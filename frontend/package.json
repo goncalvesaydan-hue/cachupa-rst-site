@@ -1,0 +1,12 @@
+{
+  "name": "cachupa-frontend",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Frontend est\u00e1tico do Cachupa Rst; contrato v1; sem depend\u00eancias externas.",
+  "scripts": {
+    "build:preview": "python3 tools/preview.py",
+    "dev": "python3 tools/preview.py --serve",
+    "test": "python3 -m unittest discover -s tests -v",
+    "lint": "python3 tools/check.py"
+  }
+}

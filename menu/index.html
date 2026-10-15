@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#006c9a">
+    <title>Cachupa Rst — Menu</title>
+    <meta name="description" content="Consulte o menu Cachupa Rst: entradas, peixes, carnes e sobremesas.">
+    <link rel="stylesheet" href="style.css">
+    <script src="data.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body class="cachupa-menu">
+    <a class="skip-link" href="#menu-content" data-copy="skip">Saltar para os pratos</a>
+    <header class="menu-header">
+        <div class="header-inner">
+            <a class="brand" href="/" aria-label="Cachupa Rst — Voltar ao site">
+                <img class="brand-logo" src="brand/logo.svg" alt="Cachupa Rst Restaurante" width="1660" height="948">
+            </a>
+            <a class="site-return" href="/">Voltar ao site</a>
+            <div class="language-control">
+                <label for="language" data-copy="language">Idioma</label>
+                <select id="language" name="language">
+                    <option value="pt" lang="pt">Português</option>
+                    <option value="en" lang="en">English</option>
+                    <option value="es" lang="es">Español</option>
+                    <option value="fr" lang="fr">Français</option>
+                </select>
+            </div>
+        </div>
+        <nav class="category-nav" id="cat-nav" aria-label="Categorias"></nav>
+    </header>
+    <main id="menu-content" tabindex="-1">
+        <p class="demo-notice">Menu de demonstração · A carta do restaurante está em preparação.</p>
+        <div class="menu-intro">
+            <div class="intro-copy"><p class="cuisine-note" data-copy="cuisine">Cozinha cabo-verdiana</p><h1 data-copy="menu">Puxe uma cadeira.</h1><p data-copy="intro">Veja o que vai para a mesa.</p></div>
+            <div class="intro-aside"><span class="hand-note" data-copy="welcome">Sente-se.</span><span class="intro-note" data-copy="detailHint">Selecione um prato para saber mais</span></div>
+        </div>
+        <section id="category-section" aria-labelledby="category-title">
+            <div class="category-heading">
+                <div class="category-copy"><h2 id="category-title"></h2><p id="category-description"></p><span id="category-count"></span></div>
+                <img id="category-image" alt="" width="480" height="240" decoding="async">
+            </div>
+            <ul id="items-list" class="items-list"></ul>
+        </section>
+        <p id="menu-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+        <footer class="menu-footer">
+            <p data-copy="allergyNote">Tem alguma alergia ou intolerância? Fale com a nossa equipa antes de escolher.</p>
+            <span class="footer-brand">Cachupa Rst</span>
+        </footer>
+        <noscript><p>Ative o JavaScript para consultar o menu. / Please enable JavaScript to view the menu.</p></noscript>
+    </main>
+    <dialog id="detail-sheet" aria-labelledby="detail-title" aria-describedby="detail-desc">
+        <div class="detail-panel">
+            <div class="detail-toolbar"><span data-copy="dishDetails">O prato em detalhe</span><button id="close-detail" class="close-button" type="button" aria-label="Fechar detalhe" autofocus><span aria-hidden="true">×</span></button></div>
+            <img id="detail-img" class="detail-image" alt="" width="720" height="480">
+            <div class="detail-info">
+                <p id="detail-category" class="detail-category"></p>
+                <div class="detail-heading"><h2 id="detail-title"></h2><span id="detail-price"></span></div>
+                <p id="detail-desc"></p>
+                <div id="detail-tags" class="item-tags"></div>
+                <h3 data-copy="ingredients">Ingredientes principais</h3>
+                <ul id="detail-ingredients" class="ingredients-list"></ul>
+                <div class="allergy-note"><h3 data-copy="allergens">Alergénios e intolerâncias</h3><p data-copy="allergyDetail">Para conhecer os alergénios e possíveis contaminações cruzadas deste prato, consulte a nossa equipa.</p></div>
+                <button type="button" id="back-to-menu" class="back-button" data-copy="back">Voltar ao menu</button>
+            </div>
+        </div>
+    </dialog>
+</body>
+</html>

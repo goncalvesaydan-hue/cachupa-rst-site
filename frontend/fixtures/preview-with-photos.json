@@ -1,0 +1,619 @@
+{
+  "schemaVersion": 1,
+  "preview": true,
+  "site": {
+    "name": "Cachupa Rst",
+    "locale": "pt-PT",
+    "baseUrl": null
+  },
+  "restaurant": {
+    "city": null,
+    "address": null,
+    "hours": [],
+    "contacts": {
+      "phoneDisplay": null,
+      "phoneHref": null,
+      "whatsappDisplay": null,
+      "whatsappHref": null,
+      "emailDisplay": null,
+      "emailHref": null,
+      "directionsHref": null,
+      "socialLinks": []
+    }
+  },
+  "artist": null,
+  "artworks": [
+    {
+      "id": "obra-01",
+      "artistId": null,
+      "title": "Obra 01",
+      "year": null,
+      "technique": null,
+      "dimensions": null,
+      "description": "Referência provisória. Título e autoria por confirmar.",
+      "imageId": "quadro-01",
+      "fullImageId": "quadro-01-detail",
+      "order": 1,
+      "featured": true
+    },
+    {
+      "id": "obra-02",
+      "artistId": null,
+      "title": "Obra 02",
+      "year": null,
+      "technique": null,
+      "dimensions": null,
+      "description": "Referência provisória. Título e autoria por confirmar.",
+      "imageId": "quadro-02",
+      "fullImageId": "quadro-02-detail",
+      "order": 2,
+      "featured": true
+    },
+    {
+      "id": "obra-03",
+      "artistId": null,
+      "title": "Obra 03",
+      "year": null,
+      "technique": null,
+      "dimensions": null,
+      "description": "Referência provisória. Título e autoria por confirmar.",
+      "imageId": "quadro-03",
+      "fullImageId": "quadro-03-detail",
+      "order": 3,
+      "featured": true
+    }
+  ],
+  "images": {
+    "cachupa-principal": {
+      "id": "cachupa-principal",
+      "src": "/assets/photos/cachupa-principal-1600.webp",
+      "width": 1600,
+      "height": 1200,
+      "alt": "Cachupa servida numa taça branca sobre uma mesa com uma paisagem impressa.",
+      "caption": null,
+      "credit": null,
+      "variants": [
+        {
+          "src": "/assets/photos/cachupa-principal-480.webp",
+          "width": 480,
+          "height": 360,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/cachupa-principal-960.webp",
+          "width": 960,
+          "height": 720,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/cachupa-principal-1600.webp",
+          "width": 1600,
+          "height": 1200,
+          "mimeType": "image/webp"
+        }
+      ],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "cachupa-barro": {
+      "id": "cachupa-barro",
+      "src": "/assets/photos/cachupa-barro-1600.webp",
+      "width": 1600,
+      "height": 1654,
+      "alt": "Cachupa numa taça de barro, vista de cima.",
+      "caption": null,
+      "credit": null,
+      "variants": [
+        {
+          "src": "/assets/photos/cachupa-barro-480.webp",
+          "width": 480,
+          "height": 496,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/cachupa-barro-960.webp",
+          "width": 960,
+          "height": 992,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/cachupa-barro-1600.webp",
+          "width": 1600,
+          "height": 1654,
+          "mimeType": "image/webp"
+        }
+      ],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ingredientes": {
+      "id": "ingredientes",
+      "src": "/assets/photos/ingredientes-1200.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Taças de milho, feijão, legumes e outros ingredientes dispostas sobre uma mesa.",
+      "caption": null,
+      "credit": null,
+      "variants": [
+        {
+          "src": "/assets/photos/ingredientes-480.webp",
+          "width": 480,
+          "height": 640,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/ingredientes-960.webp",
+          "width": 960,
+          "height": 1280,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/ingredientes-1200.webp",
+          "width": 1200,
+          "height": 1600,
+          "mimeType": "image/webp"
+        }
+      ],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "cachupa-refogada": {
+      "id": "cachupa-refogada",
+      "src": "/assets/photos/cachupa-refogada-1200.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Prato com milho, ovos estrelados e enchidos.",
+      "caption": null,
+      "credit": null,
+      "variants": [
+        {
+          "src": "/assets/photos/cachupa-refogada-480.webp",
+          "width": 480,
+          "height": 640,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/cachupa-refogada-960.webp",
+          "width": 960,
+          "height": 1280,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/cachupa-refogada-1200.webp",
+          "width": 1200,
+          "height": 1600,
+          "mimeType": "image/webp"
+        }
+      ],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "sala": {
+      "id": "sala",
+      "src": "/assets/photos/sala-1600.webp",
+      "width": 1600,
+      "height": 2133,
+      "alt": "Mesas do restaurante com paisagens impressas, cadeiras e pinturas nas paredes.",
+      "caption": null,
+      "credit": null,
+      "variants": [
+        {
+          "src": "/assets/photos/sala-480.webp",
+          "width": 480,
+          "height": 640,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/sala-960.webp",
+          "width": 960,
+          "height": 1280,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/sala-1600.webp",
+          "width": 1600,
+          "height": 2133,
+          "mimeType": "image/webp"
+        }
+      ],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "sala-entrada": {
+      "id": "sala-entrada",
+      "src": "/assets/photos/sala-entrada-1600.webp",
+      "width": 1600,
+      "height": 2133,
+      "alt": "Interior do restaurante com mesas junto à entrada e pinturas na parede de pedra.",
+      "caption": null,
+      "credit": null,
+      "variants": [
+        {
+          "src": "/assets/photos/sala-entrada-480.webp",
+          "width": 480,
+          "height": 640,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/sala-entrada-960.webp",
+          "width": 960,
+          "height": 1280,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/sala-entrada-1600.webp",
+          "width": 1600,
+          "height": 2133,
+          "mimeType": "image/webp"
+        }
+      ],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "janela": {
+      "id": "janela",
+      "src": "/assets/photos/janela-1600.webp",
+      "width": 1600,
+      "height": 2133,
+      "alt": "Mesa junto à janela com o nome Cachupa no vidro.",
+      "caption": null,
+      "credit": null,
+      "variants": [
+        {
+          "src": "/assets/photos/janela-480.webp",
+          "width": 480,
+          "height": 640,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/janela-960.webp",
+          "width": 960,
+          "height": 1280,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/janela-1600.webp",
+          "width": 1600,
+          "height": 2133,
+          "mimeType": "image/webp"
+        }
+      ],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "quadro-01": {
+      "id": "quadro-01",
+      "src": "/assets/photos/quadro-01-1600.webp",
+      "width": 1600,
+      "height": 2133,
+      "alt": "Pintura emoldurada com figuras em tons amarelos e azuis, exposta no restaurante.",
+      "caption": null,
+      "credit": null,
+      "variants": [
+        {
+          "src": "/assets/photos/quadro-01-480.webp",
+          "width": 480,
+          "height": 640,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/quadro-01-960.webp",
+          "width": 960,
+          "height": 1280,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/quadro-01-1600.webp",
+          "width": 1600,
+          "height": 2133,
+          "mimeType": "image/webp"
+        }
+      ],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "quadro-01-detail": {
+      "id": "quadro-01-detail",
+      "src": "/assets/photos/quadro-01-detail.webp",
+      "width": 2000,
+      "height": 2667,
+      "alt": "Pintura emoldurada com figuras em tons amarelos e azuis, exposta no restaurante.",
+      "caption": null,
+      "credit": null,
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "quadro-02": {
+      "id": "quadro-02",
+      "src": "/assets/photos/quadro-02-1600.webp",
+      "width": 1600,
+      "height": 2133,
+      "alt": "Pintura emoldurada de músicos com instrumentos, na parede de pedra do restaurante.",
+      "caption": null,
+      "credit": null,
+      "variants": [
+        {
+          "src": "/assets/photos/quadro-02-480.webp",
+          "width": 480,
+          "height": 640,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/quadro-02-960.webp",
+          "width": 960,
+          "height": 1280,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/quadro-02-1600.webp",
+          "width": 1600,
+          "height": 2133,
+          "mimeType": "image/webp"
+        }
+      ],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "quadro-02-detail": {
+      "id": "quadro-02-detail",
+      "src": "/assets/photos/quadro-02-detail.webp",
+      "width": 2000,
+      "height": 2667,
+      "alt": "Pintura emoldurada de músicos com instrumentos, na parede de pedra do restaurante.",
+      "caption": null,
+      "credit": null,
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "quadro-03": {
+      "id": "quadro-03",
+      "src": "/assets/photos/quadro-03-1600.webp",
+      "width": 1600,
+      "height": 2133,
+      "alt": "Pintura emoldurada com um grupo de figuras em movimento, sobre uma mesa do restaurante.",
+      "caption": null,
+      "credit": null,
+      "variants": [
+        {
+          "src": "/assets/photos/quadro-03-480.webp",
+          "width": 480,
+          "height": 640,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/quadro-03-960.webp",
+          "width": 960,
+          "height": 1280,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/quadro-03-1600.webp",
+          "width": 1600,
+          "height": 2133,
+          "mimeType": "image/webp"
+        }
+      ],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "quadro-03-detail": {
+      "id": "quadro-03-detail",
+      "src": "/assets/photos/quadro-03-detail.webp",
+      "width": 2000,
+      "height": 2667,
+      "alt": "Pintura emoldurada com um grupo de figuras em movimento, sobre uma mesa do restaurante.",
+      "caption": null,
+      "credit": null,
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "navigation": {
+    "menuEnabled": false
+  },
+  "pages": {
+    "home": {
+      "title": "Cabo Verde à mesa",
+      "description": "A cachupa dá o nome à casa. A cozinha cabo-verdiana dá-lhe o sabor.",
+      "heading": "Cabo Verde, à mesa.",
+      "intro": "A cachupa dá o nome à casa. A cozinha cabo-verdiana dá-lhe o sabor.",
+      "heroImageId": "cachupa-principal",
+      "sections": [
+        {
+          "id": "speciality",
+          "type": "editorial",
+          "heading": "A cachupa, no centro da mesa.",
+          "paragraphs": [
+            "O prato que dá nome ao restaurante é o ponto de partida para conhecer a nossa cozinha."
+          ],
+          "imageIds": [
+            "cachupa-barro"
+          ],
+          "links": []
+        },
+        {
+          "id": "house",
+          "type": "editorial",
+          "heading": "Conheça a nossa casa.",
+          "paragraphs": [
+            "A cozinha, o espaço e a pintura cabo-verdiana. Conheça o que faz parte da nossa casa."
+          ],
+          "imageIds": [
+            "sala"
+          ],
+          "links": [
+            {
+              "label": "Conhecer o restaurante",
+              "href": "/a-nossa-casa/"
+            }
+          ]
+        },
+        {
+          "id": "art",
+          "type": "artworkSelection",
+          "heading": "Um lugar para a pintura.",
+          "paragraphs": [
+            "Uma galeria dedicada aos quadros de um pintor cabo-verdiano."
+          ],
+          "imageIds": [],
+          "links": [
+            {
+              "label": "Visitar a galeria",
+              "href": "/galeria/"
+            }
+          ],
+          "artworkIds": [
+            "obra-01",
+            "obra-02",
+            "obra-03"
+          ]
+        },
+        {
+          "id": "visit",
+          "type": "visit",
+          "heading": "Puxe uma cadeira.",
+          "paragraphs": [
+            "Para reservar, fale com a equipa pelo WhatsApp."
+          ],
+          "imageIds": [
+            "janela"
+          ],
+          "links": [
+            {
+              "label": "Contactos e localização",
+              "href": "/contactos/"
+            }
+          ]
+        }
+      ]
+    },
+    "house": {
+      "title": "A nossa casa",
+      "description": "A cachupa, o espaço e as pessoas que fazem parte do restaurante.",
+      "heading": "Uma casa cabo-verdiana.",
+      "intro": "A cachupa, o espaço e as pessoas que fazem parte do restaurante.",
+      "heroImageId": "sala-entrada",
+      "sections": [
+        {
+          "id": "story",
+          "type": "editorial",
+          "heading": "À mesa, na nossa casa.",
+          "paragraphs": [
+            "As mesas, as pinturas e os detalhes do espaço fazem parte da visita."
+          ],
+          "imageIds": [
+            "sala"
+          ],
+          "links": []
+        },
+        {
+          "id": "cozinha",
+          "type": "photoGrid",
+          "heading": "Um olhar sobre a cozinha.",
+          "paragraphs": [
+            "Da preparação à mesa. Fotografias do restaurante."
+          ],
+          "imageIds": [
+            "ingredientes",
+            "cachupa-refogada"
+          ],
+          "links": []
+        }
+      ]
+    },
+    "gallery": {
+      "title": "Galeria",
+      "description": "Um espaço dedicado à pintura de um artista cabo-verdiano.",
+      "heading": "Arte que merece tempo.",
+      "intro": "Pinturas expostas no restaurante, fotografadas no seu espaço. Os títulos e a autoria serão acrescentados após confirmação.",
+      "heroImageId": null,
+      "sections": []
+    },
+    "reservations": {
+      "title": "Reservas",
+      "description": "Peça a sua reserva pelo WhatsApp. A equipa confirma a disponibilidade consigo.",
+      "heading": "Até à mesa.",
+      "intro": "Peça a sua reserva pelo WhatsApp. A equipa confirma a disponibilidade consigo.",
+      "heroImageId": null,
+      "sections": []
+    },
+    "contacts": {
+      "title": "Contactos",
+      "description": "Localização, horários e formas de falar com o Cachupa Rst.",
+      "heading": "Encontre a nossa casa.",
+      "intro": "Localização, horários e formas de falar com o Cachupa Rst.",
+      "heroImageId": null,
+      "sections": []
+    },
+    "privacy": {
+      "title": "Privacidade",
+      "description": "Informação sobre esta pré-visualização.",
+      "heading": "A sua privacidade.",
+      "intro": "Informação sobre esta pré-visualização.",
+      "heroImageId": null,
+      "sections": [
+        {
+          "id": "privacy",
+          "type": "editorial",
+          "heading": "Uma versão em preparação.",
+          "paragraphs": [
+            "Esta versão não inclui formulários de reserva nem ferramentas de análise de visitas. As ligações de contacto abrem serviços externos quando forem configuradas.",
+            "A informação de privacidade será completada com os dados do responsável e os serviços usados antes da publicação."
+          ],
+          "imageIds": [],
+          "links": []
+        }
+      ]
+    },
+    "notFound": {
+      "title": "Página não encontrada",
+      "description": "Regresse ao início para conhecer a casa, a cozinha e a galeria.",
+      "heading": "Esta página não está aqui.",
+      "intro": "Regresse ao início para conhecer a casa, a cozinha e a galeria.",
+      "heroImageId": null,
+      "sections": []
+    }
+  }
+}

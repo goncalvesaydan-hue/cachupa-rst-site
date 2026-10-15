@@ -1,0 +1,7 @@
+{
+  "name": "Cachupa Rst",
+  "preview": true,
+  "restaurant": {"phone": null, "email": null, "address": null, "hours": [], "directionsUrl": null},
+  "artist": {"name": null, "bio": null},
+  "artworks": []
+}

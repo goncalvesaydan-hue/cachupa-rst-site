@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "preview": true,
+  "site": {
+    "name": "Cachupa Rst",
+    "locale": "pt-PT",
+    "baseUrl": null
+  },
+  "restaurant": {
+    "city": null,
+    "address": null,
+    "hours": [],
+    "contacts": {
+      "phoneDisplay": null,
+      "phoneHref": null,
+      "whatsappDisplay": null,
+      "whatsappHref": null,
+      "emailDisplay": null,
+      "emailHref": null,
+      "directionsHref": null,
+      "socialLinks": []
+    }
+  },
+  "artist": null,
+  "artworks": [],
+  "images": {},
+  "navigation": {
+    "menuEnabled": false
+  },
+  "pages": {
+    "home": {
+      "title": "Cabo Verde à mesa",
+      "description": "A cachupa dá o nome à casa. A cozinha cabo-verdiana dá-lhe o sabor.",
+      "heading": "Cabo Verde, à mesa.",
+      "intro": "A cachupa dá o nome à casa. A cozinha cabo-verdiana dá-lhe o sabor.",
+      "heroImageId": null,
+      "sections": [
+        {
+          "id": "speciality",
+          "type": "editorial",
+          "heading": "A cachupa, no centro da mesa.",
+          "paragraphs": [
+            "O prato que dá nome ao restaurante é o ponto de partida para conhecer a nossa cozinha."
+          ],
+          "imageIds": [],
+          "links": []
+        },
+        {
+          "id": "house",
+          "type": "editorial",
+          "heading": "Conheça a nossa casa.",
+          "paragraphs": [
+            "A cozinha, o espaço e a pintura cabo-verdiana. Conheça o que faz parte da nossa casa."
+          ],
+          "imageIds": [],
+          "links": [
+            {
+              "label": "Conhecer o restaurante",
+              "href": "/a-nossa-casa/"
+            }
+          ]
+        },
+        {
+          "id": "art",
+          "type": "artworkSelection",
+          "heading": "Um lugar para a pintura.",
+          "paragraphs": [
+            "Uma galeria dedicada aos quadros de um pintor cabo-verdiano."
+          ],
+          "imageIds": [],
+          "links": [
+            {
+              "label": "Visitar a galeria",
+              "href": "/galeria/"
+            }
+          ],
+          "artworkIds": []
+        },
+        {
+          "id": "visit",
+          "type": "visit",
+          "heading": "Puxe uma cadeira.",
+          "paragraphs": [
+            "Para reservar, fale com a equipa pelo WhatsApp."
+          ],
+          "imageIds": [],
+          "links": [
+            {
+              "label": "Contactos e localização",
+              "href": "/contactos/"
+            }
+          ]
+        }
+      ]
+    },
+    "house": {
+      "title": "A nossa casa",
+      "description": "A cachupa, o espaço e as pessoas que fazem parte do restaurante.",
+      "heading": "Uma casa cabo-verdiana.",
+      "intro": "A cachupa, o espaço e as pessoas que fazem parte do restaurante.",
+      "heroImageId": null,
+      "sections": [
+        {
+          "id": "story",
+          "type": "editorial",
+          "heading": "À mesa, na nossa casa.",
+          "paragraphs": [
+            "As mesas, as pinturas e os detalhes do espaço fazem parte da visita."
+          ],
+          "imageIds": [],
+          "links": []
+        },
+        {
+          "id": "cozinha",
+          "type": "photoGrid",
+          "heading": "Um olhar sobre a cozinha.",
+          "paragraphs": [
+            "Da preparação à mesa. Fotografias do restaurante."
+          ],
+          "imageIds": [],
+          "links": []
+        }
+      ]
+    },
+    "gallery": {
+      "title": "Galeria",
+      "description": "Um espaço dedicado à pintura de um artista cabo-verdiano.",
+      "heading": "Arte que merece tempo.",
+      "intro": "Pinturas expostas no restaurante, fotografadas no seu espaço. Os títulos e a autoria serão acrescentados após confirmação.",
+      "heroImageId": null,
+      "sections": []
+    },
+    "reservations": {
+      "title": "Reservas",
+      "description": "Peça a sua reserva pelo WhatsApp. A equipa confirma a disponibilidade consigo.",
+      "heading": "Até à mesa.",
+      "intro": "Peça a sua reserva pelo WhatsApp. A equipa confirma a disponibilidade consigo.",
+      "heroImageId": null,
+      "sections": []
+    },
+    "contacts": {
+      "title": "Contactos",
+      "description": "Localização, horários e formas de falar com o Cachupa Rst.",
+      "heading": "Encontre a nossa casa.",
+      "intro": "Localização, horários e formas de falar com o Cachupa Rst.",
+      "heroImageId": null,
+      "sections": []
+    },
+    "privacy": {
+      "title": "Privacidade",
+      "description": "Informação sobre esta pré-visualização.",
+      "heading": "A sua privacidade.",
+      "intro": "Informação sobre esta pré-visualização.",
+      "heroImageId": null,
+      "sections": [
+        {
+          "id": "privacy",
+          "type": "editorial",
+          "heading": "Uma versão em preparação.",
+          "paragraphs": [
+            "Esta versão não inclui formulários de reserva nem ferramentas de análise de visitas. As ligações de contacto abrem serviços externos quando forem configuradas.",
+            "A informação de privacidade será completada com os dados do responsável e os serviços usados antes da publicação."
+          ],
+          "imageIds": [],
+          "links": []
+        }
+      ]
+    },
+    "notFound": {
+      "title": "Página não encontrada",
+      "description": "Regresse ao início para conhecer a casa, a cozinha e a galeria.",
+      "heading": "Esta página não está aqui.",
+      "intro": "Regresse ao início para conhecer a casa, a cozinha e a galeria.",
+      "heroImageId": null,
+      "sections": []
+    }
+  }
+}

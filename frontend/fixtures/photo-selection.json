@@ -1,0 +1,322 @@
+[
+  {
+    "id": "cachupa-principal",
+    "original": "/Volumes/Aydan/CACHUPA RESTAURANTE/IMG_0952.HEIC",
+    "originalSha256": "5a1ef87cb96937ed0cc1edee21962df5a91f91ec46c4317d33a6acb0d6a67c43",
+    "reason": "Abertura: prato nítido, completo e de elevada resolução.",
+    "exports": [
+      {
+        "src": "/assets/photos/cachupa-principal-480.webp",
+        "width": 480,
+        "height": 360,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/cachupa-principal-960.webp",
+        "width": 960,
+        "height": 720,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/cachupa-principal-1600.webp",
+        "width": 1600,
+        "height": 1200,
+        "mimeType": "image/webp"
+      }
+    ],
+    "processing": "Orientação EXIF, redução proporcional e compressão WebP. Sem recorte, retoque ou alteração criativa de cor.",
+    "decodedSourceSize": [
+      1600,
+      1200
+    ],
+    "colorProfileStatus": "Perfil Display P3 preservado na exportação."
+  },
+  {
+    "id": "cachupa-barro",
+    "original": "/Volumes/Aydan/CACHUPA RESTAURANTE/IMG_6528.JPG",
+    "originalSha256": "8a6d7dfdcd0f2af2c27aba9f1d28702b84dc187d15f011632b3d7096f175bc46",
+    "reason": "Especialidade: apresentação em barro, diferente do enquadramento principal.",
+    "exports": [
+      {
+        "src": "/assets/photos/cachupa-barro-480.webp",
+        "width": 480,
+        "height": 496,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/cachupa-barro-960.webp",
+        "width": 960,
+        "height": 992,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/cachupa-barro-1600.webp",
+        "width": 1600,
+        "height": 1654,
+        "mimeType": "image/webp"
+      }
+    ],
+    "processing": "Orientação EXIF, redução proporcional e compressão WebP. Sem recorte, retoque ou alteração criativa de cor.",
+    "decodedSourceSize": [
+      3024,
+      3126
+    ],
+    "colorProfileStatus": "Rever perfil ICC antes da publicação; o volume externo deixou de responder à releitura."
+  },
+  {
+    "id": "ingredientes",
+    "original": "/Volumes/Aydan/CACHUPA RESTAURANTE/IMG_0910.HEIC",
+    "originalSha256": "e97b6ec0a7e83853cd6c797692c28e9a45b663bbc83b1dba3020ee097680633a",
+    "reason": "Contexto da cozinha: composição completa dos ingredientes, sem afirmar uma receita.",
+    "exports": [
+      {
+        "src": "/assets/photos/ingredientes-480.webp",
+        "width": 480,
+        "height": 640,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/ingredientes-960.webp",
+        "width": 960,
+        "height": 1280,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/ingredientes-1200.webp",
+        "width": 1200,
+        "height": 1600,
+        "mimeType": "image/webp"
+      }
+    ],
+    "processing": "Orientação EXIF, redução proporcional e compressão WebP. Sem recorte, retoque ou alteração criativa de cor.",
+    "decodedSourceSize": [
+      1600,
+      1200
+    ],
+    "colorProfileStatus": "Perfil Display P3 preservado na exportação."
+  },
+  {
+    "id": "cachupa-refogada",
+    "original": "/Volumes/Aydan/CACHUPA RESTAURANTE/IMG_0984.HEIC",
+    "originalSha256": "dfc5cbbbcdb97009dc0d0723f47c90de4d9f588b6c1dd028e0a701b9d599f31e",
+    "reason": "Variação de apresentação, usada na página da casa.",
+    "exports": [
+      {
+        "src": "/assets/photos/cachupa-refogada-480.webp",
+        "width": 480,
+        "height": 640,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/cachupa-refogada-960.webp",
+        "width": 960,
+        "height": 1280,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/cachupa-refogada-1200.webp",
+        "width": 1200,
+        "height": 1600,
+        "mimeType": "image/webp"
+      }
+    ],
+    "processing": "Orientação EXIF, redução proporcional e compressão WebP. Sem recorte, retoque ou alteração criativa de cor.",
+    "decodedSourceSize": [
+      1600,
+      1200
+    ],
+    "colorProfileStatus": "Perfil Display P3 preservado na exportação."
+  },
+  {
+    "id": "sala",
+    "original": "/Volumes/Aydan/CACHUPA RESTAURANTE/IMG_7633.JPG",
+    "originalSha256": "aca11b5e4b59a3b3a1d6975a66aa41dcf60fbbe2cb3e0c310bbe6d9b02c7a872",
+    "reason": "Sala: mostra o ambiente e a ligação à pintura.",
+    "exports": [
+      {
+        "src": "/assets/photos/sala-480.webp",
+        "width": 480,
+        "height": 640,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/sala-960.webp",
+        "width": 960,
+        "height": 1280,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/sala-1600.webp",
+        "width": 1600,
+        "height": 2133,
+        "mimeType": "image/webp"
+      }
+    ],
+    "processing": "Orientação EXIF, redução proporcional e compressão WebP. Sem recorte, retoque ou alteração criativa de cor.",
+    "decodedSourceSize": [
+      4032,
+      3024
+    ],
+    "colorProfileStatus": "Rever perfil ICC antes da publicação; o volume externo deixou de responder à releitura."
+  },
+  {
+    "id": "sala-entrada",
+    "original": "/Volumes/Aydan/CACHUPA RESTAURANTE/IMG_7634.JPG",
+    "originalSha256": "7c0ca2c1831251aa9d99e935a259d227d374fd512a54b3b93391d669874c5f30",
+    "reason": "Página da casa: vista complementar do espaço.",
+    "exports": [
+      {
+        "src": "/assets/photos/sala-entrada-480.webp",
+        "width": 480,
+        "height": 640,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/sala-entrada-960.webp",
+        "width": 960,
+        "height": 1280,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/sala-entrada-1600.webp",
+        "width": 1600,
+        "height": 2133,
+        "mimeType": "image/webp"
+      }
+    ],
+    "processing": "Orientação EXIF, redução proporcional e compressão WebP. Sem recorte, retoque ou alteração criativa de cor.",
+    "decodedSourceSize": [
+      4032,
+      3024
+    ],
+    "colorProfileStatus": "Rever perfil ICC antes da publicação; o volume externo deixou de responder à releitura."
+  },
+  {
+    "id": "janela",
+    "original": "/Volumes/Aydan/CACHUPA RESTAURANTE/IMG_7635.JPG",
+    "originalSha256": "1b04152b38505ba13425e2c0048c3378abf41ea52c8e9ab26b22eea5d933ac0b",
+    "reason": "Convite à visita: enquadramento da mesa e da marca no espaço.",
+    "exports": [
+      {
+        "src": "/assets/photos/janela-480.webp",
+        "width": 480,
+        "height": 640,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/janela-960.webp",
+        "width": 960,
+        "height": 1280,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/janela-1600.webp",
+        "width": 1600,
+        "height": 2133,
+        "mimeType": "image/webp"
+      }
+    ],
+    "processing": "Orientação EXIF, redução proporcional e compressão WebP. Sem recorte, retoque ou alteração criativa de cor.",
+    "decodedSourceSize": [
+      4032,
+      3024
+    ],
+    "colorProfileStatus": "Rever perfil ICC antes da publicação; o volume externo deixou de responder à releitura."
+  },
+  {
+    "id": "quadro-01",
+    "original": "/Volumes/Aydan/CACHUPA RESTAURANTE/IMG_7636.JPG",
+    "originalSha256": "f8a627582dc471b79bf722bf0cb9842546f57d3327a93d057d87dcd22a294971",
+    "reason": "Obra completa no enquadramento original; autoria e título não inferidos.",
+    "exports": [
+      {
+        "src": "/assets/photos/quadro-01-480.webp",
+        "width": 480,
+        "height": 640,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/quadro-01-960.webp",
+        "width": 960,
+        "height": 1280,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/quadro-01-1600.webp",
+        "width": 1600,
+        "height": 2133,
+        "mimeType": "image/webp"
+      }
+    ],
+    "processing": "Orientação EXIF, redução proporcional e compressão WebP. Sem recorte, retoque ou alteração criativa de cor.",
+    "decodedSourceSize": [
+      4032,
+      3024
+    ],
+    "colorProfileStatus": "Rever perfil ICC antes da publicação; o volume externo deixou de responder à releitura."
+  },
+  {
+    "id": "quadro-02",
+    "original": "/Volumes/Aydan/CACHUPA RESTAURANTE/IMG_7637.JPG",
+    "originalSha256": "c71c36bf5618af6db8ccda1df75d7934d99c55b237bc247f8f259e4536f022bf",
+    "reason": "Obra completa; imagem de alta resolução em vez da miniatura equivalente.",
+    "exports": [
+      {
+        "src": "/assets/photos/quadro-02-480.webp",
+        "width": 480,
+        "height": 640,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/quadro-02-960.webp",
+        "width": 960,
+        "height": 1280,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/quadro-02-1600.webp",
+        "width": 1600,
+        "height": 2133,
+        "mimeType": "image/webp"
+      }
+    ],
+    "processing": "Orientação EXIF, redução proporcional e compressão WebP. Sem recorte, retoque ou alteração criativa de cor.",
+    "decodedSourceSize": [
+      4032,
+      3024
+    ],
+    "colorProfileStatus": "Rever perfil ICC antes da publicação; o volume externo deixou de responder à releitura."
+  },
+  {
+    "id": "quadro-03",
+    "original": "/Volumes/Aydan/CACHUPA RESTAURANTE/IMG_7639.JPG",
+    "originalSha256": "d51f4237e43b5328943e74c8fddaf5b0a076556f2157be345c0d58a2593ecfa9",
+    "reason": "Obra completa; cores preservadas, sem reconstrução ou recorte.",
+    "exports": [
+      {
+        "src": "/assets/photos/quadro-03-480.webp",
+        "width": 480,
+        "height": 640,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/quadro-03-960.webp",
+        "width": 960,
+        "height": 1280,
+        "mimeType": "image/webp"
+      },
+      {
+        "src": "/assets/photos/quadro-03-1600.webp",
+        "width": 1600,
+        "height": 2133,
+        "mimeType": "image/webp"
+      }
+    ],
+    "processing": "Orientação EXIF, redução proporcional e compressão WebP. Sem recorte, retoque ou alteração criativa de cor.",
+    "decodedSourceSize": [
+      4032,
+      3024
+    ],
+    "colorProfileStatus": "Rever perfil ICC antes da publicação; o volume externo deixou de responder à releitura."
+  }
+]

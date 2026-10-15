@@ -1,0 +1,17 @@
+# Sistema e ferramentas
+.DS_Store
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+# Credenciais locais
+.env
+.env.*
+!.env.example
+# Saídas regeneráveis
+dist/
+frontend/dist/
+backend/dist/
+coverage/
+*.log
+# Não ignorar fontes, documentação ou imagens reais indiscriminadamente.
