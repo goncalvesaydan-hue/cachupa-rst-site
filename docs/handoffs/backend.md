@@ -70,3 +70,8 @@
   - `content/pages.json`: atualizados os textos de `reservations` (`description`, `intro`) e `privacy` para refletir reservas/contactos via WhatsApp (`963 572 411`), telefone e email (`geral@restaurantecachupa.com`).
   - `backend/tests/test_validator.py` e `backend/tests/test_generator.py`: atualizados os testes sobre os dados reais agora completos (zero avisos em preview; apenas `site.baseUrl` em produção).
 - **Verificação executada:** `python3 scripts/build.py`, `bash scripts/lint-all.sh`, `bash scripts/test-all.sh` (`39/39` backend + `17/17` frontend).
+
+## Entrega — 13 de novembro de 2026 (Pré-mensagem nos links de WhatsApp e Email)
+
+- **Alteração implementada (`content/site.json`):** adicionados parâmetros `?text=...` em `whatsappHref` e `?subject=...&body=...` em `emailHref` com modelo de pedido de reserva (`Data`, `Hora`, `Número de pessoas`, `Nome` e `Telefone` no email).
+- **Verificação executada:** `python3 scripts/build.py`, `bash scripts/lint-all.sh`, `bash scripts/test-all.sh` (`39/39` backend + `17/17` frontend).

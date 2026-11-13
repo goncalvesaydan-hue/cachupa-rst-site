@@ -601,3 +601,11 @@ Referências aplicadas: Manual de Identidade Visual completo (`Identidade Visual
   - `frontend/fixtures/preview.json`: sincronizado com `content/site.json` e `content/pages.json` para os contactos e textos de reservas e privacidade.
   - `frontend/tests/test_render.py`: atualizados os testes de canais parciais (usando cópias isoladas sem WhatsApp/email) e de renderização confirmada em `contactos/index.html` e `reservas/index.html`.
 - **Verificação executada:** `python3 scripts/build.py`, `npm --prefix frontend run build:preview`, `bash scripts/lint-all.sh`, `bash scripts/test-all.sh` (`17/17` frontend + `39/39` backend) e verificação visual/DOM em Chrome headless (`390×844` e `1440×900`) em `/contactos/` e `/reservas/`.
+
+## Pré-mensagem de reserva no WhatsApp e Email — 13 de novembro de 2026
+
+- **Alterações implementadas (`frontend/src/render.py`, `frontend/fixtures/preview.json`, `frontend/tests/test_render.py`):**
+  - `frontend/src/render.py`: atualizada `href()` para aceitar quebras de linha codificadas (`%0A`/`%0D`) na query string de links `whatsapp` e `email`, mantendo o bloqueio de caracteres de controlo nos restantes contextos.
+  - Sincronizados `whatsappHref` (`?text=...`) e `emailHref` (`?subject=...&body=...`) com a pré-mensagem de pedido de reserva.
+  - Atualizado `test_confirmed_contacts_address_and_hours` em `frontend/tests/test_render.py` para validar a presença da pré-mensagem nos links renderizados em `contactos/index.html` e `reservas/index.html`.
+- **Verificação executada:** `python3 scripts/build.py`, `npm --prefix frontend run build:preview`, `ruff`, `mypy`, `bash scripts/lint-all.sh`, `bash scripts/test-all.sh` (`17/17` frontend + `39/39` backend).

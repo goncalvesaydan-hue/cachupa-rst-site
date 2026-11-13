@@ -135,7 +135,11 @@ def href(value, kind='link'):
     if '\\' in value:
         return ''
     decoded = unquote(value)
-    if any(ord(c) < 32 for c in decoded):
+    base_decoded = unquote(value.split('?', 1)[0])
+    if any(ord(c) < 32 for c in base_decoded):
+        return ''
+    allowed_ctrl = ('\n', '\r') if kind in ('whatsapp', 'email') else ()
+    if any(ord(c) < 32 and c not in allowed_ctrl for c in decoded):
         return ''
     try:
         parsed = urlsplit(value)

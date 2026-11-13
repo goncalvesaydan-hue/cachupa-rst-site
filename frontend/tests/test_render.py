@@ -201,9 +201,10 @@ class RendererTests(unittest.TestCase):
             self.assertIn('R. Alm. Reis 22 B, 2830-326 Barreiro', html)
             self.assertIn('963 572 411', html)
             self.assertIn('tel:+351963572411', html)
-            self.assertIn('https://wa.me/351963572411', html)
+            self.assertIn('https://wa.me/351963572411?text=Ol%C3%A1%21', html)
             self.assertIn('geral@restaurantecachupa.com', html)
-            self.assertIn('mailto:geral@restaurantecachupa.com', html)
+            self.assertIn('mailto:geral@restaurantecachupa.com?subject=Pedido%20de%20reserva', html)
+            self.assertIn('&amp;body=Ol%C3%A1%21', html)
         contacts_html = pages['contactos/index.html']
         self.assertIn('Barreiro', contacts_html)
         self.assertIn('11:00–23:00', contacts_html)
