@@ -27,13 +27,13 @@ class ValidatorTests(unittest.TestCase):
         model = normalize_content(load_content(), 'preview')
         report = validate_model(model, 'preview', public_dir=support.ROOT / 'frontend' / 'public')
         self.assertEqual(report.errors, [])
-        self.assertIn('restaurant.contacts.whatsappHref', paths(report.warnings))
+        self.assertEqual(report.warnings, [])
 
     def test_real_content_is_valid_in_production(self):
         model = normalize_content(load_content(), 'production')
         report = validate_model(model, 'production', public_dir=support.ROOT / 'frontend' / 'public')
         self.assertEqual(report.errors, [])
-        self.assertIn('restaurant.contacts.whatsappHref', paths(report.warnings))
+        self.assertEqual(paths(report.warnings), {'site.baseUrl'})
 
     def test_incomplete_content_is_blocked_in_production(self):
         source = support.complete_source()

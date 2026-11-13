@@ -62,4 +62,11 @@
 - **Contexto verificado:** o repositório público tem `homepage: https://cachupa-rst-site.vercel.app` e `has_pages: false`, ou seja, o alojamento real é a Vercel (sem build, a servir a raiz do repositório). Online, `/docs/handoffs/backend.md`, `/CACHUPA-RST-AI-MASTER-BRIEF.md` e `/backend/src/main.py` respondiam `200`.
 - **Alteração implementada:** novo `.vercelignore` em modo de lista de permissões: ignora tudo (`/*`) e reinclui apenas as 7 páginas geradas, `404.html`, `assets/` e, em `menu/`, só `index.html`, `style.css`, `script.js`, `data.js` e `brand/`. Também exclui `**/*.md`, `**/*.py`, `__pycache__/`, `.DS_Store` e `.env*`.
 - **Verificação executada:** simulação local dos ficheiros enviados (106 ficheiros, 18 MB, contra 577 no repositório) servida em `http://127.0.0.1:3099`: páginas, `/menu/`, `litosilva.jpg` e `logo-clean.svg` → `200`; `/docs/…`, `/CACHUPA-RST-AI-MASTER-BRIEF.md`, `/backend/src/main.py`, `/content/site.json`, `/menu/README.md`, `/menu/documentation/`, `/AGENTS.md`, `/.env.example` → `404`. `audit_final.mjs` → `24/24` sem problemas, 0 erros de consola e 0 erros HTTP.
-- **Pendente:** commit de todos os ficheiros (incluindo os não rastreados `.vercelignore`, `assets/photos/litosilva.jpg`, `assets/brand/*`) e push, apenas quando o utilizador pedir.
+
+## Entrega — 13 de novembro de 2026 (WhatsApp e email oficiais nos dados e validação)
+
+- **Alterações implementadas (`content/site.json`, `content/pages.json`, `backend/tests/test_validator.py`, `backend/tests/test_generator.py`):**
+  - `content/site.json`: definidos `whatsappDisplay` (`"963 572 411"`), `whatsappHref` (`"https://wa.me/351963572411"`), `emailDisplay` (`"geral@restaurantecachupa.com"`) e `emailHref` (`"mailto:geral@restaurantecachupa.com"`).
+  - `content/pages.json`: atualizados os textos de `reservations` (`description`, `intro`) e `privacy` para refletir reservas/contactos via WhatsApp (`963 572 411`), telefone e email (`geral@restaurantecachupa.com`).
+  - `backend/tests/test_validator.py` e `backend/tests/test_generator.py`: atualizados os testes sobre os dados reais agora completos (zero avisos em preview; apenas `site.baseUrl` em produção).
+- **Verificação executada:** `python3 scripts/build.py`, `bash scripts/lint-all.sh`, `bash scripts/test-all.sh` (`39/39` backend + `17/17` frontend).

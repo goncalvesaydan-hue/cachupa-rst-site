@@ -97,10 +97,10 @@
     "contacts": {
       "phoneDisplay": "963 572 411",
       "phoneHref": "tel:+351963572411",
-      "whatsappDisplay": null,
-      "whatsappHref": null,
-      "emailDisplay": null,
-      "emailHref": null,
+      "whatsappDisplay": "963 572 411",
+      "whatsappHref": "https://wa.me/351963572411",
+      "emailDisplay": "geral@restaurantecachupa.com",
+      "emailHref": "mailto:geral@restaurantecachupa.com",
       "directionsHref": "https://www.google.com/maps/search/?api=1&query=Restaurante+Cachupa+Brr",
       "socialLinks": []
     }

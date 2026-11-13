@@ -43,7 +43,14 @@ class RendererTests(unittest.TestCase):
             self.assertNotIn('menu/"', html)
 
     def test_unknown_contacts_are_not_invented(self):
-        html = render_site(self.model)['reservas/index.html']
+        phone_only = copy.deepcopy(self.model)
+        phone_only['restaurant']['contacts'].update(
+            whatsappDisplay=None,
+            whatsappHref=None,
+            emailDisplay=None,
+            emailHref=None,
+        )
+        html = render_site(phone_only)['reservas/index.html']
         self.assertNotIn('https://wa.me/', html)
         self.assertNotIn('mailto:', html)
         self.assertNotIn('WhatsApp', html)
@@ -58,14 +65,19 @@ class RendererTests(unittest.TestCase):
         self.assertNotIn('data-people', html)
         self.assertNotIn('booking-helper', html)
 
-        empty = copy.deepcopy(self.model)
+        empty = copy.deepcopy(phone_only)
         empty['restaurant']['contacts'].update(phoneDisplay=None, phoneHref=None)
         empty_html = render_site(empty)['reservas/index.html']
         self.assertIn('Não há contactos para reservas configurados.', empty_html)
         self.assertNotIn('https://wa.me/', empty_html)
 
     def test_email_only_reservations_do_not_claim_whatsapp(self):
-        self.model['restaurant']['contacts'].update(emailDisplay='teste@example.invalid', emailHref='mailto:teste@example.invalid')
+        self.model['restaurant']['contacts'].update(
+            whatsappDisplay=None,
+            whatsappHref=None,
+            emailDisplay='teste@example.invalid',
+            emailHref='mailto:teste@example.invalid',
+        )
         pages = render_site(self.model)
         reservations = pages['reservas/index.html']
         home = pages['index.html']
@@ -82,7 +94,7 @@ class RendererTests(unittest.TestCase):
         self.assertIn('class="main-nav"', home)
         self.assertIn('class="menu-button"', home)
         self.assertRegex(home, r'<img [^>]+loading="eager" decoding="async" fetchpriority="high"')
-        self.assertIn('Ver reservas', home)
+        self.assertIn('Reservar mesa', home)
         self.assertIn('<a class="nav-reserve" href="reservas/">Reservar <span aria-hidden="true">↗</span></a>', home)
         hero = home.split('<section class="hero">', 1)[1].split('</section>', 1)[0]
         self.assertIn(self.model['pages']['home']['intro'], hero)
@@ -183,13 +195,19 @@ class RendererTests(unittest.TestCase):
         self.assertNotIn('Horários e localização', html)
 
     def test_confirmed_contacts_address_and_hours(self):
-        html = render_site(self.model)['contactos/index.html']
-        self.assertIn('R. Alm. Reis 22 B, 2830-326 Barreiro', html)
-        self.assertIn('Barreiro', html)
-        self.assertIn('963 572 411', html)
-        self.assertIn('tel:+351963572411', html)
-        self.assertIn('11:00–23:00', html)
-        self.assertIn('https://www.google.com/maps/search/?api=1&amp;query=Restaurante+Cachupa+Brr', html)
+        pages = render_site(self.model)
+        for route in ('contactos/index.html', 'reservas/index.html'):
+            html = pages[route]
+            self.assertIn('R. Alm. Reis 22 B, 2830-326 Barreiro', html)
+            self.assertIn('963 572 411', html)
+            self.assertIn('tel:+351963572411', html)
+            self.assertIn('https://wa.me/351963572411', html)
+            self.assertIn('geral@restaurantecachupa.com', html)
+            self.assertIn('mailto:geral@restaurantecachupa.com', html)
+        contacts_html = pages['contactos/index.html']
+        self.assertIn('Barreiro', contacts_html)
+        self.assertIn('11:00–23:00', contacts_html)
+        self.assertIn('https://www.google.com/maps/search/?api=1&amp;query=Restaurante+Cachupa+Brr', contacts_html)
 
     def test_invalid_contact_links_still_show_the_confirmed_display_value(self):
         self.model['restaurant']['contacts'].update(phoneDisplay='+351 210 000 000', phoneHref='javascript:alert(1)')

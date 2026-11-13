@@ -109,10 +109,10 @@ class CliTests(unittest.TestCase):
     def test_validate_real_content(self):
         code, _, err = run('validate', '--mode', 'preview')
         self.assertEqual(code, 0)
-        self.assertIn('aviso: restaurant.contacts.whatsappHref', err)
+        self.assertIn('0 erro(s), 0 aviso(s)', err)
         code, _, err = run('validate', '--mode', 'production')
         self.assertEqual(code, 0)
-        self.assertIn('aviso: restaurant.contacts.whatsappHref', err)
+        self.assertIn('aviso: site.baseUrl', err)
 
     def test_model_outputs_contract_json(self):
         code, out, _ = run('model')

@@ -334,7 +334,8 @@ def contacts_panel(model, page):
     elif phone_display:
         direct_parts.append(f'<p class="phone">{text(phone_display)}</p>')
 
-    wa_link = link('Pedir por WhatsApp', c.get('whatsappHref'), 'text-link', 'whatsapp', arrow=True)
+    wa_label = f'WhatsApp · {c["whatsappDisplay"]}' if c.get('whatsappDisplay') else 'Pedir por WhatsApp'
+    wa_link = link(wa_label, c.get('whatsappHref'), 'text-link', 'whatsapp', arrow=True)
     if wa_link:
         direct_parts.append(f'<div>{wa_link}</div>')
 
@@ -680,10 +681,11 @@ def reservations_body(model):
     wa_safe = href(c.get('whatsappHref'), 'whatsapp')
     if wa_safe:
         step_channels.append('WhatsApp')
+        wa_title = f'WhatsApp · {c["whatsappDisplay"]}' if c.get('whatsappDisplay') else 'WhatsApp'
         channel_rows.append(
             f'<a href="{text(wa_safe)}" target="_blank" rel="noopener noreferrer">'
             f'<span>{len(channel_rows) + 1:02d}</span>'
-            f'<div><small>Canal recomendado</small><strong>WhatsApp</strong></div>'
+            f'<div><small>Canal recomendado</small><strong>{text(wa_title)}</strong></div>'
             f'<span aria-hidden="true">↗</span>'
             f'</a>'
         )
@@ -1078,10 +1080,12 @@ def render_site(model):
         else:
             addr_html = ''
 
+        wa_footer_label = f'WhatsApp · {c["whatsappDisplay"]}' if c.get('whatsappDisplay') else 'WhatsApp'
         maps_label = 'Restaurante Cachupa Brr no Google Maps' if city == 'Barreiro' else 'Abrir localização no Google Maps'
         contact_bits = (
             addr_html
             + link(c.get('phoneDisplay'), c.get('phoneHref'), kind='phone')
+            + link(wa_footer_label, c.get('whatsappHref'), kind='whatsapp', arrow=True)
             + link(c.get('emailDisplay'), c.get('emailHref'), kind='email')
             + ''.join(link(v['label'], v['href'], arrow=True) for v in c.get('socialLinks', []))
             + link(maps_label, c.get('directionsHref'), arrow=True)

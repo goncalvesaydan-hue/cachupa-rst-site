@@ -157,9 +157,9 @@
   },
   "reservations": {
     "title": "Reservas",
-    "description": "Reserve a sua mesa por telefone no Cachupa Rst, no Barreiro. A equipa confirma a disponibilidade consigo.",
+    "description": "Reserve a sua mesa por WhatsApp, telefone ou email no Cachupa Rst, no Barreiro. A equipa confirma a disponibilidade consigo.",
     "heading": "Até à mesa.",
-    "intro": "Reserve a sua mesa por telefone ou consulte os contactos da casa. A equipa confirma a disponibilidade consigo.",
+    "intro": "Reserve a sua mesa por WhatsApp, telefone ou email. A equipa confirma a disponibilidade consigo.",
     "heroImageId": null,
     "sections": []
   },
@@ -184,8 +184,8 @@
         "heading": "1. Proteção de Dados Pessoais (RGPD)",
         "paragraphs": [
           "No Cachupa Restaurante, a sua privacidade é um compromisso fundamental. Este site estático não recolhe dados através de formulários online nem mantém contas ou bases de dados de visitantes.",
-          "Quando entra em contacto connosco diretamente por telefone (963 572 411) ou outro canal disponibilizado, apenas utilizamos a informação estritamente necessária para responder ao seu pedido ou confirmar a sua mesa. Os seus contactos nunca são comercializados nem cedidos a terceiros.",
-          "Ao abrigo do RGPD (Regulamento UE 2016/679), tem o direito de aceder, retificar ou solicitar a eliminação de quaisquer dados fornecidos no atendimento, bastando contactar-nos pelo 963 572 411 ou presencialmente em R. Alm. Reis 22 B, 2830-326 Barreiro."
+          "Quando entra em contacto connosco diretamente por telefone (963 572 411), WhatsApp (963 572 411) ou email (geral@restaurantecachupa.com), apenas utilizamos a informação estritamente necessária para responder ao seu pedido ou confirmar a sua mesa. Os seus contactos nunca são comercializados nem cedidos a terceiros.",
+          "Ao abrigo do RGPD (Regulamento UE 2016/679), tem o direito de aceder, retificar ou solicitar a eliminação de quaisquer dados fornecidos no atendimento, bastando contactar-nos por email (geral@restaurantecachupa.com), pelo 963 572 411 ou presencialmente em R. Alm. Reis 22 B, 2830-326 Barreiro."
         ],
         "imageIds": [],
         "artworkIds": [],
@@ -255,7 +255,7 @@
         "paragraphs": [
           "Trabalhamos continuamente para assegurar que este website seja totalmente acessível a todas as pessoas, incluindo cidadãos com limitações visuais, auditivas, motoras ou cognitivas, em conformidade com as normas internacionais WCAG 2.1 nível AA.",
           "O desenvolvimento prioriza: código semântico HTML5, rácios de contraste de cor elevados superiores a 7:1 em textos principais, navegação integral através do teclado com foco destacado (:focus-visible), alvos tácteis otimizados para dispositivos móveis (mínimo de 44x44 píxeis) e textos alternativos em elementos visuais.",
-          "Se detetar alguma falha de acessibilidade ou tiver dificuldade em consultar qualquer conteúdo, entre em contacto direto connosco através do 963 572 411 para que possamos prestar apoio imediato e corrigir a situação."
+          "Se detetar alguma falha de acessibilidade ou tiver dificuldade em consultar qualquer conteúdo, entre em contacto direto connosco através do telefone/WhatsApp 963 572 411 ou do email geral@restaurantecachupa.com para que possamos prestar apoio imediato e corrigir a situação."
         ],
         "imageIds": [],
         "artworkIds": [],
