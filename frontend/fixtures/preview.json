@@ -7,55 +7,716 @@
     "baseUrl": null
   },
   "restaurant": {
-    "city": null,
-    "address": null,
-    "hours": [],
+    "city": "Barreiro",
+    "address": "R. Alm. Reis 22 B, 2830-326 Barreiro",
+    "hours": [
+      {
+        "day": 1,
+        "closed": false,
+        "intervals": [
+          {
+            "opens": "11:00",
+            "closes": "23:00",
+            "closesNextDay": false
+          }
+        ],
+        "note": null
+      },
+      {
+        "day": 2,
+        "closed": false,
+        "intervals": [
+          {
+            "opens": "11:00",
+            "closes": "23:00",
+            "closesNextDay": false
+          }
+        ],
+        "note": null
+      },
+      {
+        "day": 3,
+        "closed": false,
+        "intervals": [
+          {
+            "opens": "11:00",
+            "closes": "23:00",
+            "closesNextDay": false
+          }
+        ],
+        "note": null
+      },
+      {
+        "day": 4,
+        "closed": false,
+        "intervals": [
+          {
+            "opens": "11:00",
+            "closes": "23:00",
+            "closesNextDay": false
+          }
+        ],
+        "note": null
+      },
+      {
+        "day": 5,
+        "closed": false,
+        "intervals": [
+          {
+            "opens": "11:00",
+            "closes": "23:00",
+            "closesNextDay": false
+          }
+        ],
+        "note": null
+      },
+      {
+        "day": 6,
+        "closed": false,
+        "intervals": [
+          {
+            "opens": "11:00",
+            "closes": "23:00",
+            "closesNextDay": false
+          }
+        ],
+        "note": null
+      },
+      {
+        "day": 7,
+        "closed": false,
+        "intervals": [
+          {
+            "opens": "11:00",
+            "closes": "23:00",
+            "closesNextDay": false
+          }
+        ],
+        "note": null
+      }
+    ],
     "contacts": {
-      "phoneDisplay": null,
-      "phoneHref": null,
+      "phoneDisplay": "963 572 411",
+      "phoneHref": "tel:+351963572411",
       "whatsappDisplay": null,
       "whatsappHref": null,
       "emailDisplay": null,
       "emailHref": null,
-      "directionsHref": null,
+      "directionsHref": "https://www.google.com/maps/search/?api=1&query=Restaurante+Cachupa+Brr",
       "socialLinks": []
     }
   },
-  "artist": null,
-  "artworks": [],
-  "images": {},
+  "artist": {
+    "id": "lito-silva",
+    "name": "Lito Silva",
+    "bio": "Pintor cabo-verdiano cujas telas a óleo retratam com calor, cor e emoção a vida quotidiana, as gentes e a alma de Cabo Verde.",
+    "portrait": null,
+    "website": null
+  },
+  "artworks": [
+    {
+      "id": "arte-caldeirao",
+      "artistId": "lito-silva",
+      "title": "O Caldeirão da Mãe",
+      "year": "Obra original",
+      "technique": "Óleo sobre tela",
+      "dimensions": "Exposta na sala",
+      "description": "Cena íntima e comovente da preparação da cachupa no caldeirão de barro tradicional, servida com carinho pela mãe aos olhares atentos das crianças.",
+      "imageId": "arte-caldeirao",
+      "fullImageId": "arte-caldeirao",
+      "order": 1,
+      "featured": true
+    },
+    {
+      "id": "arte-serenata",
+      "artistId": "lito-silva",
+      "title": "Serenata à Luz da Lamparina",
+      "year": "Obra original",
+      "technique": "Óleo sobre tela",
+      "dimensions": "Exposta na sala",
+      "description": "Encontro comunitário numa taberna acolhedora: famílias e amigos reunidos à volta da mesa a escutar as cordas sentimentais da rabeca.",
+      "imageId": "arte-serenata",
+      "fullImageId": "arte-serenata",
+      "order": 2,
+      "featured": true
+    },
+    {
+      "id": "arte-pescador",
+      "artistId": "lito-silva",
+      "title": "O Regresso do Pescador",
+      "year": "Obra original",
+      "technique": "Óleo sobre tela",
+      "dimensions": "Exposta na sala",
+      "description": "Retrato vigoroso do pescador ao regressar da faina, com chapéu de palha e vara aos ombros, tendo por horizonte as montanhas e o mar das ilhas.",
+      "imageId": "arte-pescador",
+      "fullImageId": "arte-pescador",
+      "order": 3,
+      "featured": true
+    },
+    {
+      "id": "arte-tres-gracas",
+      "artistId": "lito-silva",
+      "title": "As Três Graças da Terra",
+      "year": "Obra original",
+      "technique": "Óleo sobre tela em tríptico",
+      "dimensions": "Exposta na sala",
+      "description": "Tríptico com três figuras femininas em tons de barro e vestes vermelhas ondulantes, celebrando a força, a serenidade e a presença da mulher cabo-verdiana.",
+      "imageId": "arte-tres-gracas",
+      "fullImageId": "arte-tres-gracas",
+      "order": 4,
+      "featured": false
+    },
+    {
+      "id": "arte-caminho-entardecer",
+      "artistId": "lito-silva",
+      "title": "Caminho ao Entardecer",
+      "year": "Obra original",
+      "technique": "Óleo sobre tela",
+      "dimensions": "Exposta na sala",
+      "description": "Mãe e filho de mãos dadas percorrendo a vereda dourada ao cair da tarde, com o cesto à cabeça e a cumplicidade serena dos passos partilhados.",
+      "imageId": "arte-caminho-entardecer",
+      "fullImageId": "arte-caminho-entardecer",
+      "order": 5,
+      "featured": false
+    },
+    {
+      "id": "arte-capoeira",
+      "artistId": "lito-silva",
+      "title": "Roda e Movimento",
+      "year": "Obra original",
+      "technique": "Óleo sobre tela",
+      "dimensions": "Exposta na sala",
+      "description": "Composição de grande energia e dinamismo sobre fundo carmesim, retratando o salto acrobático e a cadência ancestral do movimento.",
+      "imageId": "arte-capoeira",
+      "fullImageId": "arte-capoeira",
+      "order": 6,
+      "featured": false
+    },
+    {
+      "id": "arte-danca-batuque",
+      "artistId": "lito-silva",
+      "title": "Ritmo de Batuku",
+      "year": "Obra original",
+      "technique": "Óleo sobre tela",
+      "dimensions": "Exposta na sala",
+      "description": "A vibração autêntica do batuku: saia amarela rodada em cadência viva ao som compassado e vigoroso das mãos no tambor tradicional.",
+      "imageId": "arte-danca-batuque",
+      "fullImageId": "arte-danca-batuque",
+      "order": 7,
+      "featured": false
+    },
+    {
+      "id": "arte-jazz-sopros",
+      "artistId": "lito-silva",
+      "title": "Sopros da Noite",
+      "year": "Obra original",
+      "technique": "Óleo sobre tela",
+      "dimensions": "Exposta na sala",
+      "description": "Expressão plástica intensa onde trompetes e saxofones dourados ecoam melodias de sopro e mornas pelas noites quentes do arquipélago.",
+      "imageId": "arte-jazz-sopros",
+      "fullImageId": "arte-jazz-sopros",
+      "order": 8,
+      "featured": false
+    },
+    {
+      "id": "arte-alegria-ilhas",
+      "artistId": "lito-silva",
+      "title": "Festa na Areia",
+      "year": "Obra original",
+      "technique": "Óleo sobre tela",
+      "dimensions": "Exposta na sala",
+      "description": "Celebração praiana repleta de sol e vento: dançarinos vestidos de branco e azul festejando ao compasso das ilhas junto ao mar aberto.",
+      "imageId": "arte-alegria-ilhas",
+      "fullImageId": "arte-alegria-ilhas",
+      "order": 9,
+      "featured": false
+    },
+    {
+      "id": "arte-vale-santo-antao",
+      "artistId": "lito-silva",
+      "title": "Manhã no Vale Verdejante",
+      "year": "Obra original",
+      "technique": "Óleo sobre tela",
+      "dimensions": "Exposta na sala",
+      "description": "A serenidade luminosa do labor agrícola entre montanhas escarpadas, palmeiras e caminhos de pedra percorridos pela carroça tradicional.",
+      "imageId": "arte-vale-santo-antao",
+      "fullImageId": "arte-vale-santo-antao",
+      "order": 10,
+      "featured": false
+    },
+    {
+      "id": "arte-maos-ralador",
+      "artistId": "lito-silva",
+      "title": "Mãos de Labuta (O Ralador)",
+      "year": "Obra original",
+      "technique": "Óleo sobre tela",
+      "dimensions": "Exposta na sala",
+      "description": "Foco escultural nas mãos calejadas a raspar a raiz no ralador rústico de folha-de-flandres, o gesto fundador que prepara os frutos da terra para a cachupa.",
+      "imageId": "arte-maos-ralador",
+      "fullImageId": "arte-maos-ralador",
+      "order": 11,
+      "featured": false
+    }
+  ],
+  "images": {
+    "hero-parede-quadro": {
+      "id": "hero-parede-quadro",
+      "src": "/assets/photos/hero-parede-quadro.jpg",
+      "width": 1600,
+      "height": 1066,
+      "alt": "Parede da sala do Restaurante Cachupa com violão tradicional e pintura a óleo emoldurada de família cabo-verdiana assinada por Lito Silva.",
+      "caption": "Arte, música e tradição cabo-verdiana nas paredes da nossa casa.",
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    "studio-hero": {
+      "id": "studio-hero",
+      "src": "/assets/photos/studio-hero.jpg",
+      "width": 1320,
+      "height": 865,
+      "alt": "Cachupa de Camarão e Marisco fumegante em caçarola de barro com grandes camarões tigre grelhados e coentros frescos.",
+      "caption": "Cachupa de Marisco em barro com camarão tigre grelhado e coentros frescos.",
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "studio-carne": {
+      "id": "studio-carne",
+      "src": "/assets/photos/studio-carne.jpg",
+      "width": 1320,
+      "height": 877,
+      "alt": "Cachupa Rica tradicional com carne estufada suculenta, enchidos nobres e feijão da terra em prato de barro.",
+      "caption": "A autêntica Cachupa Rica tradicional de carne com feijão pedra e carnes nobres.",
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "studio-polvo": {
+      "id": "studio-polvo",
+      "src": "/assets/photos/studio-polvo.jpg",
+      "width": 1320,
+      "height": 860,
+      "alt": "Cachupa de Polvo tenro e marisco com tomate cereja em travessa de barro fumegante.",
+      "caption": "Cachupa de Polvo e Marisco em lume brando com tomate cereja.",
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "studio-refogada": {
+      "id": "studio-refogada",
+      "src": "/assets/photos/studio-refogada.jpg",
+      "width": 1320,
+      "height": 874,
+      "alt": "Cachupa Refogada tradicional no prato com ovos estrelados, chouriço tostado e queijo fresco de cabra.",
+      "caption": "Cachupa Refogada clássica com ovos estrelados, chouriço corado e queijo da terra.",
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "studio-frango": {
+      "id": "studio-frango",
+      "src": "/assets/photos/studio-frango.jpg",
+      "width": 1320,
+      "height": 867,
+      "alt": "Cachupa de frango dourado tenro em caçarola de barro com cebolada caramelizada e ervas aromáticas.",
+      "caption": "Cachupa rica de frango tenro dourado em lume lento com cebola caramelizada.",
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "studio-borrego": {
+      "id": "studio-borrego",
+      "src": "/assets/photos/studio-borrego.jpg",
+      "width": 1320,
+      "height": 1928,
+      "alt": "Jarrete de borrego estufado lentamente em travessa de barro sobre papel pardo com parede de pedra rústica.",
+      "caption": "Jarrete de borrego estufado lentamente em barro com legumes da horta.",
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "studio-sala": {
+      "id": "studio-sala",
+      "src": "/assets/photos/studio-sala.jpg",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Sala acolhedora do restaurante com paredes de pedra rústica, mesas de madeira e quadros de arte cabo-verdiana.",
+      "caption": "A nossa sala de refeições: ambiente caloroso com paredes de pedra e arte de Cabo Verde.",
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.28
+      }
+    },
+    "studio-casa-quadro": {
+      "id": "studio-casa-quadro",
+      "src": "/assets/photos/studio-casa-quadro.jpg",
+      "width": 1066,
+      "height": 1600,
+      "alt": "Mesa posta com copos na sala do restaurante sob grande pintura a óleo emoldurada de mulher cabo-verdiana a mexer a cachupa.",
+      "caption": null,
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.35
+      }
+    },
+    "janela-rua": {
+      "id": "janela-rua",
+      "src": "/assets/photos/janela-1600.webp",
+      "width": 1600,
+      "height": 2133,
+      "alt": "Montra do Cachupa Restaurante na Rua Almirante Reis, no Barreiro, com parede de pedra rústica, mesas de madeira e quadro a óleo.",
+      "caption": "A nossa montra na Rua Almirante Reis, 22 B, no Barreiro.",
+      "credit": "Cachupa Rst",
+      "variants": [
+        {
+          "src": "/assets/photos/janela-480.webp",
+          "width": 480,
+          "height": 640,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/janela-960.webp",
+          "width": 960,
+          "height": 1280,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/janela-1600.webp",
+          "width": 1600,
+          "height": 2133,
+          "mimeType": "image/webp"
+        }
+      ],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.35
+      }
+    },
+    "studio-pintura-cachupa": {
+      "id": "studio-pintura-cachupa",
+      "src": "/assets/photos/studio-pintura-cachupa.jpg",
+      "width": 1320,
+      "height": 872,
+      "alt": "Quadro a óleo com moldura de madeira de mãe cabo-verdiana a preparar a cachupa ao lume de chão para as crianças da casa, assinado Lito Silva.",
+      "caption": "A Cozinheira da Terra — Óleo sobre tela assinado por Lito Silva, exposto na sala.",
+      "credit": "Galeria Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "studio-pintura-mar": {
+      "id": "studio-pintura-mar",
+      "src": "/assets/photos/studio-pintura-mar.jpg",
+      "width": 930,
+      "height": 870,
+      "alt": "Pintura a óleo com moldura dourada de músico cabo-verdiano com violão na praia ao pôr-do-sol.",
+      "caption": "O Trovador do Mar — Óleo sobre tela com moldura dourada exposto na sala do restaurante.",
+      "credit": "Galeria Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "studio-pintura-festa": {
+      "id": "studio-pintura-festa",
+      "src": "/assets/photos/studio-pintura-festa.jpg",
+      "width": 950,
+      "height": 720,
+      "alt": "Pintura a óleo com moldura dourada de pares a dançar funaná tradicional em festa cabo-verdiana, assinada Lito Silva.",
+      "caption": "Baile & Funaná — Óleo sobre tela assinado por Lito Silva, exposto no restaurante.",
+      "credit": "Galeria Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "arte-tres-gracas": {
+      "id": "arte-tres-gracas",
+      "src": "/assets/photos/arte-tres-gracas.jpg",
+      "width": 213,
+      "height": 320,
+      "alt": "Pintura a óleo em formato tríptico com três figuras femininas em tons de terra com mantos vermelhos ondulantes.",
+      "caption": "As Três Graças da Terra — Tríptico a óleo sobre tela.",
+      "credit": "Galeria Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "arte-pescador": {
+      "id": "arte-pescador",
+      "src": "/assets/photos/arte-pescador.jpg",
+      "width": 213,
+      "height": 320,
+      "alt": "Pintura a óleo de pescador com chapéu de palha e vara aos ombros caminhando à beira-mar com montanhas ao fundo.",
+      "caption": "O Regresso do Pescador — Óleo sobre tela.",
+      "credit": "Galeria Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "arte-caminho-entardecer": {
+      "id": "arte-caminho-entardecer",
+      "src": "/assets/photos/arte-caminho-entardecer.jpg",
+      "width": 213,
+      "height": 320,
+      "alt": "Pintura a óleo de mãe com vestido amarelo e cesto à cabeça de mãos dadas com filho ao entardecer.",
+      "caption": "Caminho ao Entardecer — Óleo sobre tela.",
+      "credit": "Galeria Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "arte-capoeira": {
+      "id": "arte-capoeira",
+      "src": "/assets/photos/arte-capoeira.jpg",
+      "width": 213,
+      "height": 320,
+      "alt": "Pintura a óleo de capoeiristas de branco em movimento e salto no ar sobre fundo carmesim.",
+      "caption": "Roda e Movimento — Óleo sobre tela.",
+      "credit": "Galeria Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "arte-danca-batuque": {
+      "id": "arte-danca-batuque",
+      "src": "/assets/photos/arte-danca-batuque.jpg",
+      "width": 213,
+      "height": 320,
+      "alt": "Pintura a óleo de dançarina com saia amarela rodada ao ritmo de percussionista com tambor tradicional.",
+      "caption": "Ritmo de Batuku — Óleo sobre tela.",
+      "credit": "Galeria Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "arte-jazz-sopros": {
+      "id": "arte-jazz-sopros",
+      "src": "/assets/photos/arte-jazz-sopros.jpg",
+      "width": 213,
+      "height": 320,
+      "alt": "Pintura a óleo expressionista com três músicos tocando trompetes e saxofones dourados.",
+      "caption": "Sopros da Noite — Óleo sobre tela.",
+      "credit": "Galeria Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "arte-serenata": {
+      "id": "arte-serenata",
+      "src": "/assets/photos/arte-serenata.jpg",
+      "width": 213,
+      "height": 320,
+      "alt": "Pintura a óleo com família e vizinhos à volta da mesa a escutar tocador de rabeca sob a luz de lamparina.",
+      "caption": "Serenata à Luz da Lamparina — Óleo sobre tela.",
+      "credit": "Galeria Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "arte-caldeirao": {
+      "id": "arte-caldeirao",
+      "src": "/assets/photos/arte-caldeirao.jpg",
+      "width": 213,
+      "height": 320,
+      "alt": "Pintura a óleo de mãe servindo cachupa de um caldeirão de barro ao lume de chão para três crianças.",
+      "caption": "O Caldeirão da Mãe — Óleo sobre tela.",
+      "credit": "Galeria Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "arte-alegria-ilhas": {
+      "id": "arte-alegria-ilhas",
+      "src": "/assets/photos/arte-alegria-ilhas.jpg",
+      "width": 213,
+      "height": 320,
+      "alt": "Pintura a óleo de grupo dançando com vestes brancas e azuis em praia tropical em frente ao oceano.",
+      "caption": "Festa na Areia — Óleo sobre tela.",
+      "credit": "Galeria Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "arte-vale-santo-antao": {
+      "id": "arte-vale-santo-antao",
+      "src": "/assets/photos/arte-vale-santo-antao.jpg",
+      "width": 213,
+      "height": 320,
+      "alt": "Pintura a óleo de paisagem agrícola de vale entre montanhas escarpadas com carroça de burro e casario tradicional.",
+      "caption": "Manhã no Vale Verdejante — Óleo sobre tela.",
+      "credit": "Galeria Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "arte-maos-ralador": {
+      "id": "arte-maos-ralador",
+      "src": "/assets/photos/arte-maos-ralador.jpg",
+      "width": 213,
+      "height": 320,
+      "alt": "Pintura a óleo em plano aproximado de mãos expressivas ralando tubérculos num ralador artesanal de folha-de-flandres.",
+      "caption": "Mãos de Labuta (O Ralador) — Óleo sobre tela.",
+      "credit": "Galeria Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
   "navigation": {
-    "menuEnabled": false
+    "menuEnabled": true
   },
   "pages": {
     "home": {
       "title": "Cabo Verde à mesa",
       "description": "A cachupa dá o nome à casa. A cozinha cabo-verdiana dá-lhe o sabor.",
       "heading": "Cabo Verde, à mesa.",
-      "intro": "A cachupa dá o nome à casa. A cozinha cabo-verdiana dá-lhe o sabor.",
-      "heroImageId": null,
+      "intro": "A cachupa dá o nome à nossa casa. O cozimento lento, os ingredientes das ilhas e o carinho da tradição dão-lhe a alma.",
+      "heroImageId": "hero-parede-quadro",
       "sections": [
         {
           "id": "speciality",
           "type": "editorial",
           "heading": "A cachupa, no centro da mesa.",
           "paragraphs": [
-            "O prato que dá nome ao restaurante é o ponto de partida para conhecer a nossa cozinha."
+            "O prato mais emblemático de Cabo Verde é preparado aqui como manda a tradição: milho quebrado selecionado, feijão pedra, carnes nobres e tempero aromático cozinhados em lume brando durante horas.",
+            "Servida bem quente em autênticas caçarolas de barro, cada garfada é uma viagem aos sabores e à hospitalidade das ilhas."
+          ],
+          "imageIds": [
+            "studio-carne"
+          ],
+          "links": [
+            {
+              "label": "Conhecer a nossa história",
+              "href": "/a-nossa-casa/"
+            }
+          ]
+        },
+        {
+          "id": "pratos",
+          "type": "photoGrid",
+          "heading": "As nossas especialidades.",
+          "paragraphs": [
+            "Da autêntica Cachupa de Polvo e Marisco à clássica Cachupa Refogada com ovos estrelados, chouriço e queijo de cabra. Sabores genuínos que reconfortam a alma."
+          ],
+          "imageIds": [
+            "studio-polvo",
+            "studio-refogada"
+          ],
+          "links": [
+            {
+              "label": "Reservar mesa para provar",
+              "href": "/reservas/"
+            }
+          ]
+        },
+        {
+          "id": "noticias",
+          "type": "editorial",
+          "heading": "Novidades & Avisos da Casa",
+          "paragraphs": [
+            "Especial — Cachupa Rica ao Fim de Semana: Preparada lentamente em lume brando durante horas com carnes nobres e feijão da terra, servida fumegante em barro aos sábados e domingos.",
+            "Cultura — Telas Originais de Lito Silva na Sala: As paredes da nossa casa acolhem pinturas a óleo originais dedicadas à cozinha, à música e às gentes de Cabo Verde. Uma exposição viva enquanto almoça ou janta.",
+            "Aviso — Reservas para Grupos & Famílias: Para mesas de 4 ou mais pessoas ou celebrações familiares, recomendamos a mensagem prévia no WhatsApp para prepararmos o melhor acolhimento para si."
           ],
           "imageIds": [],
-          "links": []
+          "links": [
+            {
+              "label": "Falar connosco no WhatsApp",
+              "href": "/reservas/"
+            }
+          ]
         },
         {
           "id": "house",
           "type": "editorial",
           "heading": "Conheça a nossa casa.",
           "paragraphs": [
-            "A cozinha, o espaço e a pintura cabo-verdiana. Conheça o que faz parte da nossa casa."
+            "Um espaço acolhedor com paredes de pedra rústica, mesas de madeira, luz calorosa e o aroma inconfundível da cachupa acabada de apurar.",
+            "Aqui encontra o conforto e a hospitalidade de uma verdadeira casa cabo-verdiana no Barreiro, onde a boa comida se junta à arte e à simpatia."
           ],
-          "imageIds": [],
+          "imageIds": [
+            "studio-casa-quadro"
+          ],
           "links": [
             {
-              "label": "Conhecer o restaurante",
+              "label": "Ver mais sobre a casa",
               "href": "/a-nossa-casa/"
             }
           ]
@@ -65,25 +726,31 @@
           "type": "artworkSelection",
           "heading": "Um lugar para a pintura.",
           "paragraphs": [
-            "Uma galeria dedicada aos quadros de um pintor cabo-verdiano."
+            "Uma galeria viva nas paredes do restaurante com pinturas a óleo que retratam a história, a música e a alma do povo cabo-verdiano."
           ],
           "imageIds": [],
           "links": [
             {
-              "label": "Visitar a galeria",
+              "label": "Visitar a galeria completa",
               "href": "/galeria/"
             }
           ],
-          "artworkIds": []
+          "artworkIds": [
+            "arte-caldeirao",
+            "arte-serenata",
+            "arte-pescador"
+          ]
         },
         {
           "id": "visit",
           "type": "visit",
           "heading": "Puxe uma cadeira.",
           "paragraphs": [
-            "Para reservar, fale com a equipa pelo WhatsApp."
+            "Esperamos por si de portas abertas na Rua Almirante Reis, no Barreiro. Com esplanada acolhedora, opções veganas e noites de música ao vivo."
           ],
-          "imageIds": [],
+          "imageIds": [
+            "studio-frango"
+          ],
           "links": [
             {
               "label": "Contactos e localização",
@@ -97,27 +764,33 @@
       "title": "A nossa casa",
       "description": "A cachupa, o espaço e as pessoas que fazem parte do restaurante.",
       "heading": "Uma casa cabo-verdiana.",
-      "intro": "A cachupa, o espaço e as pessoas que fazem parte do restaurante.",
-      "heroImageId": null,
+      "intro": "A cachupa, o espaço e a arte que fazem parte da nossa identidade.",
+      "heroImageId": "studio-sala",
       "sections": [
         {
           "id": "story",
           "type": "editorial",
           "heading": "À mesa, na nossa casa.",
           "paragraphs": [
-            "As mesas, as pinturas e os detalhes do espaço fazem parte da visita."
+            "Criámos este restaurante com um propósito simples: trazer a verdadeira hospitalidade e a gastronomia de Cabo Verde para a mesa.",
+            "Cada detalhe — das caçarolas de barro fumegantes aos quadros de Lito Silva pintados à mão sobre paredes de pedra — foi pensado para que se sinta em casa."
           ],
-          "imageIds": [],
+          "imageIds": [
+            "studio-pintura-cachupa"
+          ],
           "links": []
         },
         {
           "id": "cozinha",
           "type": "photoGrid",
-          "heading": "Um olhar sobre a cozinha.",
+          "heading": "Do tacho ao prato.",
           "paragraphs": [
-            "Da preparação à mesa. Fotografias do restaurante."
+            "Fotografias reais dos nossos pratos confeccionados com paixão, paciência e respeito absoluto pela receita tradicional."
           ],
-          "imageIds": [],
+          "imageIds": [
+            "studio-hero",
+            "studio-carne"
+          ],
           "links": []
         }
       ]
@@ -126,7 +799,7 @@
       "title": "Galeria",
       "description": "Um espaço dedicado à pintura de um artista cabo-verdiano.",
       "heading": "Arte que merece tempo.",
-      "intro": "Pinturas expostas no restaurante, fotografadas no seu espaço. Os títulos e a autoria serão acrescentados após confirmação.",
+      "intro": "Pinturas a óleo expostas nas paredes da sala de refeições, fotografadas no seu espaço natural.",
       "heroImageId": null,
       "sections": []
     },
@@ -142,27 +815,104 @@
       "title": "Contactos",
       "description": "Localização, horários e formas de falar com o Cachupa Rst.",
       "heading": "Encontre a nossa casa.",
-      "intro": "Localização, horários e formas de falar com o Cachupa Rst.",
-      "heroImageId": null,
+      "intro": "Localização, horários e contactos da nossa casa no Barreiro.",
+      "heroImageId": "janela-rua",
       "sections": []
     },
     "privacy": {
-      "title": "Privacidade",
-      "description": "Informação sobre esta pré-visualização.",
-      "heading": "A sua privacidade.",
-      "intro": "Informação sobre esta pré-visualização.",
+      "title": "Privacidade & Termos",
+      "description": "Política de privacidade, termos de utilização, política de reservas e acessibilidade digital do Cachupa Restaurante.",
+      "heading": "Transparência, Privacidade & Termos.",
+      "intro": "Conheça com clareza as nossas práticas de proteção de dados, ausência de cookies de rastreio, condições de reserva, livro de reclamações e compromisso de acessibilidade.",
       "heroImageId": null,
       "sections": [
         {
-          "id": "privacy",
+          "id": "dados",
           "type": "editorial",
-          "heading": "Uma versão em preparação.",
+          "heading": "1. Proteção de Dados Pessoais (RGPD)",
           "paragraphs": [
-            "Esta versão não inclui formulários de reserva nem ferramentas de análise de visitas. As ligações de contacto abrem serviços externos quando forem configuradas.",
-            "A informação de privacidade será completada com os dados do responsável e os serviços usados antes da publicação."
+            "No Cachupa Restaurante, a sua privacidade é um compromisso fundamental. Recolhemos apenas os dados estritamente necessários para a gestão do seu pedido de reserva de mesa ou resposta às suas dúvidas (nome, telefone e email, facultados voluntariamente).",
+            "Os seus dados nunca são comercializados, cedidos a terceiros ou utilizados para envio de publicidade não solicitada. São conservados unicamente pelo período indispensável ao atendimento.",
+            "Ao abrigo do RGPD (Regulamento Geral sobre a Proteção de Dados — Regulamento UE 2016/679), tem o direito de aceder, retificar ou solicitar a eliminação dos seus dados a qualquer momento, bastando contactar-nos pelo telefone 963 572 411 ou presencialmente no nosso restaurante no Barreiro."
           ],
           "imageIds": [],
+          "artworkIds": [],
           "links": []
+        },
+        {
+          "id": "cookies",
+          "type": "editorial",
+          "heading": "2. Ausência Total de Cookies de Rastreio & Fontes Locais",
+          "paragraphs": [
+            "Este website foi intencionalmente concebido segundo princípios rigorosos de privacidade por conceção. Não utilizamos quaisquer cookies de rastreio, pixéis de seguimento, ferramentas de perfilamento ou analítica invasiva de visitas.",
+            "Todas as tipografias e ficheiros do website são alojados e servidos diretamente pelo nosso próprio servidor local, sem qualquer contacto com servidores externos de terceiros (como Google Fonts ou CDNs externos), salvaguardando a privacidade do seu endereço IP.",
+            "Por não utilizarmos cookies não essenciais, a navegação neste espaço digital dispensa banners ou pedidos de consentimento intrusivos, garantindo uma experiência direta, rápida e transparente."
+          ],
+          "imageIds": [],
+          "artworkIds": [],
+          "links": []
+        },
+        {
+          "id": "termos",
+          "type": "editorial",
+          "heading": "3. Termos de Utilização & Política de Reservas",
+          "paragraphs": [
+            "O pedido de reserva efetuado através dos nossos canais de contacto (WhatsApp, telefone ou correio eletrónico) constitui uma solicitação de disponibilidade sujeita a validação manual. A reserva só fica garantida após confirmação direta e expressa por parte da equipa.",
+            "De forma a garantir o melhor acolhimento de todos os clientes, agradecemos aviso prévio em caso de alteração no horário ou número de pessoas. É concedida uma tolerância de 15 minutos em relação à hora acordada, finda a qual a mesa poderá ser reatribuída.",
+            "A identidade visual, logótipos e textos deste site pertencem ao Cachupa Restaurante. As obras de arte pictóricas expostas na sala de refeições e representadas na nossa galeria digital são criações artísticas originais da autoria do artista Lito Silva, protegidas pela legislação de direitos de autor."
+          ],
+          "imageIds": [],
+          "artworkIds": [],
+          "links": [
+            {
+              "label": "Consultar Galeria de Arte",
+              "href": "/galeria/"
+            },
+            {
+              "label": "Pedir Reserva de Mesa",
+              "href": "/reservas/"
+            }
+          ]
+        },
+        {
+          "id": "litigios",
+          "type": "editorial",
+          "heading": "4. Livro de Reclamações & Resolução Alternativa de Litígios (RAL)",
+          "paragraphs": [
+            "Em cumprimento do Decreto-Lei n.º 74/2017, disponibilizamos o acesso direto à plataforma oficial do Livro de Reclamações Eletrónico, onde qualquer cidadão pode submeter a sua reclamação ou elogio.",
+            "Em caso de litígio de consumo, o cliente pode recorrer a uma entidade de Resolução Alternativa de Litígios de Consumo (RAL). O Cachupa Restaurante insere-se na área de competência do CNIACC — Centro Nacional de Informação e Arbitragem de Conflitos de Consumo.",
+            "Pode consultar a lista atualizada de todas as entidades RAL de Portugal no Portal do Consumidor oficial."
+          ],
+          "imageIds": [],
+          "artworkIds": [],
+          "links": [
+            {
+              "label": "Livro de Reclamações Eletrónico (livroreclamacoes.pt)",
+              "href": "https://www.livroreclamacoes.pt"
+            },
+            {
+              "label": "Centro Nacional de Arbitragem de Conflitos (CNIACC)",
+              "href": "https://www.cniacc.pt"
+            }
+          ]
+        },
+        {
+          "id": "acessibilidade",
+          "type": "editorial",
+          "heading": "5. Declaração de Acessibilidade Digital (WCAG 2.1 AA)",
+          "paragraphs": [
+            "Trabalhamos continuamente para assegurar que este website seja totalmente acessível a todas as pessoas, incluindo cidadãos com limitações visuais, auditivas, motoras ou cognitivas, em conformidade com as normas internacionais WCAG 2.1 nível AA.",
+            "O desenvolvimento prioriza: código semântico HTML5, rácios de contraste de cor elevados superiores a 7:1 em textos principais, navegação integral através do teclado com foco destacado (:focus-visible), alvos tácteis otimizados para dispositivos móveis (mínimo de 44x44 píxeis) e textos alternativos em elementos visuais.",
+            "Se detetar alguma falha de acessibilidade ou tiver dificuldade em consultar qualquer conteúdo, entre em contacto direto connosco através do 963 572 411 para que possamos prestar apoio imediato e corrigir a situação."
+          ],
+          "imageIds": [],
+          "artworkIds": [],
+          "links": [
+            {
+              "label": "Contactar a Gerência",
+              "href": "/contactos/"
+            }
+          ]
         }
       ]
     },

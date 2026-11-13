@@ -1,125 +1,199 @@
 'use strict';
-const toggle = document.querySelector('.nav-toggle');
+
+const menuButton = document.querySelector('.menu-button');
 const nav = document.querySelector('#site-nav');
-if (toggle && nav) {
-  const mobile = matchMedia('(max-width: 900px)');
-  toggle.hidden = false;
-  const close = () => { nav.hidden = mobile.matches; toggle.setAttribute('aria-expanded', 'false'); };
-  close();
-  toggle.addEventListener('click', () => {
-    const open = toggle.getAttribute('aria-expanded') !== 'true';
-    toggle.setAttribute('aria-expanded', String(open)); nav.hidden = !open;
+if (menuButton && nav) {
+  document.body.classList.add('js-nav');
+  menuButton.hidden = false;
+
+  const setMenuOpen = open => {
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    nav.classList.toggle('is-open', open);
+    if (open) {
+      nav.querySelector('a')?.focus();
+    }
+  };
+
+  menuButton.addEventListener('click', () => {
+    const open = menuButton.getAttribute('aria-expanded') !== 'true';
+    setMenuOpen(open);
   });
-  mobile.addEventListener('change', close);
+
+  nav.addEventListener('click', event => {
+    if (event.target.closest('a') && menuButton.getAttribute('aria-expanded') === 'true') {
+      setMenuOpen(false);
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 850 && menuButton.getAttribute('aria-expanded') === 'true') {
+      setMenuOpen(false);
+    }
+  });
+
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && mobile.matches && !nav.hidden) { close(); toggle.focus(); }
+    if (menuButton.getAttribute('aria-expanded') !== 'true') return;
+    if (event.key === 'Escape') {
+      setMenuOpen(false);
+      menuButton.focus();
+      return;
+    }
+    if (event.key !== 'Tab' || window.innerWidth > 850) return;
+    const focusable = [...nav.querySelectorAll('a[href]'), menuButton]
+      .filter(el => !el.hidden && el.getClientRects().length > 0);
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  document.addEventListener('click', event => {
+    if (
+      menuButton.getAttribute('aria-expanded') === 'true' &&
+      !nav.contains(event.target) &&
+      !menuButton.contains(event.target)
+    ) {
+      setMenuOpen(false);
+    }
   });
 }
 
 for (const button of document.querySelectorAll('[data-copy-email]')) {
   button.hidden = false;
+  const originalLabel = button.textContent;
   button.addEventListener('click', async () => {
     const status = document.querySelector('#copy-status');
     try {
       if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
       await navigator.clipboard.writeText(button.dataset.copyEmail);
-      status.textContent = 'Email copiado.';
+      if (status) status.textContent = 'Email copiado.';
+      button.textContent = 'Email copiado';
+      setTimeout(() => { button.textContent = originalLabel; }, 2200);
     } catch {
-      status.textContent = 'Não foi possível copiar. Selecione o endereço de email apresentado e copie-o manualmente.';
+      if (status) {
+        status.textContent = 'Não foi possível copiar. Selecione o endereço de email apresentado e copie-o manualmente.';
+      }
     }
   });
 }
 
-const images = document.querySelectorAll('.media img');
-for (const img of images) {
-  const fail = () => img.closest('.media').classList.add('has-error');
+for (const img of document.querySelectorAll('.media img')) {
+  const fail = () => img.closest('.media')?.classList.add('has-error');
   img.addEventListener('error', fail);
   if (img.complete && !img.naturalWidth) fail();
 }
 
 const dialog = document.querySelector('#art-dialog');
 const triggers = [...document.querySelectorAll('[data-artwork]')];
-if (dialog && typeof dialog.showModal === 'function') {
-  const image = dialog.querySelector('img');
-  const imageBox = dialog.querySelector('.dialog-image');
-  const previous = dialog.querySelector('[data-art-prev]');
-  const next = dialog.querySelector('[data-art-next]');
-  let index = 0;
-  let opener;
-  let scrollPosition = 0;
-  const show = value => {
-    index = value;
-    const trigger = triggers[index];
-    const card = trigger.closest('.art-card');
-    imageBox.classList.remove('has-error');
-    image.alt = trigger.querySelector('img')?.alt || '';
-    image.src = trigger.href;
-    dialog.querySelector('#art-title').textContent = card.querySelector('h3').textContent;
-    for (const field of ['meta', 'description', 'credit']) {
-      dialog.querySelector(`[data-art-${field}]`).textContent = card.querySelector(`.art-${field}`).textContent;
-    }
-    dialog.querySelector('#art-position').textContent = `Obra ${index + 1} de ${triggers.length}`;
-    previous.setAttribute('aria-disabled', String(index === 0));
-    next.setAttribute('aria-disabled', String(index === triggers.length - 1));
-  };
-  image.addEventListener('error', () => imageBox.classList.add('has-error'));
-  triggers.forEach((trigger, value) => trigger.addEventListener('click', event => {
-    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    opener = trigger; scrollPosition = window.scrollY;
-    show(value);
-    document.body.classList.add('dialog-open');
-    dialog.showModal();
-  }));
-  previous.addEventListener('click', () => { if (index > 0) show(index - 1); });
-  next.addEventListener('click', () => { if (index < triggers.length - 1) show(index + 1); });
-  dialog.querySelector('[data-art-close]').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('keydown', event => {
-    if (event.key === 'ArrowLeft' && index > 0) { event.preventDefault(); show(index - 1); }
-    if (event.key === 'ArrowRight' && index < triggers.length - 1) { event.preventDefault(); show(index + 1); }
-  });
-  dialog.addEventListener('close', () => {
-    document.body.classList.remove('dialog-open');
-    opener?.focus({preventScroll:true});
-    window.scrollTo({top:scrollPosition,behavior:'instant'});
-  });
-}
+if (dialog && typeof dialog.showModal === 'function' && triggers.length > 0) {
+  const modalImg = dialog.querySelector('.modal-frame img');
+  const modalFrame = dialog.querySelector('.modal-frame');
+  const prevBtn = dialog.querySelector('[data-art-prev]');
+  const nextBtn = dialog.querySelector('[data-art-next]');
+  const closeBtn = dialog.querySelector('[data-art-close]');
+  const posEl = dialog.querySelector('#art-position');
+  const titleEl = dialog.querySelector('#art-title');
+  const techEl = dialog.querySelector('[data-art-technique]');
+  const descEl = dialog.querySelector('[data-art-description]');
+  const metaEl = dialog.querySelector('[data-art-meta]');
 
-const helper = document.querySelector('#booking-helper');
-if (helper) {
-  helper.hidden = false;
-  let people = '2 pessoas';
-  let meal = 'Almoço';
-  const waButtons = document.querySelectorAll('a[href*="wa.me"]');
-  const updateWaLinks = () => {
-    for (const a of waButtons) {
-      try {
-        const url = new URL(a.href);
-        const text = `Olá! Gostaria de pedir uma reserva para ${people} (${meal}) no Cachupa Rst.`;
-        url.searchParams.set('text', text);
-        a.href = url.toString();
-      } catch {
-        // Fallback for relative or static URLs
-      }
+  let index = 0;
+  let opener = null;
+
+  const show = nextIndex => {
+    index = (nextIndex + triggers.length) % triggers.length;
+    const trigger = triggers[index];
+    const card = trigger.closest('.art-card, .artwork');
+    modalFrame.classList.remove('has-error');
+    modalImg.alt = trigger.querySelector('img')?.alt || '';
+    modalImg.src = trigger.href;
+
+    const title = card?.querySelector('.art-title-source')?.textContent
+      || card?.querySelector('.art-meta strong')?.textContent
+      || '';
+    const technique = card?.querySelector('.art-technique')?.textContent || '';
+    const description = card?.querySelector('.art-description')?.textContent || '';
+    const meta = card?.querySelector('.art-meta-line')?.textContent
+      || card?.querySelector('.art-credit')?.textContent
+      || '';
+
+    if (titleEl) titleEl.textContent = title;
+    if (techEl) {
+      techEl.textContent = technique;
+      techEl.hidden = !technique;
     }
+    if (descEl) {
+      descEl.textContent = description;
+      descEl.hidden = !description;
+    }
+    if (metaEl) {
+      metaEl.textContent = meta;
+      metaEl.hidden = !meta;
+    }
+    if (posEl) {
+      const current = String(index + 1).padStart(2, '0');
+      const total = String(triggers.length).padStart(2, '0');
+      posEl.textContent = `${current} / ${total}`;
+    }
+    const single = triggers.length <= 1;
+    if (prevBtn) prevBtn.disabled = single;
+    if (nextBtn) nextBtn.disabled = single;
   };
-  helper.querySelectorAll('[data-people]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      helper.querySelectorAll('[data-people]').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      people = btn.dataset.people === 'grupo' ? 'um grupo' : `${btn.dataset.people} pessoas`;
-      updateWaLinks();
+
+  modalImg.addEventListener('error', () => modalFrame.classList.add('has-error'));
+
+  triggers.forEach((trigger, idx) => {
+    trigger.addEventListener('click', event => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      opener = trigger;
+      show(idx);
+      dialog.showModal();
     });
   });
-  helper.querySelectorAll('[data-meal]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      helper.querySelectorAll('[data-meal]').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      meal = btn.dataset.meal;
-      updateWaLinks();
-    });
+
+  prevBtn?.addEventListener('click', () => {
+    if (triggers.length > 1) show(index - 1);
   });
-  if (waButtons.length > 0) {
-    updateWaLinks();
+  nextBtn?.addEventListener('click', () => {
+    if (triggers.length > 1) show(index + 1);
+  });
+  closeBtn?.addEventListener('click', () => dialog.close());
+
+  if (!('closedBy' in HTMLDialogElement.prototype)) {
+    dialog.addEventListener('click', event => {
+      if (event.target !== dialog) return;
+      const rect = dialog.getBoundingClientRect();
+      const isDialogContent = (
+        rect.top <= event.clientY &&
+        event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX &&
+        event.clientX <= rect.left + rect.width
+      );
+      if (isDialogContent) return;
+      dialog.close();
+    });
   }
+
+  dialog.addEventListener('keydown', event => {
+    if (triggers.length <= 1) return;
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      show(index - 1);
+    } else if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      show(index + 1);
+    }
+  });
+
+  dialog.addEventListener('close', () => {
+    opener?.focus({ preventScroll: true });
+  });
 }

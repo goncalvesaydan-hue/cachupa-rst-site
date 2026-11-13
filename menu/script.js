@@ -4,46 +4,42 @@ const UI_COPY = {
     pt: {
         locale: 'pt-PT', menu: 'Puxe uma cadeira.', intro: 'Veja o que vai para a mesa.', cuisine: 'Cozinha cabo-verdiana', welcome: 'Sente-se.',
         language: 'Idioma', categories: 'Categorias', skip: 'Saltar para os pratos',
-        detailHint: 'Selecione um prato para saber mais', dishDetails: 'O prato em detalhe',
+        detailHint: 'Preços e porções conforme o catálogo aprovado.', dishDetails: 'O prato em detalhe',
         ingredients: 'Ingredientes principais', allergens: 'Alergénios e intolerâncias',
-        allergyNote: 'Tem alguma alergia ou intolerância? Fale com a nossa equipa antes de escolher.',
+        allergyNote: 'A lista de ingredientes e alergénios ainda não foi validada. Se tiver alergias ou intolerâncias, fale com a equipa antes de escolher.',
         allergyDetail: 'Para conhecer os alergénios e possíveis contaminações cruzadas deste prato, consulte a nossa equipa.',
         back: 'Voltar ao menu', close: 'Fechar detalhe', dishes: 'pratos', details: 'Ver detalhes de',
         tags: { V: 'Vegetariano', GF: 'Sem glúten' },
-        sections: ['Para começar e partilhar.', 'Sabores do mar, à nossa maneira.', 'Cortes e preparações com carácter.', 'Um final doce, sem pressa.']
     },
     en: {
         locale: 'en-GB', menu: 'Pull up a chair.', intro: 'See what’s on the menu.', cuisine: 'Cape Verdean cuisine', welcome: 'Make yourself at home.',
         language: 'Language', categories: 'Categories', skip: 'Skip to dishes',
-        detailHint: 'Select a dish to discover more', dishDetails: 'About this dish',
+        detailHint: 'Prices and portions from the approved list.', dishDetails: 'About this dish',
         ingredients: 'Main ingredients', allergens: 'Allergens and intolerances',
-        allergyNote: 'Any allergies or intolerances? Please speak to our team before choosing.',
+        allergyNote: 'Ingredient and allergen information has not yet been verified. If you have an allergy or intolerance, please speak with our team before choosing.',
         allergyDetail: 'Please ask our team about allergens and possible cross-contact for this dish.',
         back: 'Back to menu', close: 'Close details', dishes: 'dishes', details: 'View details for',
         tags: { V: 'Vegetarian', GF: 'Gluten-free' },
-        sections: ['To begin and to share.', 'Flavours of the sea, our way.', 'Carefully prepared cuts.', 'A sweet finish. Take your time.']
     },
     es: {
         locale: 'es-ES', menu: 'Tome asiento.', intro: 'Descubra lo que hay en la mesa.', cuisine: 'Cocina caboverdiana', welcome: 'Siéntase en casa.',
         language: 'Idioma', categories: 'Categorías', skip: 'Ir a los platos',
-        detailHint: 'Seleccione un plato para saber más', dishDetails: 'El plato en detalle',
+        detailHint: 'Precios y porciones según la lista aprobada.', dishDetails: 'El plato en detalle',
         ingredients: 'Ingredientes principales', allergens: 'Alérgenos e intolerancias',
-        allergyNote: '¿Tiene alguna alergia o intolerancia? Hable con nuestro equipo antes de elegir.',
+        allergyNote: 'La información sobre ingredientes y alérgenos aún no está verificada. Si tiene alguna alergia o intolerancia, consulte con el equipo antes de elegir.',
         allergyDetail: 'Consulte a nuestro equipo sobre los alérgenos y la posible contaminación cruzada de este plato.',
         back: 'Volver al menú', close: 'Cerrar detalles', dishes: 'platos', details: 'Ver detalles de',
         tags: { V: 'Vegetariano', GF: 'Sin gluten' },
-        sections: ['Para empezar y compartir.', 'Sabores del mar, a nuestra manera.', 'Cortes preparados con cuidado.', 'Un final dulce, sin prisa.']
     },
     fr: {
         locale: 'fr-FR', menu: 'Prenez place.', intro: 'Découvrez ce qui est au menu.', cuisine: 'Cuisine cap-verdienne', welcome: 'Installez-vous.',
         language: 'Langue', categories: 'Catégories', skip: 'Aller aux plats',
-        detailHint: 'Sélectionnez un plat pour en savoir plus', dishDetails: 'Le plat en détail',
+        detailHint: 'Prix et portions selon la liste approuvée.', dishDetails: 'Le plat en détail',
         ingredients: 'Ingrédients principaux', allergens: 'Allergènes et intolérances',
-        allergyNote: 'Une allergie ou une intolérance ? Parlez-en à notre équipe avant de choisir.',
+        allergyNote: 'Les informations sur les ingrédients et les allergènes ne sont pas encore vérifiées. En cas d’allergie ou d’intolérance, consultez notre équipe avant de choisir.',
         allergyDetail: 'Consultez notre équipe pour connaître les allergènes et les risques de contamination croisée de ce plat.',
         back: 'Retour au menu', close: 'Fermer les détails', dishes: 'plats', details: 'Voir les détails de',
         tags: { V: 'Végétarien', GF: 'Sans gluten' },
-        sections: ['Pour commencer et partager.', 'Les saveurs de la mer, à notre façon.', 'Des viandes préparées avec soin.', 'Une fin en douceur, sans se presser.']
     }
 };
 
@@ -86,20 +82,43 @@ function renderCategory(announce = false) {
     const section = data.sections.find(section => section.id === categoryId) || data.sections[0];
     categoryId = section.id;
     byId('category-title').textContent = section.name;
-    byId('category-description').textContent = UI_COPY[language].sections[data.sections.indexOf(section)];
+    byId('category-description').textContent = section.description || '';
     byId('category-count').textContent = `${section.items.length} ${UI_COPY[language].dishes}`;
-    byId('category-image').src = section.image;
-    byId('items-list').innerHTML = section.items.map(item => `
-        <li><button type="button" class="item-row" data-item="${escapeHTML(item.id)}" aria-haspopup="dialog" aria-label="${escapeHTML(`${UI_COPY[language].details} ${item.name}, ${priceLabel(item.price)}`)}">
-            <img class="item-thumbnail" src="${escapeHTML(item.image)}" alt="" width="92" height="92" loading="lazy" decoding="async">
+    const categoryHeading = byId('category-heading');
+    const categoryMedia = byId('category-media');
+    categoryHeading.classList.toggle('without-image', !section.image);
+    categoryMedia.replaceChildren();
+    if (section.image) {
+        const image = document.createElement('img');
+        image.src = section.image;
+        image.alt = '';
+        image.width = 480;
+        image.height = 240;
+        image.decoding = 'async';
+        categoryMedia.append(image);
+    }
+    byId('items-list').innerHTML = section.items.map(item => {
+        const hasDetails = Boolean(item.image || item.desc || item.ingredients.length || item.tags.length);
+        const tag = hasDetails ? 'button' : 'div';
+        const interactiveAttributes = hasDetails
+            ? `type="button" data-item="${escapeHTML(item.id)}" aria-haspopup="dialog" aria-label="${escapeHTML(`${UI_COPY[language].details} ${item.name}, ${priceLabel(item.price)}`)}"`
+            : '';
+        const thumbnail = item.image
+            ? `<img class="item-thumbnail" src="${escapeHTML(item.image)}" alt="" width="92" height="92" loading="lazy" decoding="async">`
+            : '';
+        const supportingText = item.portion || item.ingredients.join(', ');
+        return `
+        <li><${tag} class="item-row${item.image ? '' : ' no-image'}" ${interactiveAttributes}>
+            ${thumbnail}
             <span class="item-main">
                 <span class="item-heading"><span class="item-name">${escapeHTML(item.name)}</span><span class="item-price">${escapeHTML(priceLabel(item.price))}</span></span>
-                <span class="item-desc">${escapeHTML(item.ingredients.join(', '))}</span>
+                ${supportingText ? `<span class="item-desc">${escapeHTML(supportingText)}</span>` : ''}
                 <span class="item-tags">${tagsHTML(item)}</span>
             </span>
-            <span class="row-arrow" aria-hidden="true">›</span>
-        </button></li>
-    `).join('');
+            ${hasDetails ? '<span class="row-arrow" aria-hidden="true">›</span>' : ''}
+        </${tag}></li>
+    `;
+    }).join('');
     document.querySelectorAll('[data-category]').forEach(button => button.setAttribute('aria-current', String(button.dataset.category === categoryId)));
     if (announce) byId('menu-status').textContent = `${section.name}: ${section.items.length} ${UI_COPY[language].dishes}`;
 }
@@ -120,12 +139,24 @@ function showDetail(id, trigger) {
     detailTrigger = trigger;
     byId('detail-title').textContent = item.name;
     byId('detail-price').textContent = priceLabel(item.price);
-    byId('detail-desc').textContent = item.desc;
+    byId('detail-desc').textContent = item.desc || '';
+    byId('detail-desc').hidden = !item.desc;
     byId('detail-category').textContent = section.name;
-    byId('detail-img').src = item.image;
-    byId('detail-img').alt = item.name;
+    const detailMedia = byId('detail-media');
+    detailMedia.replaceChildren();
+    if (item.image) {
+        const image = document.createElement('img');
+        image.className = 'detail-image';
+        image.src = item.image;
+        image.alt = item.name;
+        image.width = 720;
+        image.height = 480;
+        detailMedia.append(image);
+    }
     byId('detail-tags').innerHTML = tagsHTML(item);
     byId('detail-ingredients').innerHTML = item.ingredients.map(ingredient => `<li>${escapeHTML(ingredient)}</li>`).join('');
+    byId('detail-ingredients-heading').hidden = item.ingredients.length === 0;
+    byId('detail-ingredients').hidden = item.ingredients.length === 0;
     scrollPosition = window.scrollY;
     document.body.style.position = 'fixed';
     document.body.style.top = `-${scrollPosition}px`;

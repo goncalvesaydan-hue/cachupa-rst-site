@@ -62,8 +62,9 @@ Para montar a distribuição, o Gemini deverá:
 3. Copiar o conteúdo de `frontend/public/` para a raiz da distribuição.
 4. Copiar `src/styles/site.css` para `assets/site.css` e `src/scripts/site.js` para `assets/site.js`.
 5. Gerar/copiar apenas imagens públicas referenciadas pelo modelo para `/assets/...`; os originais privados ficam fora da distribuição.
-6. Configurar no alojamento a resposta HTTP 404 com `404.html`; entregar todas as rotas com barra final.
-7. Validar a saída em conjunto com a Orca antes de publicar.
+6. Se `navigation.menuEnabled` for `true`, copiar `menu/index.html`, CSS, JavaScript, dados e marca para `/menu/`; não publicar as antigas pastas de imagens sem referência no catálogo. Se forem adicionadas imagens de produto aprovadas, atualizar explicitamente os recursos públicos copiados.
+7. Configurar no alojamento a resposta HTTP 404 com `404.html`; entregar todas as rotas com barra final.
+8. Validar a saída em conjunto com a Orca antes de publicar.
 
 O site pressupõe publicação na raiz do domínio. Uma publicação num subcaminho exige decisão coordenada sobre URLs; não introduzir prefixos apenas de um lado.
 
@@ -71,7 +72,7 @@ O site pressupõe publicação na raiz do domínio. Uma publicação num subcami
 
 - Os links de WhatsApp, email, telefone e direções chegam prontos do backend. A interface não reconstrói mensagens nem números. Um pedido de reserva só é confirmado pela equipa fora do site.
 - Sem contactos: aparece um estado informativo, sem links falsos.
-- `menuEnabled: false` mantém o menu fora da navegação. A integração do menu é uma fase posterior; não ativar até existir `/menu/` real.
+- `navigation.menuEnabled` controla os links do menu no cabeçalho, navegação móvel e rodapé. A fixture de preview já o ativa e publica `/menu/`; o gerador de produção ainda precisa copiar os mesmos recursos públicos. O menu inclui 71 produtos aprovados e oito Cachupas em `Outros pratos`, adicionadas por instrução do utilizador apesar de estarem marcadas `Para validar`; as outras sete pendentes não são publicadas. Não há imagens ou detalhes alimentares validados.
 - `images` é um mapa por ID. Dimensões, alt, variantes, crédito e posição focal são consumidos diretamente. Imagens principais têm prioridade; restantes carregam progressivamente.
 - Retrato: o renderer interpreta `artist.portrait` como ID em `images`. A Orca deve confirmar esta interpretação se o backend precisar de outro formato; o contrato canónico não foi alterado nesta entrega.
 - Pinturas usam `object-fit: contain`, sem recorte nem variante móvel alternativa. A imagem completa abre num diálogo; sem JavaScript o link abre o ficheiro diretamente.
@@ -85,17 +86,21 @@ HTML semântico, CSS e JavaScript nativos, com renderização em Python. Tipogra
 
 Fontes locais: Big Shoulders, Work Sans e Nothing You Could Do (recurso disponível, não obrigatório no layout), acompanhadas dos ficheiros OFL em `public/assets/brand/fonts/`. Manter as licenças na distribuição dos recursos.
 
+A navegação móvel mantém links disponíveis sem JavaScript; com JavaScript, o menu contém o foco e devolve-o ao botão ao fechar. Os controlos móveis têm áreas de toque de pelo menos 44 px. Imagens fora do hero carregam progressivamente e a preferência por movimento reduzido é respeitada.
+
+O cabeçalho mantém o mesmo fundo claro em todas as páginas, com a marca à esquerda, links centrados e ação principal “Reservar” à direita. Em mobile, o botão abre um painel simples com os mesmos destinos e um link interno para reservas; não há conteúdo promocional duplicado no menu.
+
 ## Verificação e limites
 
-Oito testes unitários cobrem rotas, imutabilidade, dados ausentes, URLs, escaping, contactos, horários que passam da meia-noite, imagens e versão do contrato. `lint` verifica sintaxe Python/JSON/JavaScript; não é um auditor completo de CSS ou acessibilidade.
+Dezasseis testes unitários cobrem rotas, imutabilidade, dados ausentes, URLs, escaping, contactos, horários que passam da meia-noite, imagens, versão do contrato, navegação, cópia pública do menu e canais de reserva. `lint` verifica sintaxe Python/JSON/JavaScript; não é um auditor completo de CSS ou acessibilidade.
 
-Verificação no navegador: página inicial em 320, 390, 768, 1024 e 1440 px sem overflow horizontal; menu móvel e Escape; abertura da galeria, passagem para obra seguinte e restituição de foco ao fechar por Escape, com recurso explicitamente identificado como teste. Sem erros de consola observados nesse percurso.
+Verificação no navegador: as sete rotas em 320, 375, 390, 768, 900, 901, 1024 e 1440 px, sem overflow horizontal e com um único `h1`; navegação muda no breakpoint; painel mobile fica acima do aviso de preview, contém o foco e fecha com Escape; navegação alternativa disponível sem JavaScript.
 
-Ainda exigem validação com o backend e dados reais: recortes, cores das pinturas, contactos externos, cópia de email nos navegadores alvo, erro real de imagem, ampliação de texto, revisão completa sem JavaScript, metadados de produção e desempenho final. Não confundir os testes de apresentação com aprovação para publicação.
+Ainda exigem validação com o backend e dados reais: recortes, cores das pinturas, contactos externos, cópia de email nos navegadores alvo, erro real de imagem, ampliação de texto, metadados de produção e desempenho final. Não confundir os testes de apresentação com aprovação para publicação.
 
 ## Segunda direção visual
 
-A revisão pedida pelo utilizador está descrita em `VISUAL-DIRECTION.md`. A preview utiliza agora grafismos vetoriais da identidade existente em vez de caixas cinzentas. Quando há uma imagem principal válida, a página inicial passa para fotografia de fundo em grande dimensão. Não houve mudança no contrato v1. Os SVG de panela, vapor e grãos são recursos de marca, não fotografias nem representações de obras reais.
+A revisão pedida pelo utilizador está descrita em `VISUAL-DIRECTION.md`. A preview utiliza grafismos vetoriais da identidade existente em vez de caixas cinzentas. Na página inicial, a fotografia abre o percurso sem texto sobreposto; o título, a introdução e as ações surgem numa faixa editorial própria. As reservas usam apenas canais realmente fornecidos pelo modelo: sem WhatsApp ou email válidos, a interface explica que os contactos estão indisponíveis e não simula um pedido. Não houve mudança no contrato v1. Os SVG de panela, vapor e grãos são recursos de marca, não fotografias nem representações de obras reais.
 
 Nesta revisão, as sete rotas foram verificadas em cinco larguras (320, 390, 768, 1024, 1440 px), sem overflow horizontal. Fotos e contactos permanecem pendentes.
 

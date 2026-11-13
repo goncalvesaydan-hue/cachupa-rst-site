@@ -3,19 +3,73 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>$title</title><meta name="description" content="$description">
-<meta name="theme-color" content="#006c9a">$metadata
-<link rel="icon" href="/assets/brand/logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/site.css"><script src="/assets/site.js" defer></script>
+<meta name="theme-color" content="#faf8f2">$metadata
+<link rel="icon" href="/assets/brand/logo-clean.svg?v=$asset_version" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site.css?v=$asset_version"><script src="/assets/site.js?v=$asset_version" defer></script>
 </head>
 <body>
-<a class="skip" href="#main">Saltar para o conteúdo</a>
+<a class="skip-link" href="#main">Saltar para o conteúdo</a>
 $preview
-<header class="header"><div class="shell header-inner">
-<a class="brand" href="/" aria-label="$name — Início"><img src="/assets/brand/logo.svg" alt="$name" width="1660" height="948"></a>
-<button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" hidden>Navegação</button>
-<nav id="site-nav" aria-label="Navegação principal">$navigation</nav>
-</div></header>
+<header class="site-header">
+  <div class="nav-shell">
+    <a class="brand" href="/" aria-label="$name — Início">$brand_wordmark</a>
+    <nav class="main-nav" id="site-nav" aria-label="Navegação principal">$navigation</nav>
+    <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menu" hidden>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
 <main id="main" tabindex="-1">$body</main>
-<footer class="footer"><div class="footer-word" aria-hidden="true">Cachupa.</div><div class="shell footer-grid"><div><a href="/" class="footer-name">$name</a><p>Cozinha cabo-verdiana.</p>$footer_contacts</div><nav aria-label="Navegação do rodapé"><a href="/a-nossa-casa/">A nossa casa</a><a href="/galeria/">Galeria</a><a href="/reservas/">Reservas</a><a href="/contactos/">Contactos</a></nav></div><div class="shell footer-bottom"><span>Cabo Verde à mesa.</span><a href="/privacidade/">Privacidade</a></div></footer>
+<footer class="footer">
+  <div class="footer-intro">
+    <p class="footer-brand">$name <i aria-hidden="true">·</i> Cozinha cabo-verdiana</p>
+    <h2>Volte com fome.</h2>
+    <p class="footer-invite">Sente-se. Há lugar à mesa.</p>
+    <p>$footer_summary</p>
+  </div>
+  <div class="footer-grid">
+    <div>
+      <h3>Visitar</h3>
+      $footer_visit
+    </div>
+    <div>
+      <h3>Encontrar</h3>
+      $footer_contacts
+    </div>
+    <div>
+      <h3>Navegar</h3>
+      <nav aria-label="Navegação do rodapé">
+        <a href="/">Início</a>
+        $footer_menu_link
+        <a href="/a-nossa-casa/">A nossa casa</a>
+        <a href="/galeria/">Galeria</a>
+        <a href="/reservas/">Reservas</a>
+        <a href="/contactos/">Contactos</a>
+      </nav>
+    </div>
+    <div>
+      <h3>Transparência</h3>
+      <nav aria-label="Informações legais e de transparência">
+        <a href="/privacidade/#dados">Privacidade &amp; RGPD</a>
+        <a href="/privacidade/#cookies">Ausência de Cookies</a>
+        <a href="/privacidade/#termos">Termos &amp; Reservas</a>
+        <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener noreferrer">Livro de Reclamações <span aria-hidden="true">↗</span></a>
+        <a href="/privacidade/#litigios">Resolução de Litígios (RAL)</a>
+        <a href="/privacidade/#acessibilidade">Acessibilidade (WCAG 2.1 AA)</a>
+      </nav>
+    </div>
+  </div>
+  <div class="transparency">
+    Transparência Digital: Sem cookies de rastreio ou perfilamento · Tipografia e ficheiros 100% locais · Dados salvaguardados pelo RGPD.
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 $name · Cozinha tradicional de Cabo Verde. Todos os direitos reservados.</p>
+    $footer_art_credit
+    $footer_location
+  </div>
+</footer>
+$mobile_bar
 <p class="sr-only" id="copy-status" role="status" aria-live="polite"></p>
-</body></html>
+</body>
+</html>

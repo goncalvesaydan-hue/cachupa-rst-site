@@ -1,16 +1,16 @@
 # Cachupa Rst — Menu
 
-Cópia independente do projeto `/Users/aydangoncalves/Documents/menu-luxury-ref`, adaptada à identidade do Cachupa Rst. O projeto original não foi alterado. A cópia preserva também o conteúdo atual de data.js, incluindo alterações locais existentes no original.
+Cópia independente do projeto de menu, adaptada à identidade do Cachupa Rst. O projeto original não foi alterado. O conteúdo atual foi aprovado pelo utilizador para publicação.
 
 ## Abrir
 
-Abrir `index.html` no navegador. Também funciona servido dentro do site em `/menu/`.
+O site serve o menu em `/menu/`, no mesmo domínio e sem iframe. A preview em `frontend/dist/menu/` é gerada pelo comando do frontend:
 
 ```sh
-python3 -m http.server 8000 --bind 127.0.0.1 --directory "/Users/aydangoncalves/Desktop/Restaurante Cachupa/Site"
+npm --prefix frontend run build:preview
 ```
 
-Aceder a `http://localhost:8000/menu/`.
+Para servir a preview localmente, usar `npm --prefix frontend run dev` e abrir `http://127.0.0.1:18952/menu/`.
 
 ## Identidade
 
@@ -18,16 +18,18 @@ Logo vetorial em `brand/logo.svg`. Fontes locais e respetivas licenças em `bran
 
 Azul #006C9A, vermelho #DD1A2A, amarelo #FFED00 e branco. Títulos de letreiro, nomes e preços em Work Sans e uma breve nota manuscrita na versão desktop.
 
-## Conteúdo preservado
+## Conteúdo carregado
 
-Os 22 produtos, imagens, preços, descrições e etiquetas alimentares do original mantêm-se. São conteúdos de demonstração; ainda não representam a ementa validada do Cachupa Rst. Não foi acrescentada uma receita de cachupa fictícia.
+O catálogo tem 86 linhas nos CSVs fornecidos. Estão no menu 79 produtos: 71 marcados `Aprovado` e as oito Cachupas (CR-68 a CR-75), incluídas a pedido do utilizador em `Outros pratos`. A categoria fica com nove produtos, além de Bebidas (51), Entradas (13) e Sobremesa (6). As outras sete linhas marcadas `Para validar` permanecem excluídas.
+
+O CSV só fornece nome, preço e, por vezes, porção. As Cachupas continuam marcadas `Para validar` na fonte; foram incluídos apenas os nomes e preços existentes, sem inventar porções ou detalhes alimentares. Os nomes mantêm-se em português nas quatro escolhas de idioma; categorias e interface são traduzidas. Não há fotografias, descrições, ingredientes ou alergénios validados para estes produtos. O menu mostra uma nota para clientes com alergias e não reutiliza as imagens ou descrições do catálogo anterior. A coluna `Notas internas` e restantes metadados editoriais não são publicados.
 
 ## Funcionalidades
 
 - Português, inglês, espanhol e francês.
 - Preferência guardada em `cachupa_menu_lang`, separada do menu original.
 - Categorias por clique e teclado.
-- Detalhe em dialog nativo, com fecho por botão e Escape, retorno do foco e da posição na lista.
+- Dialog nativo para produtos que tenham detalhes editoriais; o catálogo importado não tem esses dados, por isso os seus itens são apresentados como linhas sem interação.
 - Versão móvel, zoom permitido e respeito por movimento reduzido.
 - Continua a ser uma interface estática. Backend, painel de gestão e ligação ao Notion não fazem parte desta adaptação.
 
@@ -38,6 +40,6 @@ node --check script.js
 node --test tests/menu.test.cjs
 ```
 
-Os nove testes existentes passaram. Verificação no navegador: desktop, 390 px e 320 px; abertura/fecho de prato, retorno do foco, troca de categoria e idiomas. Imagens locais verificadas na categoria testada. Não substitui testes em dispositivos físicos.
+`node --test tests/menu.test.cjs` verifica os 79 produtos, preços, porções, as oito Cachupas em `Outros pratos`, exclusão dos restantes pendentes e consistência entre idiomas. A disponibilidade de alergénios, detalhes e fotografias continua pendente de dados aprovados.
 
 Capturas em `visuals/cachupa-desktop.png` e `visuals/cachupa-mobile.png`.

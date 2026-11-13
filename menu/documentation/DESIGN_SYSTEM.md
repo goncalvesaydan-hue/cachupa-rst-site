@@ -6,4 +6,4 @@ Big Shoulders Bold nos títulos; Work Sans nos pratos, preços e controlos; Noth
 
 Lista compacta, preço visível e fotografia ao lado. A categoria selecionada usa sublinhado vermelho. O amarelo fica reservado a apontamentos sobre azul. O detalhe mantém uma barra de fecho fixa e abre como painel inferior em telemóveis.
 
-Produtos e fotografias de demonstração preservados por pedido do utilizador. A identidade foi adaptada; a oferta real será recolhida posteriormente.
+Publicar apenas os produtos marcados `Aprovado` no catálogo fornecido. Não inventar descrições, ingredientes, alergénios ou fotografias para campos em falta; não publicar registos `Para validar` nem notas internas.
