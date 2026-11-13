@@ -2,10 +2,10 @@
 import argparse
 import functools
 import json
-from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
-from pathlib import Path
 import shutil
 import sys
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MENU_FILES = ('index.html', 'style.css', 'data.js', 'script.js')

@@ -2,11 +2,12 @@
 
 render_site(model) -> {relative output path: HTML}. No file writes or network I/O.
 """
+import re
 from hashlib import sha256
 from html import escape
 from pathlib import Path
 from string import Template
-from urllib.parse import urlsplit, unquote
+from urllib.parse import unquote, urlsplit
 
 _SRC_DIR = Path(__file__).parent
 BASE = Template((_SRC_DIR / 'templates/base.html').read_text())
@@ -74,6 +75,57 @@ def text(value):
 def styled_heading(value):
     raw = str(value if value is not None else '')
     return HEADING_ACCENTS.get(raw, text(raw))
+
+
+_ATTR_URL_RE = re.compile(r'\b(href|src|srcset)="([^"]*)"')
+_NOT_FOUND_HEAD_ASSETS = (
+    "<script>(function(){var b=document.createElement('base');"
+    "b.href=location.pathname==='/cachupa-rst-site'||location.pathname.indexOf('/cachupa-rst-site/')===0"
+    "?'/cachupa-rst-site/':'/';document.head.appendChild(b);"
+    "[['icon','image/svg+xml','assets/brand/logo-clean.svg?v=__V__'],['stylesheet','','assets/site.css?v=__V__']]"
+    ".forEach(function(r){var l=document.createElement('link');l.rel=r[0];if(r[1])l.type=r[1];l.href=r[2];"
+    "document.head.appendChild(l);});"
+    "var s=document.createElement('script');s.src='assets/site.js?v=__V__';s.defer=true;"
+    'document.head.appendChild(s);}());</script>'
+    '<noscript><link rel="icon" href="assets/brand/logo-clean.svg?v=__V__" type="image/svg+xml">'
+    '<link rel="stylesheet" href="assets/site.css?v=__V__"></noscript>'
+)
+_STANDARD_HEAD_ASSETS = (
+    '<link rel="icon" href="/assets/brand/logo-clean.svg?v=__V__" type="image/svg+xml">\n'
+    '<link rel="stylesheet" href="/assets/site.css?v=__V__">'
+    '<script src="/assets/site.js?v=__V__" defer></script>'
+)
+
+
+def _rel_url(url, prefix):
+    if not url.startswith('/') or url.startswith('//'):
+        return url
+    if url == '/':
+        return './' if not prefix else prefix
+    if url.startswith('/#'):
+        return ('./' if not prefix else prefix) + url[1:]
+    return prefix + url.lstrip('/')
+
+
+def _relativize_html(html, output):
+    depth = output.count('/')
+    prefix = '../' * depth
+
+    def replace_attr(match):
+        attr, value = match.group(1), match.group(2)
+        if attr == 'srcset':
+            parts = []
+            for entry in value.split(','):
+                stripped = entry.strip()
+                if not stripped:
+                    continue
+                tokens = stripped.split(None, 1)
+                tokens[0] = _rel_url(tokens[0], prefix)
+                parts.append(' '.join(tokens))
+            return f'srcset="{", ".join(parts)}"'
+        return f'{attr}="{_rel_url(value, prefix)}"'
+
+    return _ATTR_URL_RE.sub(replace_attr, html)
 
 
 def href(value, kind='link'):
@@ -211,7 +263,7 @@ def hours_summary(model):
     if not open_days:
         return None
     first_intervals = [
-        '%s—%s%s' % (v['opens'], v['closes'], ' (+1)' if v.get('closesNextDay') else '')
+        f"{v['opens']}—{v['closes']}{' (+1)' if v.get('closesNextDay') else ''}"
         for v in open_days[0]['intervals']
     ]
     all_same = len(open_days) == 7 and all(
@@ -237,7 +289,7 @@ def hours(model):
     rows = []
     for day in sorted(model['restaurant'].get('hours', []), key=lambda d: d['day']):
         intervals = [
-            '%s–%s%s' % (v['opens'], v['closes'], ' (dia seguinte)' if v.get('closesNextDay') else '')
+            f"{v['opens']}–{v['closes']}{' (dia seguinte)' if v.get('closesNextDay') else ''}"
             for v in day['intervals']
         ]
         value = 'Encerrado' if day['closed'] else ' / '.join(intervals)
@@ -313,7 +365,7 @@ def contacts_panel(model, page):
         f'</div>'
         f'<div class="contact-details">'
         f'<div><p class="eyebrow">Contacto direto</p>{direct_content}</div>'
-        f'<div class="schedule"><p class="eyebrow">Horário semanal</p>{hours(model)}</div>'
+        f'<div class="schedule" id="horario"><p class="eyebrow">Horário semanal</p>{hours(model)}</div>'
         f'</div>'
         f'</section>'
     )
@@ -381,11 +433,31 @@ def art_cards(model, selected=None, *, preview_mode=False):
             f'</article>'
         )
     if not output:
+        artist = model.get('artist')
+        has_artist = bool(artist and artist.get('name'))
+        if has_artist:
+            artist_name = artist['name']
+            eyebrow = '<p class="eyebrow">A chegar brevemente</p>' if preview_mode else '<p class="eyebrow">Coleção de sala</p>'
+            title = (
+                '<h3>Novas fotografias das obras em preparação.</h3>'
+                if preview_mode
+                else '<h3>Novas fotografias das artes em preparação.</h3>'
+            )
+            desc = (
+                f'Estamos a fotografar de novo as telas originais de {text(artist_name)} expostas no restaurante.'
+                if preview_mode
+                else f'Estamos a preparar novas fotografias das pinturas originais de {text(artist_name)} expostas na nossa sala. Enquanto a coleção digital é renovada, convidamo-lo a vê-las ao vivo à mesa.'
+            )
+        else:
+            eyebrow = '<p class="eyebrow">A chegar brevemente</p>'
+            title = '<h3>A exposição está a ser preparada.</h3>'
+            desc = 'As novas fotografias das obras e a informação do artista serão apresentadas brevemente.'
+        action = '' if preview_mode else link('Conhecer a nossa casa', '/a-nossa-casa/', 'text-link', arrow=True)
         return (
-            '<div class="empty-gallery">'
-            '<h3>A exposição está a ser preparada.</h3>'
-            '<p>As obras e a informação do artista serão apresentadas quando estiverem confirmadas.</p>'
-            '</div>'
+            f'<div class="empty-gallery">'
+            f'<div>{eyebrow}{title}</div>'
+            f'<div><p>{desc}</p>{action}</div>'
+            f'</div>'
         )
     grid_cls = 'preview-grid' if preview_mode else 'art-grid'
     return f'<div class="{grid_cls}">' + ''.join(output) + '</div>'
@@ -602,7 +674,6 @@ def legal_page_body(page, channels):
 
 def reservations_body(model):
     c = model['restaurant']['contacts']
-    digital = reservation_channels(model)
     channel_rows = []
     step_channels = []
 
@@ -655,12 +726,9 @@ def reservations_body(model):
             '<div><small>Estado</small><strong>Não há contactos para reservas configurados.</strong></div>'
             '</div>'
         )
-
-    digital_note = (
-        ''
-        if digital
-        else '<p class="status-note">Os canais digitais de reserva não estão configurados.</p>'
-    )
+        digital_note = '<p class="status-note">Os canais de reserva não estão configurados de momento.</p>'
+    else:
+        digital_note = ''
 
     if step_channels:
         if len(step_channels) == 1:
@@ -684,21 +752,50 @@ def reservations_body(model):
         for idx, step in enumerate(steps_list, start=1)
     )
 
+    extra_links = [link('Ver morada, horários e contactos', '/contactos/', '', arrow=True)]
+    if model['navigation']['menuEnabled']:
+        extra_links.append(link('Consultar a carta', '/menu/', '', arrow=True))
+    maps_link = link('Abrir localização no Google Maps', c.get('directionsHref'), '', arrow=True)
+    if maps_link:
+        extra_links.append(maps_link)
+    intro_links = f'<div class="inline-links">{"".join(extra_links)}</div>'
+
+    schedule_summary = hours_summary(model)
+    address = model['restaurant'].get('address')
+    summary_items = []
+    if schedule_summary:
+        summary_items.append(
+            f'<div class="channel-summary">'
+            f'<span>Horário</span>'
+            f'<div><small>{text(schedule_summary["footer_days"])}</small>'
+            f'<strong>{text(schedule_summary["footer_hours"])}</strong></div>'
+            f'</div>'
+        )
+    if address:
+        summary_items.append(
+            f'<div class="channel-summary">'
+            f'<span>Casa</span>'
+            f'<div><small>Morada</small><strong>{text(address)}</strong></div>'
+            f'</div>'
+        )
+
     return (
         f'<section class="reservation-panel">'
         f'<div class="reservation-intro">'
         f'<p class="eyebrow">Contacto direto</p>'
         f'<h2>Uma conversa,<br><em>uma mesa.</em></h2>'
-        f'<p>Fale diretamente com a equipa para pedir uma reserva. A disponibilidade é confirmada na conversa.</p>'
+        f'<p>Fale diretamente com a equipa para pedir uma reserva. A disponibilidade é confirmada consigo na conversa.</p>'
         f'{digital_note}'
+        f'{intro_links}'
         f'</div>'
-        f'<div class="channels">{"".join(channel_rows)}</div>'
+        f'<div class="channels">{"".join(channel_rows)}{"".join(summary_items)}</div>'
         f'</section>'
         f'<section class="section steps">'
         f'<p class="eyebrow">Como pedir</p>'
         f'<div class="steps-grid">{steps_cards}</div>'
         f'<div class="notice"><strong>Importante</strong>'
-        f'<p>O pedido só fica confirmado depois da resposta da equipa. Este site não envia mensagens nem confirma reservas.</p>'
+        f'<p>O pedido só fica confirmado depois da resposta da equipa. Este site não envia mensagens nem confirma reservas. '
+        f'Para grupos de 4 ou mais pessoas recomendamos contacto prévio; existe tolerância de 15 minutos em relação à hora combinada.</p>'
         f'</div>'
         f'</section>'
     )
@@ -826,12 +923,17 @@ def render_site(model):
                 'privacy': 'Legal & transparência',
             }
             hero_intro = page.get('intro')
+            has_phone = bool(
+                href(model['restaurant']['contacts'].get('phoneHref'), 'phone')
+                or model['restaurant']['contacts'].get('phoneDisplay')
+            )
             if key == 'reservations' and 'WhatsApp' not in channels:
-                hero_intro = (
-                    'Peça a sua reserva por email. A equipa confirma a disponibilidade consigo.'
-                    if 'email' in channels
-                    else 'Os canais de reserva estão indisponíveis nesta pré-visualização.'
-                )
+                if 'email' in channels:
+                    hero_intro = 'Peça a sua reserva por email. A equipa confirma a disponibilidade consigo.'
+                elif has_phone:
+                    hero_intro = 'Reserve a sua mesa por telefone ou consulte os contactos da casa. A equipa confirma a disponibilidade consigo.'
+                else:
+                    hero_intro = 'Consulte a página de contactos para falar com o restaurante.'
             show_hero_visual = key != 'contacts' and (
                 bool(page.get('heroImageId')) or (key == 'house' and model['preview'] and bool(model['images']))
             )
@@ -871,13 +973,19 @@ def render_site(model):
 
             if key == 'gallery':
                 if artist and artist.get('name'):
-                    if artist.get('portrait') and artist.get('portrait') in model['images']:
-                        badge_html = f'<div class="artist-portrait">{image(model, artist["portrait"], show_caption=False)}</div>'
+                    has_portrait = bool(artist.get('portrait') and artist.get('portrait') in model['images'])
+                    if has_portrait:
+                        badge_html = (
+                            f'<div class="artist-portrait">'
+                            f'{image(model, artist["portrait"], hero=not hero_visual, show_caption=False)}'
+                            f'</div>'
+                        )
                     else:
                         badge_html = f'<span aria-hidden="true">{text(artist_initials(artist["name"]))}</span>'
+                    intro_cls = 'artist-intro has-portrait' if has_portrait else 'artist-intro'
                     artist_web = link('Conhecer o artista', artist.get('website'), 'text-link', arrow=True)
                     body += (
-                        f'<section class="artist-intro">'
+                        f'<section class="{intro_cls}">'
                         f'{badge_html}'
                         f'<div>'
                         f'<p class="eyebrow">O artista</p>'
@@ -895,7 +1003,7 @@ def render_site(model):
                     ex_heading = f'<h2>{text(word)} {plural}<br><em>{orig}</em></h2>'
                     ex_intro = '<p>Selecione uma obra para abrir a respetiva ficha completa.</p>'
                 else:
-                    ex_heading = '<h2>Exposição<br><em>na sala.</em></h2>'
+                    ex_heading = '<h2>A chegar<br><em>brevemente.</em></h2>'
                     ex_intro = ''
                 body += (
                     f'<section class="section exhibition">'
@@ -923,12 +1031,17 @@ def render_site(model):
             canonical = base.rstrip('/') + route
             metadata += f'<link rel="canonical" href="{text(canonical)}"><meta property="og:url" content="{text(canonical)}">'
         description = page['description']
+        has_phone = bool(
+            href(model['restaurant']['contacts'].get('phoneHref'), 'phone')
+            or model['restaurant']['contacts'].get('phoneDisplay')
+        )
         if key == 'reservations' and 'WhatsApp' not in channels:
-            description = (
-                'Contactos para reservas indisponíveis.'
-                if not channels
-                else 'Peça a sua reserva por email; a equipa confirma a disponibilidade.'
-            )
+            if 'email' in channels:
+                description = 'Peça a sua reserva por email; a equipa confirma a disponibilidade.'
+            elif has_phone:
+                description = 'Reserve a sua mesa por telefone no Cachupa Rst. A equipa confirma a disponibilidade consigo.'
+            else:
+                description = 'Contactos para reservas indisponíveis.'
         metadata += (
             f'<meta property="og:type" content="website">'
             f'<meta property="og:title" content="{text(page["title"])}">'
@@ -1000,13 +1113,18 @@ def render_site(model):
         mobile_secondary_target = directions_target or phone_target
         mobile_secondary_label = 'Como chegar' if directions_target else text(c.get('phoneDisplay') or 'Contactos')
         mobile_secondary_arrow = ' <span aria-hidden="true">↗</span>' if directions_target else ''
-        mobile_primary_label = 'Reservar mesa' if href(c.get('whatsappHref'), 'whatsapp') else 'Ver reservas'
-        mobile_primary_ext = ' target="_blank" rel="noopener noreferrer"' if wa_target.startswith('https://') else ''
+        mobile_primary_target = phone_target if (route == '/reservas/' and not wa_target.startswith('https://') and phone_target.startswith('tel:')) else wa_target
+        mobile_primary_label = (
+            'Ligar para reservar'
+            if mobile_primary_target.startswith('tel:')
+            else ('Reservar mesa' if href(c.get('whatsappHref'), 'whatsapp') else 'Ver reservas')
+        )
+        mobile_primary_ext = ' target="_blank" rel="noopener noreferrer"' if mobile_primary_target.startswith('https://') else ''
         mobile_secondary_ext = ' target="_blank" rel="noopener noreferrer"' if mobile_secondary_target.startswith('https://') else ''
         mobile_buttons = []
-        if wa_target != route:
+        if mobile_primary_target != route:
             mobile_buttons.append(
-                f'<a class="mobile-bar-primary" href="{text(wa_target)}"{mobile_primary_ext}>{mobile_primary_label}</a>'
+                f'<a class="mobile-bar-primary" href="{text(mobile_primary_target)}"{mobile_primary_ext}>{mobile_primary_label}</a>'
             )
         if mobile_secondary_target != route:
             mobile_buttons.append(
@@ -1016,16 +1134,14 @@ def render_site(model):
             f'<nav class="mobile-bar" aria-label="Ações rápidas">{"".join(mobile_buttons)}</nav>'
             if mobile_buttons else ''
         )
-        preview_banner = (
-            '<div class="preview">Pré-visualização · Fotografias selecionadas; contactos digitais por confirmar</div>'
-            if model['preview'] else ''
-        )
-        rendered[output] = BASE.substitute(
+        preview_banner = ''
+        assets_template = _NOT_FOUND_HEAD_ASSETS if output == '404.html' else _STANDARD_HEAD_ASSETS
+        rendered_html = BASE.substitute(
             locale=text(model['site']['locale']),
             title=text(page['title'] + ' — ' + name),
             description=text(description),
             metadata=metadata,
-            asset_version=ASSET_VERSION,
+            head_assets=assets_template.replace('__V__', ASSET_VERSION),
             name=text(name),
             brand_wordmark=brand_wordmark_html(name),
             preview=preview_banner,
@@ -1039,4 +1155,5 @@ def render_site(model):
             footer_location=footer_location,
             mobile_bar=mobile_bar,
         )
+        rendered[output] = _relativize_html(rendered_html, output)
     return rendered

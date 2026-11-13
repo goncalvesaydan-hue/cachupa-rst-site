@@ -540,3 +540,47 @@ Referências aplicadas: Manual de Identidade Visual completo (`Identidade Visual
   - `npm --prefix frontend run build:preview`: 7 páginas + `/menu/` geradas em `frontend/dist/`.
   - `bash scripts/lint-all.sh`: sintaxe Python, JSON e JavaScript aprovada.
   - `bash scripts/test-all.sh`: 17/17 testes frontend + 38/38 testes backend aprovados.
+
+## Galeria «A chegar brevemente» e Retrato Real de Lito Silva — 13 de novembro de 2026
+
+- **Pedido do utilizador:**
+  - *"exato esse é o certo, so uma coisa / na galeria mete a chegar brevemente ja que vamos fazer fotos novas das artes e meta a foto que esta em assets/photos/litosilva.lpg"*
+- **Diagnóstico do desalinhamento anterior no Git:**
+  - Nos commits `c942e43` e `de049dd`, `assets/site.css` na raiz recebeu o CSS editorial novo enquanto os HTMLs da raiz (`index.html`, `galeria/index.html`, etc.) e `assets/site.js` continuavam no formato legado (já que `frontend/dist/` está em `.gitignore`). A pré-visualização completa e atualizada serve a partir de `frontend/dist/` na porta local `3000`.
+- **Alterações implementadas (`frontend/**` e `assets/site.css`):**
+  - **Fotografia real do artista (`frontend/public/assets/photos/litosilva.jpg`):** copiada a partir de `assets/photos/litosilva.jpg` (`1439×1067`, proporção `4:3`, `441811` bytes). Registada em `frontend/fixtures/preview.json` com `artist.portrait = "litosilva"` e `focalPoint` `{x: 0.72, y: 0.3}`.
+  - **Estado «A chegar brevemente» (`frontend/fixtures/preview.json`, `frontend/src/render.py`, `frontend/src/styles/site.css`):**
+    - Limpo `artworks: []`, limpo `artworkIds: []` na secção `#art` da página inicial (`Link`: `Conhecer a galeria`), removidas as 11 entradas antigas `arte-*` de `images` e ajustada a cópia da página `/galeria/` para evitar repetição.
+    - Em `render_site` (`gallery`), `.artist-intro.has-portrait` passa a apresentar o retrato `litosilva.jpg` em `.artist-portrait` com proporção `4:3` e prioridade de carregamento LCP apenas quando não existe imagem hero na página (`loading="eager" fetchpriority="high"`). Quando `artworks` está vazio, `.exhibition-title` mostra `A chegar brevemente.` e `art_cards` renderiza o cartão editorial `.empty-gallery` adaptado à secção `#art` da homepage e à página `/galeria/`.
+  - **Correção de flash da gaveta móvel (`frontend/src/styles/site.css`, `frontend/src/scripts/site.js`):** adicionada a classe `.js-nav-ready` via `requestAnimationFrame` após `void nav.offsetWidth` para evitar que o menu móvel deslizasse brevemente sobre o ecrã ao carregar a página.
+  - **Testes (`frontend/tests/test_render.py`):** atualizado `test_real_photos_and_artworks_placed_in_correct_slots` para validar `litosilva.jpg`, `.artist-intro.has-portrait`, `"A chegar brevemente"` e `0` fichas `art-dialog` na pré-visualização.
+- **Validação Executada:**
+  - `npm --prefix frontend run build:preview`: 7 páginas geradas em `frontend/dist/`.
+  - `bash scripts/lint-all.sh`: sintaxe válida em frontend e backend.
+  - `bash scripts/test-all.sh`: 17/17 testes frontend + 38/38 testes backend aprovados.
+  - `validator.validate_model(model, 'preview', public_dir='frontend/public')`: `errors = []` (3 avisos esperados de pré-visualização: `whatsappHref`, `emailHref`, `menuEnabled`).
+  - Verificação visual em Chrome headless (emulação móvel `390×1750`, `320×1850` e desktop `1440×2100`) em `/galeria/` e `/#art`: zero erros de consola, zero falhas de rede (`HTTP 200` em `/`, `/galeria/` e `/assets/photos/litosilva.jpg`), imagens carregadas (`naturalWidth > 0`) e zero overflow horizontal (`document.documentElement.scrollWidth === window.innerWidth`).
+- **Pendente de decisão do utilizador:**
+  - Confirmar se pretende sincronizar as 7 páginas HTML geradas de `frontend/dist/` e `frontend/src/scripts/site.js` para a raiz do repositório para alinhar o GitHub com a nova UI.
+
+## Remoção do banner de pré-visualização, melhoria de Reservas/Privacidade, correções do Menu e alinhamento com produção — 13 de novembro de 2026
+
+- **Pedidos do utilizador:** remover o texto `Pré-visualização · ...` do topo, resolver incoerências e melhorar `/reservas/`, corrigir problemas em `/menu/` e alinhar os textos de privacidade e a raiz do repositório para publicação.
+- **Alterações implementadas (`frontend/**`, `menu/**` e `assets/`):**
+  - **Remoção do banner visual (`frontend/src/render.py`):** eliminada a faixa visível `Pré-visualização · Fotografias selecionadas; contactos digitais por confirmar`, mantendo apenas a meta tag `noindex, nofollow` em builds de pré-visualização.
+  - **Melhoria da página `/reservas/` (`frontend/src/render.py`, `frontend/src/styles/site.css`, `assets/site.css`):** suprimida a frase enganadora «Os canais digitais de reserva não estão configurados.» quando existe telefone confirmado (`963 572 411`); adicionados links diretos em `.inline-links` para `/contactos/`, `/menu/` (quando `menuEnabled` está ativo) e Google Maps, cartões `.channel-summary` com resumo do horário (`Segunda a domingo · 11:00–23:00`) e morada (`R. Alm. Reis 22 B, 2830-326 Barreiro`), nota prática para grupos na caixa `.notice` e CTA móvel `Ligar para reservar` na barra inferior. Adicionado `id="horario"` ao bloco de horários em `/contactos/`.
+  - **Alinhamento editorial (`frontend/fixtures/preview.json`):** corrigido o terceiro destaque na página inicial e a cópia de `/reservas/` para o atendimento telefónico direto; atualizada a página `/privacidade/` para refletir com exatidão a ausência de formulários/cookies de rastreio e a gravação local estritamente funcional do idioma do menu (`cachupa_menu_lang` em `localStorage`).
+  - **Correções em `/menu/` (`menu/index.html`, `menu/style.css`):** adicionado `<link rel="icon" href="brand/logo.svg" type="image/svg+xml">` para eliminar o erro `404` de `/favicon.ico`, `padding-block: 10px` em `.header-inner` abaixo de `600px` para respiração vertical ao quebrar linha, e `gap: 14px` em `.category-nav` abaixo de `360px`.
+  - **Testes (`frontend/tests/test_render.py`):** atualizados `test_unknown_contacts_are_not_invented` (cobre reservas por telefone e cenário sem qualquer contacto) e `test_production_has_no_preview_banner` (valida ausência de `"Pré-visualização"` em ambos os modos).
+- **Verificação executada (após última edição):**
+  - `bash scripts/lint-all.sh` → saída `0`; `bash scripts/test-all.sh` → frontend `17/17 OK` e backend `39/39 OK`; `node --test menu/tests/menu.test.cjs` → `10/10 pass`; `node --check menu/script.js` → saída `0`.
+  - `npm --prefix frontend run build:preview` → 7 páginas + `/menu/` geradas em `frontend/dist/`.
+  - Chrome headless em `http://127.0.0.1:3000/` (`frontend/dist/`) e em servidor local da raiz publicada (ambos em 8 rotas × 3 larguras `320/390/1440 px` = `24` verificações cada): zero erros de consola, zero erros HTTP (incluindo `/menu/` e `/favicon.ico`), zero overflow horizontal, zero imagens quebradas após scroll, ausência confirmada de `"Pré-visualização"` e alternância de idioma funcional em `/menu/`.
+
+## Correções finais da auditoria geral (GitHub Pages em subpasta, `/menu/` i18n/mobile e lint) — 13 de novembro de 2026
+
+- **Alterações implementadas (`frontend/**`, `menu/**` e raiz regenerada):**
+  - **Portabilidade raiz (`/`) e subpasta (`/cachupa-rst-site/`):** adicionados `_rel_url()` e `_relativize_html()` em `frontend/src/render.py` (com suporte no `base.html`) para converter todos os links e recursos internos (`href`, `src`, `srcset`) em URLs relativos à profundidade da página, eliminando a dependência da raiz `/` em alojamento GitHub Pages sem `CNAME`.
+  - **`404.html` em qualquer profundidade (`_NOT_FOUND_HEAD_ASSETS`):** injetado um `<base>` dinâmico via script em `<head>` (deteta `/cachupa-rst-site/` ou `/`) antes de criar `<link rel="icon">`, `<link rel="stylesheet">` e `<script src>`, evitando pedidos `404` pelo preloader especulativo do browser em URLs fundos inexistentes, com fallback `<noscript>`.
+  - **`/menu/` (`menu/index.html`, `menu/script.js`, `menu/style.css`):** corrigido `.site-return` para `href="../"` com `data-copy="siteReturn"` e traduções `pt`/`en`/`es`/`fr` em `UI_COPY`; alinhado `detailHint` de fallback para «Preços e porções conforme o catálogo aprovado.» e ajustado `.category-nav` (`gap: 12px` em `<=600px` e `<=360px`) para caberem as 4 abas sem corte nos `390 px`.
+  - **Lint e tipos (`frontend/src/render.py`, `frontend/tools/*.py`, `frontend/tests/*.py`):** removido `F841` (`digital = reservation_channels(model)`), convertidas formatações `%` em f-strings (`UP031`), organizados imports (`I001`) e atualizados os testes em `frontend/tests/test_render.py` para validar URLs relativos e o loader `<base>` do `404.html`.

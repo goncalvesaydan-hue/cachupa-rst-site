@@ -110,154 +110,10 @@
     "id": "lito-silva",
     "name": "Lito Silva",
     "bio": "Pintor cabo-verdiano cujas telas a óleo retratam com calor, cor e emoção a vida quotidiana, as gentes e a alma de Cabo Verde.",
-    "portrait": null,
+    "portrait": "litosilva",
     "website": null
   },
-  "artworks": [
-    {
-      "id": "arte-caldeirao",
-      "artistId": "lito-silva",
-      "title": "O Caldeirão da Mãe",
-      "year": "Obra original",
-      "technique": "Óleo sobre tela",
-      "dimensions": "Exposta na sala",
-      "description": "Cena íntima e comovente da preparação da cachupa no caldeirão de barro tradicional, servida com carinho pela mãe aos olhares atentos das crianças.",
-      "imageId": "arte-caldeirao",
-      "fullImageId": "arte-caldeirao",
-      "order": 1,
-      "featured": true
-    },
-    {
-      "id": "arte-serenata",
-      "artistId": "lito-silva",
-      "title": "Serenata à Luz da Lamparina",
-      "year": "Obra original",
-      "technique": "Óleo sobre tela",
-      "dimensions": "Exposta na sala",
-      "description": "Encontro comunitário numa taberna acolhedora: famílias e amigos reunidos à volta da mesa a escutar as cordas sentimentais da rabeca.",
-      "imageId": "arte-serenata",
-      "fullImageId": "arte-serenata",
-      "order": 2,
-      "featured": true
-    },
-    {
-      "id": "arte-pescador",
-      "artistId": "lito-silva",
-      "title": "O Regresso do Pescador",
-      "year": "Obra original",
-      "technique": "Óleo sobre tela",
-      "dimensions": "Exposta na sala",
-      "description": "Retrato vigoroso do pescador ao regressar da faina, com chapéu de palha e vara aos ombros, tendo por horizonte as montanhas e o mar das ilhas.",
-      "imageId": "arte-pescador",
-      "fullImageId": "arte-pescador",
-      "order": 3,
-      "featured": true
-    },
-    {
-      "id": "arte-tres-gracas",
-      "artistId": "lito-silva",
-      "title": "As Três Graças da Terra",
-      "year": "Obra original",
-      "technique": "Óleo sobre tela em tríptico",
-      "dimensions": "Exposta na sala",
-      "description": "Tríptico com três figuras femininas em tons de barro e vestes vermelhas ondulantes, celebrando a força, a serenidade e a presença da mulher cabo-verdiana.",
-      "imageId": "arte-tres-gracas",
-      "fullImageId": "arte-tres-gracas",
-      "order": 4,
-      "featured": false
-    },
-    {
-      "id": "arte-caminho-entardecer",
-      "artistId": "lito-silva",
-      "title": "Caminho ao Entardecer",
-      "year": "Obra original",
-      "technique": "Óleo sobre tela",
-      "dimensions": "Exposta na sala",
-      "description": "Mãe e filho de mãos dadas percorrendo a vereda dourada ao cair da tarde, com o cesto à cabeça e a cumplicidade serena dos passos partilhados.",
-      "imageId": "arte-caminho-entardecer",
-      "fullImageId": "arte-caminho-entardecer",
-      "order": 5,
-      "featured": false
-    },
-    {
-      "id": "arte-capoeira",
-      "artistId": "lito-silva",
-      "title": "Roda e Movimento",
-      "year": "Obra original",
-      "technique": "Óleo sobre tela",
-      "dimensions": "Exposta na sala",
-      "description": "Composição de grande energia e dinamismo sobre fundo carmesim, retratando o salto acrobático e a cadência ancestral do movimento.",
-      "imageId": "arte-capoeira",
-      "fullImageId": "arte-capoeira",
-      "order": 6,
-      "featured": false
-    },
-    {
-      "id": "arte-danca-batuque",
-      "artistId": "lito-silva",
-      "title": "Ritmo de Batuku",
-      "year": "Obra original",
-      "technique": "Óleo sobre tela",
-      "dimensions": "Exposta na sala",
-      "description": "A vibração autêntica do batuku: saia amarela rodada em cadência viva ao som compassado e vigoroso das mãos no tambor tradicional.",
-      "imageId": "arte-danca-batuque",
-      "fullImageId": "arte-danca-batuque",
-      "order": 7,
-      "featured": false
-    },
-    {
-      "id": "arte-jazz-sopros",
-      "artistId": "lito-silva",
-      "title": "Sopros da Noite",
-      "year": "Obra original",
-      "technique": "Óleo sobre tela",
-      "dimensions": "Exposta na sala",
-      "description": "Expressão plástica intensa onde trompetes e saxofones dourados ecoam melodias de sopro e mornas pelas noites quentes do arquipélago.",
-      "imageId": "arte-jazz-sopros",
-      "fullImageId": "arte-jazz-sopros",
-      "order": 8,
-      "featured": false
-    },
-    {
-      "id": "arte-alegria-ilhas",
-      "artistId": "lito-silva",
-      "title": "Festa na Areia",
-      "year": "Obra original",
-      "technique": "Óleo sobre tela",
-      "dimensions": "Exposta na sala",
-      "description": "Celebração praiana repleta de sol e vento: dançarinos vestidos de branco e azul festejando ao compasso das ilhas junto ao mar aberto.",
-      "imageId": "arte-alegria-ilhas",
-      "fullImageId": "arte-alegria-ilhas",
-      "order": 9,
-      "featured": false
-    },
-    {
-      "id": "arte-vale-santo-antao",
-      "artistId": "lito-silva",
-      "title": "Manhã no Vale Verdejante",
-      "year": "Obra original",
-      "technique": "Óleo sobre tela",
-      "dimensions": "Exposta na sala",
-      "description": "A serenidade luminosa do labor agrícola entre montanhas escarpadas, palmeiras e caminhos de pedra percorridos pela carroça tradicional.",
-      "imageId": "arte-vale-santo-antao",
-      "fullImageId": "arte-vale-santo-antao",
-      "order": 10,
-      "featured": false
-    },
-    {
-      "id": "arte-maos-ralador",
-      "artistId": "lito-silva",
-      "title": "Mãos de Labuta (O Ralador)",
-      "year": "Obra original",
-      "technique": "Óleo sobre tela",
-      "dimensions": "Exposta na sala",
-      "description": "Foco escultural nas mãos calejadas a raspar a raiz no ralador rústico de folha-de-flandres, o gesto fundador que prepara os frutos da terra para a cachupa.",
-      "imageId": "arte-maos-ralador",
-      "fullImageId": "arte-maos-ralador",
-      "order": 11,
-      "featured": false
-    }
-  ],
+  "artworks": [],
   "images": {
     "hero-parede-quadro": {
       "id": "hero-parede-quadro",
@@ -473,169 +329,19 @@
         "y": 0.5
       }
     },
-    "arte-tres-gracas": {
-      "id": "arte-tres-gracas",
-      "src": "/assets/photos/arte-tres-gracas.jpg",
-      "width": 213,
-      "height": 320,
-      "alt": "Pintura a óleo em formato tríptico com três figuras femininas em tons de terra com mantos vermelhos ondulantes.",
-      "caption": "As Três Graças da Terra — Tríptico a óleo sobre tela.",
-      "credit": "Galeria Cachupa Rst",
+    "litosilva": {
+      "id": "litosilva",
+      "src": "/assets/photos/litosilva.jpg",
+      "width": 1439,
+      "height": 1067,
+      "alt": "Retrato do pintor cabo-verdiano Lito Silva junto a uma das suas pinturas a óleo vibrantes.",
+      "caption": "Lito Silva junto a uma das suas obras originais.",
+      "credit": "Cachupa Rst",
       "variants": [],
       "mobileImageId": null,
       "focalPoint": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "arte-pescador": {
-      "id": "arte-pescador",
-      "src": "/assets/photos/arte-pescador.jpg",
-      "width": 213,
-      "height": 320,
-      "alt": "Pintura a óleo de pescador com chapéu de palha e vara aos ombros caminhando à beira-mar com montanhas ao fundo.",
-      "caption": "O Regresso do Pescador — Óleo sobre tela.",
-      "credit": "Galeria Cachupa Rst",
-      "variants": [],
-      "mobileImageId": null,
-      "focalPoint": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "arte-caminho-entardecer": {
-      "id": "arte-caminho-entardecer",
-      "src": "/assets/photos/arte-caminho-entardecer.jpg",
-      "width": 213,
-      "height": 320,
-      "alt": "Pintura a óleo de mãe com vestido amarelo e cesto à cabeça de mãos dadas com filho ao entardecer.",
-      "caption": "Caminho ao Entardecer — Óleo sobre tela.",
-      "credit": "Galeria Cachupa Rst",
-      "variants": [],
-      "mobileImageId": null,
-      "focalPoint": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "arte-capoeira": {
-      "id": "arte-capoeira",
-      "src": "/assets/photos/arte-capoeira.jpg",
-      "width": 213,
-      "height": 320,
-      "alt": "Pintura a óleo de capoeiristas de branco em movimento e salto no ar sobre fundo carmesim.",
-      "caption": "Roda e Movimento — Óleo sobre tela.",
-      "credit": "Galeria Cachupa Rst",
-      "variants": [],
-      "mobileImageId": null,
-      "focalPoint": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "arte-danca-batuque": {
-      "id": "arte-danca-batuque",
-      "src": "/assets/photos/arte-danca-batuque.jpg",
-      "width": 213,
-      "height": 320,
-      "alt": "Pintura a óleo de dançarina com saia amarela rodada ao ritmo de percussionista com tambor tradicional.",
-      "caption": "Ritmo de Batuku — Óleo sobre tela.",
-      "credit": "Galeria Cachupa Rst",
-      "variants": [],
-      "mobileImageId": null,
-      "focalPoint": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "arte-jazz-sopros": {
-      "id": "arte-jazz-sopros",
-      "src": "/assets/photos/arte-jazz-sopros.jpg",
-      "width": 213,
-      "height": 320,
-      "alt": "Pintura a óleo expressionista com três músicos tocando trompetes e saxofones dourados.",
-      "caption": "Sopros da Noite — Óleo sobre tela.",
-      "credit": "Galeria Cachupa Rst",
-      "variants": [],
-      "mobileImageId": null,
-      "focalPoint": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "arte-serenata": {
-      "id": "arte-serenata",
-      "src": "/assets/photos/arte-serenata.jpg",
-      "width": 213,
-      "height": 320,
-      "alt": "Pintura a óleo com família e vizinhos à volta da mesa a escutar tocador de rabeca sob a luz de lamparina.",
-      "caption": "Serenata à Luz da Lamparina — Óleo sobre tela.",
-      "credit": "Galeria Cachupa Rst",
-      "variants": [],
-      "mobileImageId": null,
-      "focalPoint": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "arte-caldeirao": {
-      "id": "arte-caldeirao",
-      "src": "/assets/photos/arte-caldeirao.jpg",
-      "width": 213,
-      "height": 320,
-      "alt": "Pintura a óleo de mãe servindo cachupa de um caldeirão de barro ao lume de chão para três crianças.",
-      "caption": "O Caldeirão da Mãe — Óleo sobre tela.",
-      "credit": "Galeria Cachupa Rst",
-      "variants": [],
-      "mobileImageId": null,
-      "focalPoint": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "arte-alegria-ilhas": {
-      "id": "arte-alegria-ilhas",
-      "src": "/assets/photos/arte-alegria-ilhas.jpg",
-      "width": 213,
-      "height": 320,
-      "alt": "Pintura a óleo de grupo dançando com vestes brancas e azuis em praia tropical em frente ao oceano.",
-      "caption": "Festa na Areia — Óleo sobre tela.",
-      "credit": "Galeria Cachupa Rst",
-      "variants": [],
-      "mobileImageId": null,
-      "focalPoint": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "arte-vale-santo-antao": {
-      "id": "arte-vale-santo-antao",
-      "src": "/assets/photos/arte-vale-santo-antao.jpg",
-      "width": 213,
-      "height": 320,
-      "alt": "Pintura a óleo de paisagem agrícola de vale entre montanhas escarpadas com carroça de burro e casario tradicional.",
-      "caption": "Manhã no Vale Verdejante — Óleo sobre tela.",
-      "credit": "Galeria Cachupa Rst",
-      "variants": [],
-      "mobileImageId": null,
-      "focalPoint": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "arte-maos-ralador": {
-      "id": "arte-maos-ralador",
-      "src": "/assets/photos/arte-maos-ralador.jpg",
-      "width": 213,
-      "height": 320,
-      "alt": "Pintura a óleo em plano aproximado de mãos expressivas ralando tubérculos num ralador artesanal de folha-de-flandres.",
-      "caption": "Mãos de Labuta (O Ralador) — Óleo sobre tela.",
-      "credit": "Galeria Cachupa Rst",
-      "variants": [],
-      "mobileImageId": null,
-      "focalPoint": {
-        "x": 0.5,
-        "y": 0.5
+        "x": 0.72,
+        "y": 0.3
       }
     }
   },
@@ -691,14 +397,14 @@
           "type": "editorial",
           "heading": "Novidades & Avisos da Casa",
           "paragraphs": [
-            "Especial — Cachupa Rica ao Fim de Semana: Preparada lentamente em lume brando durante horas com carnes nobres e feijão da terra, servida fumegante em barro aos sábados e domingos.",
+            "Especial — Cachupa Rica Todos os Dias: Preparada lentamente em lume brando durante horas com carnes nobres e feijão da terra, servida fumegante em barro todos os dias.",
             "Cultura — Telas Originais de Lito Silva na Sala: As paredes da nossa casa acolhem pinturas a óleo originais dedicadas à cozinha, à música e às gentes de Cabo Verde. Uma exposição viva enquanto almoça ou janta.",
-            "Aviso — Reservas para Grupos & Famílias: Para mesas de 4 ou mais pessoas ou celebrações familiares, recomendamos a mensagem prévia no WhatsApp para prepararmos o melhor acolhimento para si."
+            "Aviso — Reservas para Grupos & Famílias: Para mesas de 4 ou mais pessoas ou celebrações familiares, recomendamos o contacto telefónico prévio para prepararmos o melhor acolhimento para si."
           ],
           "imageIds": [],
           "links": [
             {
-              "label": "Falar connosco no WhatsApp",
+              "label": "Ver formas de reserva",
               "href": "/reservas/"
             }
           ]
@@ -731,15 +437,11 @@
           "imageIds": [],
           "links": [
             {
-              "label": "Visitar a galeria completa",
+              "label": "Conhecer a galeria",
               "href": "/galeria/"
             }
           ],
-          "artworkIds": [
-            "arte-caldeirao",
-            "arte-serenata",
-            "arte-pescador"
-          ]
+          "artworkIds": []
         },
         {
           "id": "visit",
@@ -797,17 +499,17 @@
     },
     "gallery": {
       "title": "Galeria",
-      "description": "Um espaço dedicado à pintura de um artista cabo-verdiano.",
+      "description": "Um espaço dedicado à pintura de Lito Silva no Cachupa Rst. Novas fotografias das obras a chegar brevemente.",
       "heading": "Arte que merece tempo.",
-      "intro": "Pinturas a óleo expostas nas paredes da sala de refeições, fotografadas no seu espaço natural.",
+      "intro": "Pinturas a óleo originais expostas nas paredes da sala de refeições do Cachupa Rst.",
       "heroImageId": null,
       "sections": []
     },
     "reservations": {
       "title": "Reservas",
-      "description": "Peça a sua reserva pelo WhatsApp. A equipa confirma a disponibilidade consigo.",
+      "description": "Reserve a sua mesa por telefone no Cachupa Rst, no Barreiro. A equipa confirma a disponibilidade consigo.",
       "heading": "Até à mesa.",
-      "intro": "Peça a sua reserva pelo WhatsApp. A equipa confirma a disponibilidade consigo.",
+      "intro": "Reserve a sua mesa por telefone ou consulte os contactos da casa. A equipa confirma a disponibilidade consigo.",
       "heroImageId": null,
       "sections": []
     },
@@ -831,9 +533,9 @@
           "type": "editorial",
           "heading": "1. Proteção de Dados Pessoais (RGPD)",
           "paragraphs": [
-            "No Cachupa Restaurante, a sua privacidade é um compromisso fundamental. Recolhemos apenas os dados estritamente necessários para a gestão do seu pedido de reserva de mesa ou resposta às suas dúvidas (nome, telefone e email, facultados voluntariamente).",
-            "Os seus dados nunca são comercializados, cedidos a terceiros ou utilizados para envio de publicidade não solicitada. São conservados unicamente pelo período indispensável ao atendimento.",
-            "Ao abrigo do RGPD (Regulamento Geral sobre a Proteção de Dados — Regulamento UE 2016/679), tem o direito de aceder, retificar ou solicitar a eliminação dos seus dados a qualquer momento, bastando contactar-nos pelo telefone 963 572 411 ou presencialmente no nosso restaurante no Barreiro."
+            "No Cachupa Restaurante, a sua privacidade é um compromisso fundamental. Este site estático não recolhe dados através de formulários online nem mantém contas ou bases de dados de visitantes.",
+            "Quando entra em contacto connosco diretamente por telefone (963 572 411) ou outro canal disponibilizado, apenas utilizamos a informação estritamente necessária para responder ao seu pedido ou confirmar a sua mesa. Os seus contactos nunca são comercializados nem cedidos a terceiros.",
+            "Ao abrigo do RGPD (Regulamento UE 2016/679), tem o direito de aceder, retificar ou solicitar a eliminação de quaisquer dados fornecidos no atendimento, bastando contactar-nos pelo 963 572 411 ou presencialmente em R. Alm. Reis 22 B, 2830-326 Barreiro."
           ],
           "imageIds": [],
           "artworkIds": [],
@@ -844,9 +546,9 @@
           "type": "editorial",
           "heading": "2. Ausência Total de Cookies de Rastreio & Fontes Locais",
           "paragraphs": [
-            "Este website foi intencionalmente concebido segundo princípios rigorosos de privacidade por conceção. Não utilizamos quaisquer cookies de rastreio, pixéis de seguimento, ferramentas de perfilamento ou analítica invasiva de visitas.",
-            "Todas as tipografias e ficheiros do website são alojados e servidos diretamente pelo nosso próprio servidor local, sem qualquer contacto com servidores externos de terceiros (como Google Fonts ou CDNs externos), salvaguardando a privacidade do seu endereço IP.",
-            "Por não utilizarmos cookies não essenciais, a navegação neste espaço digital dispensa banners ou pedidos de consentimento intrusivos, garantindo uma experiência direta, rápida e transparente."
+            "Este website foi concebido segundo princípios de privacidade por conceção. Não utilizamos quaisquer cookies de rastreio, pixéis de seguimento, ferramentas de perfilamento ou analítica de visitas.",
+            "Apenas a página da carta (/menu/) recorre ao armazenamento local técnico do navegador (localStorage) para memorizar o idioma escolhido (Português, Inglês, Espanhol ou Francês), sem qualquer cookie nem finalidade publicitária.",
+            "Todas as tipografias e ficheiros do site são servidos localmente sem contacto automático com servidores de terceiros (como Google Fonts ou CDNs externos), dispensando banners de consentimento intrusivos."
           ],
           "imageIds": [],
           "artworkIds": [],
@@ -857,7 +559,7 @@
           "type": "editorial",
           "heading": "3. Termos de Utilização & Política de Reservas",
           "paragraphs": [
-            "O pedido de reserva efetuado através dos nossos canais de contacto (WhatsApp, telefone ou correio eletrónico) constitui uma solicitação de disponibilidade sujeita a validação manual. A reserva só fica garantida após confirmação direta e expressa por parte da equipa.",
+            "O pedido de reserva efetuado através dos canais de contacto disponibilizados no site (telefone ou outros canais diretos) constitui uma solicitação de disponibilidade sujeita a validação da equipa. A reserva só fica garantida após confirmação direta.",
             "De forma a garantir o melhor acolhimento de todos os clientes, agradecemos aviso prévio em caso de alteração no horário ou número de pessoas. É concedida uma tolerância de 15 minutos em relação à hora acordada, finda a qual a mesa poderá ser reatribuída.",
             "A identidade visual, logótipos e textos deste site pertencem ao Cachupa Restaurante. As obras de arte pictóricas expostas na sala de refeições e representadas na nossa galeria digital são criações artísticas originais da autoria do artista Lito Silva, protegidas pela legislação de direitos de autor."
           ],

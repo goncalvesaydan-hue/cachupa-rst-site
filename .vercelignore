@@ -1,0 +1,34 @@
+# Vercel — publicar APENAS o site público.
+# Tudo o resto (documentação, código-fonte, conteúdo, protótipos, briefs, identidade
+# visual, ferramentas) fica no GitHub mas não é enviado para a Vercel.
+# Sintaxe igual à do .gitignore: primeiro ignora-se tudo, depois reincluem-se as páginas.
+
+/*
+
+# Páginas geradas (raiz publicada)
+!/index.html
+!/404.html
+!/a-nossa-casa/
+!/galeria/
+!/reservas/
+!/contactos/
+!/privacidade/
+
+# Recursos do site
+!/assets/
+
+# Carta digital (apenas os ficheiros servidos)
+!/menu/
+/menu/*
+!/menu/index.html
+!/menu/style.css
+!/menu/script.js
+!/menu/data.js
+!/menu/brand/
+
+# Lixo de sistema e ficheiros internos em qualquer pasta
+.DS_Store
+**/*.md
+**/*.py
+**/__pycache__/
+.env*

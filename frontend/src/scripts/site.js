@@ -4,6 +4,8 @@ const menuButton = document.querySelector('.menu-button');
 const nav = document.querySelector('#site-nav');
 if (menuButton && nav) {
   document.body.classList.add('js-nav');
+  void nav.offsetWidth;
+  requestAnimationFrame(() => document.body.classList.add('js-nav-ready'));
   menuButton.hidden = false;
 
   const setMenuOpen = open => {

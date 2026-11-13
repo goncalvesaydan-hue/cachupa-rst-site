@@ -3,30 +3,76 @@
     "title": "Cabo Verde à mesa",
     "description": "A cachupa dá o nome à casa. A cozinha cabo-verdiana dá-lhe o sabor.",
     "heading": "Cabo Verde, à mesa.",
-    "intro": "A cachupa dá o nome à casa. A cozinha cabo-verdiana dá-lhe o sabor.",
-    "heroImageId": null,
+    "intro": "A cachupa dá o nome à nossa casa. O cozimento lento, os ingredientes das ilhas e o carinho da tradição dão-lhe a alma.",
+    "heroImageId": "hero-parede-quadro",
     "sections": [
       {
         "id": "speciality",
         "type": "editorial",
         "heading": "A cachupa, no centro da mesa.",
         "paragraphs": [
-          "O prato que dá nome ao restaurante é o ponto de partida para conhecer a nossa cozinha."
+          "O prato mais emblemático de Cabo Verde é preparado aqui como manda a tradição: milho quebrado selecionado, feijão pedra, carnes nobres e tempero aromático cozinhados em lume brando durante horas.",
+          "Servida bem quente em autênticas caçarolas de barro, cada garfada é uma viagem aos sabores e à hospitalidade das ilhas."
+        ],
+        "imageIds": [
+          "studio-carne"
+        ],
+        "links": [
+          {
+            "label": "Conhecer a nossa história",
+            "href": "/a-nossa-casa/"
+          }
+        ]
+      },
+      {
+        "id": "pratos",
+        "type": "photoGrid",
+        "heading": "As nossas especialidades.",
+        "paragraphs": [
+          "Da autêntica Cachupa de Polvo e Marisco à clássica Cachupa Refogada com ovos estrelados, chouriço e queijo de cabra. Sabores genuínos que reconfortam a alma."
+        ],
+        "imageIds": [
+          "studio-polvo",
+          "studio-refogada"
+        ],
+        "links": [
+          {
+            "label": "Reservar mesa para provar",
+            "href": "/reservas/"
+          }
+        ]
+      },
+      {
+        "id": "noticias",
+        "type": "editorial",
+        "heading": "Novidades & Avisos da Casa",
+        "paragraphs": [
+          "Especial — Cachupa Rica Todos os Dias: Preparada lentamente em lume brando durante horas com carnes nobres e feijão da terra, servida fumegante em barro todos os dias.",
+          "Cultura — Telas Originais de Lito Silva na Sala: As paredes da nossa casa acolhem pinturas a óleo originais dedicadas à cozinha, à música e às gentes de Cabo Verde. Uma exposição viva enquanto almoça ou janta.",
+          "Aviso — Reservas para Grupos & Famílias: Para mesas de 4 ou mais pessoas ou celebrações familiares, recomendamos o contacto telefónico prévio para prepararmos o melhor acolhimento para si."
         ],
         "imageIds": [],
-        "links": []
+        "links": [
+          {
+            "label": "Ver formas de reserva",
+            "href": "/reservas/"
+          }
+        ]
       },
       {
         "id": "house",
         "type": "editorial",
         "heading": "Conheça a nossa casa.",
         "paragraphs": [
-          "A cozinha, o espaço e a pintura cabo-verdiana. Conheça o que faz parte da nossa casa."
+          "Um espaço acolhedor com paredes de pedra rústica, mesas de madeira, luz calorosa e o aroma inconfundível da cachupa acabada de apurar.",
+          "Aqui encontra o conforto e a hospitalidade de uma verdadeira casa cabo-verdiana no Barreiro, onde a boa comida se junta à arte e à simpatia."
         ],
-        "imageIds": [],
+        "imageIds": [
+          "studio-casa-quadro"
+        ],
         "links": [
           {
-            "label": "Conhecer o restaurante",
+            "label": "Ver mais sobre a casa",
             "href": "/a-nossa-casa/"
           }
         ]
@@ -36,12 +82,12 @@
         "type": "artworkSelection",
         "heading": "Um lugar para a pintura.",
         "paragraphs": [
-          "Uma galeria dedicada aos quadros de um pintor cabo-verdiano."
+          "Uma galeria viva nas paredes do restaurante com pinturas a óleo que retratam a história, a música e a alma do povo cabo-verdiano."
         ],
         "imageIds": [],
         "links": [
           {
-            "label": "Visitar a galeria",
+            "label": "Conhecer a galeria",
             "href": "/galeria/"
           }
         ],
@@ -52,9 +98,11 @@
         "type": "visit",
         "heading": "Puxe uma cadeira.",
         "paragraphs": [
-          "Para reservar, fale com a equipa pelo WhatsApp."
+          "Esperamos por si de portas abertas na Rua Almirante Reis, no Barreiro. Com esplanada acolhedora, opções veganas e noites de música ao vivo."
         ],
-        "imageIds": [],
+        "imageIds": [
+          "studio-frango"
+        ],
         "links": [
           {
             "label": "Contactos e localização",
@@ -68,44 +116,50 @@
     "title": "A nossa casa",
     "description": "A cachupa, o espaço e as pessoas que fazem parte do restaurante.",
     "heading": "Uma casa cabo-verdiana.",
-    "intro": "A cachupa, o espaço e as pessoas que fazem parte do restaurante.",
-    "heroImageId": null,
+    "intro": "A cachupa, o espaço e a arte que fazem parte da nossa identidade.",
+    "heroImageId": "studio-sala",
     "sections": [
       {
         "id": "story",
         "type": "editorial",
         "heading": "À mesa, na nossa casa.",
         "paragraphs": [
-          "As mesas, as pinturas e os detalhes do espaço fazem parte da visita."
+          "Criámos este restaurante com um propósito simples: trazer a verdadeira hospitalidade e a gastronomia de Cabo Verde para a mesa.",
+          "Cada detalhe — das caçarolas de barro fumegantes aos quadros de Lito Silva pintados à mão sobre paredes de pedra — foi pensado para que se sinta em casa."
         ],
-        "imageIds": [],
+        "imageIds": [
+          "studio-pintura-cachupa"
+        ],
         "links": []
       },
       {
         "id": "cozinha",
         "type": "photoGrid",
-        "heading": "Um olhar sobre a cozinha.",
+        "heading": "Do tacho ao prato.",
         "paragraphs": [
-          "Da preparação à mesa. Fotografias do restaurante."
+          "Fotografias reais dos nossos pratos confeccionados com paixão, paciência e respeito absoluto pela receita tradicional."
         ],
-        "imageIds": [],
+        "imageIds": [
+          "studio-hero",
+          "studio-carne"
+        ],
         "links": []
       }
     ]
   },
   "gallery": {
     "title": "Galeria",
-    "description": "Um espaço dedicado à pintura de um artista cabo-verdiano.",
+    "description": "Um espaço dedicado à pintura de Lito Silva no Cachupa Rst. Novas fotografias das obras a chegar brevemente.",
     "heading": "Arte que merece tempo.",
-    "intro": "Pinturas expostas no restaurante, fotografadas no seu espaço. Os títulos e a autoria serão acrescentados após confirmação.",
+    "intro": "Pinturas a óleo originais expostas nas paredes da sala de refeições do Cachupa Rst.",
     "heroImageId": null,
     "sections": []
   },
   "reservations": {
     "title": "Reservas",
-    "description": "Peça a sua reserva pelo WhatsApp. A equipa confirma a disponibilidade consigo.",
+    "description": "Reserve a sua mesa por telefone no Cachupa Rst, no Barreiro. A equipa confirma a disponibilidade consigo.",
     "heading": "Até à mesa.",
-    "intro": "Peça a sua reserva pelo WhatsApp. A equipa confirma a disponibilidade consigo.",
+    "intro": "Reserve a sua mesa por telefone ou consulte os contactos da casa. A equipa confirma a disponibilidade consigo.",
     "heroImageId": null,
     "sections": []
   },
@@ -113,27 +167,104 @@
     "title": "Contactos",
     "description": "Localização, horários e formas de falar com o Cachupa Rst.",
     "heading": "Encontre a nossa casa.",
-    "intro": "Localização, horários e formas de falar com o Cachupa Rst.",
-    "heroImageId": null,
+    "intro": "Localização, horários e contactos da nossa casa no Barreiro.",
+    "heroImageId": "janela-rua",
     "sections": []
   },
   "privacy": {
-    "title": "Privacidade",
-    "description": "Informação sobre esta pré-visualização.",
-    "heading": "A sua privacidade.",
-    "intro": "Informação sobre esta pré-visualização.",
+    "title": "Privacidade & Termos",
+    "description": "Política de privacidade, termos de utilização, política de reservas e acessibilidade digital do Cachupa Restaurante.",
+    "heading": "Transparência, Privacidade & Termos.",
+    "intro": "Conheça com clareza as nossas práticas de proteção de dados, ausência de cookies de rastreio, condições de reserva, livro de reclamações e compromisso de acessibilidade.",
     "heroImageId": null,
     "sections": [
       {
-        "id": "privacy",
+        "id": "dados",
         "type": "editorial",
-        "heading": "Uma versão em preparação.",
+        "heading": "1. Proteção de Dados Pessoais (RGPD)",
         "paragraphs": [
-          "Esta versão não inclui formulários de reserva nem ferramentas de análise de visitas. As ligações de contacto abrem serviços externos quando forem configuradas.",
-          "A informação de privacidade será completada com os dados do responsável e os serviços usados antes da publicação."
+          "No Cachupa Restaurante, a sua privacidade é um compromisso fundamental. Este site estático não recolhe dados através de formulários online nem mantém contas ou bases de dados de visitantes.",
+          "Quando entra em contacto connosco diretamente por telefone (963 572 411) ou outro canal disponibilizado, apenas utilizamos a informação estritamente necessária para responder ao seu pedido ou confirmar a sua mesa. Os seus contactos nunca são comercializados nem cedidos a terceiros.",
+          "Ao abrigo do RGPD (Regulamento UE 2016/679), tem o direito de aceder, retificar ou solicitar a eliminação de quaisquer dados fornecidos no atendimento, bastando contactar-nos pelo 963 572 411 ou presencialmente em R. Alm. Reis 22 B, 2830-326 Barreiro."
         ],
         "imageIds": [],
+        "artworkIds": [],
         "links": []
+      },
+      {
+        "id": "cookies",
+        "type": "editorial",
+        "heading": "2. Ausência Total de Cookies de Rastreio & Fontes Locais",
+        "paragraphs": [
+          "Este website foi concebido segundo princípios de privacidade por conceção. Não utilizamos quaisquer cookies de rastreio, pixéis de seguimento, ferramentas de perfilamento ou analítica de visitas.",
+          "Apenas a página da carta (/menu/) recorre ao armazenamento local técnico do navegador (localStorage) para memorizar o idioma escolhido (Português, Inglês, Espanhol ou Francês), sem qualquer cookie nem finalidade publicitária.",
+          "Todas as tipografias e ficheiros do site são servidos localmente sem contacto automático com servidores de terceiros (como Google Fonts ou CDNs externos), dispensando banners de consentimento intrusivos."
+        ],
+        "imageIds": [],
+        "artworkIds": [],
+        "links": []
+      },
+      {
+        "id": "termos",
+        "type": "editorial",
+        "heading": "3. Termos de Utilização & Política de Reservas",
+        "paragraphs": [
+          "O pedido de reserva efetuado através dos canais de contacto disponibilizados no site (telefone ou outros canais diretos) constitui uma solicitação de disponibilidade sujeita a validação da equipa. A reserva só fica garantida após confirmação direta.",
+          "De forma a garantir o melhor acolhimento de todos os clientes, agradecemos aviso prévio em caso de alteração no horário ou número de pessoas. É concedida uma tolerância de 15 minutos em relação à hora acordada, finda a qual a mesa poderá ser reatribuída.",
+          "A identidade visual, logótipos e textos deste site pertencem ao Cachupa Restaurante. As obras de arte pictóricas expostas na sala de refeições e representadas na nossa galeria digital são criações artísticas originais da autoria do artista Lito Silva, protegidas pela legislação de direitos de autor."
+        ],
+        "imageIds": [],
+        "artworkIds": [],
+        "links": [
+          {
+            "label": "Consultar Galeria de Arte",
+            "href": "/galeria/"
+          },
+          {
+            "label": "Pedir Reserva de Mesa",
+            "href": "/reservas/"
+          }
+        ]
+      },
+      {
+        "id": "litigios",
+        "type": "editorial",
+        "heading": "4. Livro de Reclamações & Resolução Alternativa de Litígios (RAL)",
+        "paragraphs": [
+          "Em cumprimento do Decreto-Lei n.º 74/2017, disponibilizamos o acesso direto à plataforma oficial do Livro de Reclamações Eletrónico, onde qualquer cidadão pode submeter a sua reclamação ou elogio.",
+          "Em caso de litígio de consumo, o cliente pode recorrer a uma entidade de Resolução Alternativa de Litígios de Consumo (RAL). O Cachupa Restaurante insere-se na área de competência do CNIACC — Centro Nacional de Informação e Arbitragem de Conflitos de Consumo.",
+          "Pode consultar a lista atualizada de todas as entidades RAL de Portugal no Portal do Consumidor oficial."
+        ],
+        "imageIds": [],
+        "artworkIds": [],
+        "links": [
+          {
+            "label": "Livro de Reclamações Eletrónico (livroreclamacoes.pt)",
+            "href": "https://www.livroreclamacoes.pt"
+          },
+          {
+            "label": "Centro Nacional de Arbitragem de Conflitos (CNIACC)",
+            "href": "https://www.cniacc.pt"
+          }
+        ]
+      },
+      {
+        "id": "acessibilidade",
+        "type": "editorial",
+        "heading": "5. Declaração de Acessibilidade Digital (WCAG 2.1 AA)",
+        "paragraphs": [
+          "Trabalhamos continuamente para assegurar que este website seja totalmente acessível a todas as pessoas, incluindo cidadãos com limitações visuais, auditivas, motoras ou cognitivas, em conformidade com as normas internacionais WCAG 2.1 nível AA.",
+          "O desenvolvimento prioriza: código semântico HTML5, rácios de contraste de cor elevados superiores a 7:1 em textos principais, navegação integral através do teclado com foco destacado (:focus-visible), alvos tácteis otimizados para dispositivos móveis (mínimo de 44x44 píxeis) e textos alternativos em elementos visuais.",
+          "Se detetar alguma falha de acessibilidade ou tiver dificuldade em consultar qualquer conteúdo, entre em contacto direto connosco através do 963 572 411 para que possamos prestar apoio imediato e corrigir a situação."
+        ],
+        "imageIds": [],
+        "artworkIds": [],
+        "links": [
+          {
+            "label": "Contactar a Gerência",
+            "href": "/contactos/"
+          }
+        ]
       }
     ]
   },

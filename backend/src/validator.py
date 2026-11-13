@@ -294,14 +294,23 @@ class _Checker:
                                                   'preenchidos ou ambos null')
 
         email, mailto = contacts.get('emailDisplay'), contacts.get('emailHref')
-        if isinstance(email, str) and isinstance(mailto, str) and self._mailto(mailto):
-            if unquote(urlsplit(mailto).path) != email:
-                self.error(f'{base}.emailDisplay', 'deve ser o mesmo endereço usado em emailHref')
+        if (
+            isinstance(email, str)
+            and isinstance(mailto, str)
+            and self._mailto(mailto)
+            and unquote(urlsplit(mailto).path) != email
+        ):
+            self.error(f'{base}.emailDisplay', 'deve ser o mesmo endereço usado em emailHref')
 
+        if all(contacts.get(k) is None for k in ('phoneHref', 'whatsappHref', 'emailHref')):
+            self.required_for_production(
+                base,
+                'pelo menos um canal de contacto (telefone, WhatsApp ou email) obrigatório para produção',
+            )
         if contacts.get('whatsappHref') is None:
-            self.required_for_production(f'{base}.whatsappHref', 'WhatsApp obrigatório para produção')
+            self.warn(f'{base}.whatsappHref', 'WhatsApp não configurado')
         if contacts.get('emailHref') is None:
-            self.required_for_production(f'{base}.emailHref', 'email obrigatório para produção')
+            self.warn(f'{base}.emailHref', 'email não configurado')
 
         directions = contacts.get('directionsHref')
         if directions is not None and not _https_url(directions):
@@ -557,6 +566,3 @@ class _Checker:
         enabled = navigation.get('menuEnabled')
         if type(enabled) is not bool:
             self.error('navigation.menuEnabled', 'deve ser booleano')
-        elif enabled:
-            self.required_for_production('navigation.menuEnabled',
-                                         'o menu de demonstração não pode ser publicado nesta fase')

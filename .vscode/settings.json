@@ -1,3 +1,19 @@
 {
-    "chat.disableAIFeatures": false
+    "chat.disableAIFeatures": false,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/__pycache__": true,
+        "backend/dist": true,
+        "frontend/dist": true
+    },
+    "files.watcherExclude": {
+        "**/__pycache__/**": true,
+        "backend/dist/**": true,
+        "frontend/dist/**": true
+    },
+    "js/ts.tsserver.experimental.enableProjectDiagnostics": false,
+    "python.analysis.extraPaths": [
+        "backend/src",
+        "frontend/src"
+    ]
 }

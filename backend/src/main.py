@@ -15,10 +15,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from data_loader import ContentError, load_content  # noqa: E402
-from generator import PUBLIC_DIR, BuildError, build_site  # noqa: E402
-from normalizer import normalize_content  # noqa: E402
-from validator import validate_model  # noqa: E402
+from data_loader import ContentError, load_content
+from generator import PUBLIC_DIR, BuildError, build_site
+from normalizer import normalize_content
+from validator import validate_model
 
 
 def prepare(mode, content_dir=None, public_dir=PUBLIC_DIR):
@@ -75,7 +75,7 @@ def main(argv=None):
         except (KeyError, TypeError, ValueError) as exc:
             print(f'erro na geração: {exc!r}', file=sys.stderr)
             return 1
-        pages = sum(1 for name in files if name.endswith('.html'))
+        pages = sum(1 for name in files if name.endswith('.html') and name != 'menu/index.html')
         print(f'{pages} páginas e {len(files) - pages} recursos gerados em {Path(args.out).resolve()}')
     return 0
 

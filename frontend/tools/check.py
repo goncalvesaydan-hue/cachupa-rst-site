@@ -1,8 +1,9 @@
 """Dependency-free source checks. Not a substitute for browser testing."""
 import ast
 import json
-from pathlib import Path
 import subprocess
+from pathlib import Path
+
 ROOT = Path(__file__).resolve().parents[1]
 for folder in ('src', 'tools', 'tests'):
     for path in (ROOT / folder).rglob('*.py'):

@@ -24,6 +24,9 @@ PROJECT_OUTPUT_ROOT = ROOT / 'backend' / 'dist'
 # Photo folders are not copied wholesale: only images referenced by the model are
 # published, so unselected or draft-only photos stay private.
 IMAGE_DIRS = ('assets/photos', 'assets/images')
+MENU_DIR = ROOT / 'menu'
+MENU_FILES = ('index.html', 'style.css', 'data.js', 'script.js')
+MENU_DIRS = ('brand',)
 MARKER = '.cachupa-build'
 
 
@@ -101,6 +104,23 @@ def _write(staging, model, pages, public_dir):
         target = _inside(staging, name)
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(pages[name], encoding='utf-8')
+
+    if model.get('navigation', {}).get('menuEnabled') and MENU_DIR.is_dir():
+        menu_target = _inside(staging, 'menu')
+        menu_target.mkdir(parents=True, exist_ok=True)
+        for name in MENU_FILES:
+            source = MENU_DIR / name
+            if source.is_file():
+                shutil.copyfile(source, _inside(menu_target, name))
+        for dirname in MENU_DIRS:
+            source_dir = MENU_DIR / dirname
+            if source_dir.is_dir():
+                shutil.copytree(
+                    source_dir,
+                    _inside(menu_target, dirname),
+                    ignore=lambda _, names: [n for n in names if n in ('.DS_Store', '.gitkeep')],
+                    dirs_exist_ok=True,
+                )
 
     if model['preview']:
         # Pages already carry noindex; robots.txt covers crawlers that skip HTML.

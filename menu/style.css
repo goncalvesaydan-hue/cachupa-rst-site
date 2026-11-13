@@ -184,10 +184,10 @@ main { scroll-margin-top: 190px; }
 .back-button { background: var(--red); border-radius: 4px; font-weight: 700; font-size: 15px; }
 .back-button:hover { background: #bd1422; }
 @media (max-width: 600px) {
- .header-inner { min-height: 116px; gap: 14px; }
+ .header-inner { min-height: 116px; gap: 14px; padding-block: 10px; }
  .brand-logo { width: 166px; }
  .language-control select { max-width: 125px; padding-inline: 5px; }
- .category-nav { gap: 24px; }
+ .category-nav { gap: 12px; }
  .category-button { font-size: 14px; min-height: 46px; }
  .menu-intro { padding-block: 23px; }
  .menu-intro h1 { font-size: 44px; }
@@ -210,7 +210,7 @@ main { scroll-margin-top: 190px; }
  .header-inner { gap: 8px; }
  .brand-logo { width: 151px; }
  .language-control select { max-width: 121px; font-size: 14px; }
- .category-nav { gap: 19px; }
+ .category-nav { gap: 12px; }
  .menu-intro h1 { font-size: 39px; }
  .detail-heading { flex-wrap: wrap; gap: 8px; }
 }

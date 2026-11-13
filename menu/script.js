@@ -3,7 +3,7 @@
 const UI_COPY = {
     pt: {
         locale: 'pt-PT', menu: 'Puxe uma cadeira.', intro: 'Veja o que vai para a mesa.', cuisine: 'Cozinha cabo-verdiana', welcome: 'Sente-se.',
-        language: 'Idioma', categories: 'Categorias', skip: 'Saltar para os pratos',
+        siteReturn: 'Voltar ao site', language: 'Idioma', categories: 'Categorias', skip: 'Saltar para os pratos',
         detailHint: 'Preços e porções conforme o catálogo aprovado.', dishDetails: 'O prato em detalhe',
         ingredients: 'Ingredientes principais', allergens: 'Alergénios e intolerâncias',
         allergyNote: 'A lista de ingredientes e alergénios ainda não foi validada. Se tiver alergias ou intolerâncias, fale com a equipa antes de escolher.',
@@ -13,7 +13,7 @@ const UI_COPY = {
     },
     en: {
         locale: 'en-GB', menu: 'Pull up a chair.', intro: 'See what’s on the menu.', cuisine: 'Cape Verdean cuisine', welcome: 'Make yourself at home.',
-        language: 'Language', categories: 'Categories', skip: 'Skip to dishes',
+        siteReturn: 'Back to website', language: 'Language', categories: 'Categories', skip: 'Skip to dishes',
         detailHint: 'Prices and portions from the approved list.', dishDetails: 'About this dish',
         ingredients: 'Main ingredients', allergens: 'Allergens and intolerances',
         allergyNote: 'Ingredient and allergen information has not yet been verified. If you have an allergy or intolerance, please speak with our team before choosing.',
@@ -23,7 +23,7 @@ const UI_COPY = {
     },
     es: {
         locale: 'es-ES', menu: 'Tome asiento.', intro: 'Descubra lo que hay en la mesa.', cuisine: 'Cocina caboverdiana', welcome: 'Siéntase en casa.',
-        language: 'Idioma', categories: 'Categorías', skip: 'Ir a los platos',
+        siteReturn: 'Volver al sitio', language: 'Idioma', categories: 'Categorías', skip: 'Ir a los platos',
         detailHint: 'Precios y porciones según la lista aprobada.', dishDetails: 'El plato en detalle',
         ingredients: 'Ingredientes principales', allergens: 'Alérgenos e intolerancias',
         allergyNote: 'La información sobre ingredientes y alérgenos aún no está verificada. Si tiene alguna alergia o intolerancia, consulte con el equipo antes de elegir.',
@@ -33,7 +33,7 @@ const UI_COPY = {
     },
     fr: {
         locale: 'fr-FR', menu: 'Prenez place.', intro: 'Découvrez ce qui est au menu.', cuisine: 'Cuisine cap-verdienne', welcome: 'Installez-vous.',
-        language: 'Langue', categories: 'Catégories', skip: 'Aller aux plats',
+        siteReturn: 'Retour au site', language: 'Langue', categories: 'Catégories', skip: 'Aller aux plats',
         detailHint: 'Prix et portions selon la liste approuvée.', dishDetails: 'Le plat en détail',
         ingredients: 'Ingrédients principaux', allergens: 'Allergènes et intolérances',
         allergyNote: 'Les informations sur les ingrédients et les allergènes ne sont pas encore vérifiées. En cas d’allergie ou d’intolérance, consultez notre équipe avant de choisir.',

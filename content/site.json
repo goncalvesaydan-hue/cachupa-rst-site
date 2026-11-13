@@ -1,7 +1,350 @@
 {
-  "name": "Cachupa Rst",
-  "preview": true,
-  "restaurant": {"phone": null, "email": null, "address": null, "hours": [], "directionsUrl": null},
-  "artist": {"name": null, "bio": null},
-  "artworks": []
+  "schemaVersion": 1,
+  "site": {
+    "name": "Cachupa Rst",
+    "locale": "pt-PT",
+    "baseUrl": null
+  },
+  "restaurant": {
+    "city": "Barreiro",
+    "address": "R. Alm. Reis 22 B, 2830-326 Barreiro",
+    "hours": [
+      {
+        "day": 1,
+        "closed": false,
+        "intervals": [
+          {
+            "opens": "11:00",
+            "closes": "23:00",
+            "closesNextDay": false
+          }
+        ],
+        "note": null
+      },
+      {
+        "day": 2,
+        "closed": false,
+        "intervals": [
+          {
+            "opens": "11:00",
+            "closes": "23:00",
+            "closesNextDay": false
+          }
+        ],
+        "note": null
+      },
+      {
+        "day": 3,
+        "closed": false,
+        "intervals": [
+          {
+            "opens": "11:00",
+            "closes": "23:00",
+            "closesNextDay": false
+          }
+        ],
+        "note": null
+      },
+      {
+        "day": 4,
+        "closed": false,
+        "intervals": [
+          {
+            "opens": "11:00",
+            "closes": "23:00",
+            "closesNextDay": false
+          }
+        ],
+        "note": null
+      },
+      {
+        "day": 5,
+        "closed": false,
+        "intervals": [
+          {
+            "opens": "11:00",
+            "closes": "23:00",
+            "closesNextDay": false
+          }
+        ],
+        "note": null
+      },
+      {
+        "day": 6,
+        "closed": false,
+        "intervals": [
+          {
+            "opens": "11:00",
+            "closes": "23:00",
+            "closesNextDay": false
+          }
+        ],
+        "note": null
+      },
+      {
+        "day": 7,
+        "closed": false,
+        "intervals": [
+          {
+            "opens": "11:00",
+            "closes": "23:00",
+            "closesNextDay": false
+          }
+        ],
+        "note": null
+      }
+    ],
+    "contacts": {
+      "phoneDisplay": "963 572 411",
+      "phoneHref": "tel:+351963572411",
+      "whatsappDisplay": null,
+      "whatsappHref": null,
+      "emailDisplay": null,
+      "emailHref": null,
+      "directionsHref": "https://www.google.com/maps/search/?api=1&query=Restaurante+Cachupa+Brr",
+      "socialLinks": []
+    }
+  },
+  "artist": {
+    "id": "lito-silva",
+    "name": "Lito Silva",
+    "bio": "Pintor cabo-verdiano cujas telas a óleo retratam com calor, cor e emoção a vida quotidiana, as gentes e a alma de Cabo Verde.",
+    "portrait": "litosilva",
+    "website": null
+  },
+  "artworks": [],
+  "images": {
+    "hero-parede-quadro": {
+      "id": "hero-parede-quadro",
+      "src": "/assets/photos/hero-parede-quadro.jpg",
+      "width": 1600,
+      "height": 1066,
+      "alt": "Parede da sala do Restaurante Cachupa com violão tradicional e pintura a óleo emoldurada de família cabo-verdiana assinada por Lito Silva.",
+      "caption": "Arte, música e tradição cabo-verdiana nas paredes da nossa casa.",
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    "studio-hero": {
+      "id": "studio-hero",
+      "src": "/assets/photos/studio-hero.jpg",
+      "width": 1320,
+      "height": 865,
+      "alt": "Cachupa de Camarão e Marisco fumegante em caçarola de barro com grandes camarões tigre grelhados e coentros frescos.",
+      "caption": "Cachupa de Marisco em barro com camarão tigre grelhado e coentros frescos.",
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "studio-carne": {
+      "id": "studio-carne",
+      "src": "/assets/photos/studio-carne.jpg",
+      "width": 1320,
+      "height": 877,
+      "alt": "Cachupa Rica tradicional com carne estufada suculenta, enchidos nobres e feijão da terra em prato de barro.",
+      "caption": "A autêntica Cachupa Rica tradicional de carne com feijão pedra e carnes nobres.",
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "studio-polvo": {
+      "id": "studio-polvo",
+      "src": "/assets/photos/studio-polvo.jpg",
+      "width": 1320,
+      "height": 860,
+      "alt": "Cachupa de Polvo tenro e marisco com tomate cereja em travessa de barro fumegante.",
+      "caption": "Cachupa de Polvo e Marisco em lume brando com tomate cereja.",
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "studio-refogada": {
+      "id": "studio-refogada",
+      "src": "/assets/photos/studio-refogada.jpg",
+      "width": 1320,
+      "height": 874,
+      "alt": "Cachupa Refogada tradicional no prato com ovos estrelados, chouriço tostado e queijo fresco de cabra.",
+      "caption": "Cachupa Refogada clássica com ovos estrelados, chouriço corado e queijo da terra.",
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "studio-frango": {
+      "id": "studio-frango",
+      "src": "/assets/photos/studio-frango.jpg",
+      "width": 1320,
+      "height": 867,
+      "alt": "Cachupa de frango dourado tenro em caçarola de barro com cebolada caramelizada e ervas aromáticas.",
+      "caption": "Cachupa rica de frango tenro dourado em lume lento com cebola caramelizada.",
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "studio-borrego": {
+      "id": "studio-borrego",
+      "src": "/assets/photos/studio-borrego.jpg",
+      "width": 1320,
+      "height": 1928,
+      "alt": "Jarrete de borrego estufado lentamente em travessa de barro sobre papel pardo com parede de pedra rústica.",
+      "caption": "Jarrete de borrego estufado lentamente em barro com legumes da horta.",
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "studio-sala": {
+      "id": "studio-sala",
+      "src": "/assets/photos/studio-sala.jpg",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Sala acolhedora do restaurante com paredes de pedra rústica, mesas de madeira e quadros de arte cabo-verdiana.",
+      "caption": "A nossa sala de refeições: ambiente caloroso com paredes de pedra e arte de Cabo Verde.",
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.28
+      }
+    },
+    "studio-casa-quadro": {
+      "id": "studio-casa-quadro",
+      "src": "/assets/photos/studio-casa-quadro.jpg",
+      "width": 1066,
+      "height": 1600,
+      "alt": "Mesa posta com copos na sala do restaurante sob grande pintura a óleo emoldurada de mulher cabo-verdiana a mexer a cachupa.",
+      "caption": null,
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.35
+      }
+    },
+    "janela-rua": {
+      "id": "janela-rua",
+      "src": "/assets/photos/janela-1600.webp",
+      "width": 1600,
+      "height": 2133,
+      "alt": "Montra do Cachupa Restaurante na Rua Almirante Reis, no Barreiro, com parede de pedra rústica, mesas de madeira e quadro a óleo.",
+      "caption": "A nossa montra na Rua Almirante Reis, 22 B, no Barreiro.",
+      "credit": "Cachupa Rst",
+      "variants": [
+        {
+          "src": "/assets/photos/janela-480.webp",
+          "width": 480,
+          "height": 640,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/janela-960.webp",
+          "width": 960,
+          "height": 1280,
+          "mimeType": "image/webp"
+        },
+        {
+          "src": "/assets/photos/janela-1600.webp",
+          "width": 1600,
+          "height": 2133,
+          "mimeType": "image/webp"
+        }
+      ],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.35
+      }
+    },
+    "studio-pintura-cachupa": {
+      "id": "studio-pintura-cachupa",
+      "src": "/assets/photos/studio-pintura-cachupa.jpg",
+      "width": 1320,
+      "height": 872,
+      "alt": "Quadro a óleo com moldura de madeira de mãe cabo-verdiana a preparar a cachupa ao lume de chão para as crianças da casa, assinado Lito Silva.",
+      "caption": "A Cozinheira da Terra — Óleo sobre tela assinado por Lito Silva, exposto na sala.",
+      "credit": "Galeria Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "studio-pintura-mar": {
+      "id": "studio-pintura-mar",
+      "src": "/assets/photos/studio-pintura-mar.jpg",
+      "width": 930,
+      "height": 870,
+      "alt": "Pintura a óleo com moldura dourada de músico cabo-verdiano com violão na praia ao pôr-do-sol.",
+      "caption": "O Trovador do Mar — Óleo sobre tela com moldura dourada exposto na sala do restaurante.",
+      "credit": "Galeria Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "studio-pintura-festa": {
+      "id": "studio-pintura-festa",
+      "src": "/assets/photos/studio-pintura-festa.jpg",
+      "width": 950,
+      "height": 720,
+      "alt": "Pintura a óleo com moldura dourada de pares a dançar funaná tradicional em festa cabo-verdiana, assinada Lito Silva.",
+      "caption": "Baile & Funaná — Óleo sobre tela assinado por Lito Silva, exposto no restaurante.",
+      "credit": "Galeria Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "litosilva": {
+      "id": "litosilva",
+      "src": "/assets/photos/litosilva.jpg",
+      "width": 1439,
+      "height": 1067,
+      "alt": "Retrato do pintor cabo-verdiano Lito Silva junto a uma das suas pinturas a óleo vibrantes.",
+      "caption": "Lito Silva junto a uma das suas obras originais.",
+      "credit": "Cachupa Rst",
+      "variants": [],
+      "mobileImageId": null,
+      "focalPoint": {
+        "x": 0.72,
+        "y": 0.3
+      }
+    }
+  },
+  "navigation": {
+    "menuEnabled": true
+  }
 }

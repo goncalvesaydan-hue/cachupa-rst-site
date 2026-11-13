@@ -29,14 +29,25 @@ class ValidatorTests(unittest.TestCase):
         self.assertEqual(report.errors, [])
         self.assertIn('restaurant.contacts.whatsappHref', paths(report.warnings))
 
-    def test_real_content_is_blocked_in_production(self):
+    def test_real_content_is_valid_in_production(self):
         model = normalize_content(load_content(), 'production')
+        report = validate_model(model, 'production', public_dir=support.ROOT / 'frontend' / 'public')
+        self.assertEqual(report.errors, [])
+        self.assertIn('restaurant.contacts.whatsappHref', paths(report.warnings))
+
+    def test_incomplete_content_is_blocked_in_production(self):
+        source = support.complete_source()
+        source['restaurant'] = {'city': None, 'address': None, 'hours': [], 'contacts': {}}
+        model = normalize_content(source, 'production')
         report = validate_model(model, 'production')
         self.assertTrue({'restaurant.city', 'restaurant.address', 'restaurant.hours',
-                         'restaurant.contacts.whatsappHref', 'restaurant.contacts.emailHref'}
+                         'restaurant.contacts'}
                         <= paths(report.errors))
-        message = next(str(i) for i in report.errors if i.path == 'restaurant.contacts.emailHref')
-        self.assertEqual(message, 'restaurant.contacts.emailHref: email obrigatório para produção')
+        message = next(str(i) for i in report.errors if i.path == 'restaurant.contacts')
+        self.assertEqual(
+            message,
+            'restaurant.contacts: pelo menos um canal de contacto (telefone, WhatsApp ou email) obrigatório para produção',
+        )
 
     def test_schema_version_and_preview_flag(self):
         self.assertIn('schemaVersion', paths(validate_model(self.model(schemaVersion=2), 'production').errors))
@@ -151,11 +162,12 @@ class ValidatorTests(unittest.TestCase):
                          'artworks[0].featured', 'artworks[0].published', 'artworks[1].id',
                          'artist'} <= errors)
 
-    def test_menu_demo_cannot_be_published(self):
-        model = self.model(navigation={'menuEnabled': True})
-        self.assertIn('navigation.menuEnabled', paths(validate_model(model, 'production').errors))
-        preview = self.model('preview', navigation={'menuEnabled': True})
-        self.assertIn('navigation.menuEnabled', paths(validate_model(preview, 'preview').warnings))
+    def test_menu_navigation_flag_allows_published_catalog(self):
+        for mode in ('production', 'preview'):
+            model = self.model(mode, navigation={'menuEnabled': True})
+            self.assertEqual(validate_model(model, mode).errors, [], mode)
+        invalid = self.model('production', navigation={'menuEnabled': 'yes'})
+        self.assertIn('navigation.menuEnabled', paths(validate_model(invalid, 'production').errors))
 
     def test_malformed_input_does_not_crash(self):
         for broken in (None, [], {'pages': [], 'images': [], 'artworks': {}, 'restaurant': 'x'},

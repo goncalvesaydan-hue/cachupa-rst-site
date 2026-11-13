@@ -111,8 +111,8 @@ class CliTests(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertIn('aviso: restaurant.contacts.whatsappHref', err)
         code, _, err = run('validate', '--mode', 'production')
-        self.assertEqual(code, 1)
-        self.assertIn('erro: restaurant.contacts.emailHref: email obrigatório para produção', err)
+        self.assertEqual(code, 0)
+        self.assertIn('aviso: restaurant.contacts.whatsappHref', err)
 
     def test_model_outputs_contract_json(self):
         code, out, _ = run('model')
@@ -127,8 +127,15 @@ class CliTests(unittest.TestCase):
 
     def test_production_build_of_incomplete_content_writes_nothing(self):
         with tempfile.TemporaryDirectory() as tmp:
+            content_dir = Path(tmp) / 'content'
+            content_dir.mkdir()
+            source = support.complete_source()
+            pages = source.pop('pages')
+            source['restaurant'] = {'city': None, 'address': None, 'hours': [], 'contacts': {}}
+            (content_dir / 'site.json').write_text(json.dumps(source), encoding='utf-8')
+            (content_dir / 'pages.json').write_text(json.dumps(pages), encoding='utf-8')
             out = Path(tmp) / 'prod'
-            self.assertEqual(run('build', '--mode', 'production', '--out', str(out))[0], 1)
+            self.assertEqual(run('build', '--mode', 'production', '--content', str(content_dir), '--out', str(out))[0], 1)
             self.assertFalse(out.exists())
 
     def test_preview_build_of_real_content(self):
@@ -138,6 +145,10 @@ class CliTests(unittest.TestCase):
             self.assertEqual(code, 0)
             self.assertIn('7 páginas', out_text)
             self.assertTrue(all((out / name).is_file() for name in PAGES))
+            for name in ('menu/index.html', 'menu/style.css', 'menu/data.js', 'menu/script.js', 'menu/brand/logo.svg'):
+                self.assertTrue((out / name).is_file(), name)
+            self.assertFalse((out / 'menu/README.md').exists())
+            self.assertFalse((out / 'menu/tests').exists())
 
 
 if __name__ == '__main__':
