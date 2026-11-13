@@ -71,6 +71,24 @@ a {
   text-decoration: none;
 }
 
+a > span[aria-hidden="true"]:not(.address-line) {
+  display: inline-block;
+  width: .85em;
+  height: .85em;
+  vertical-align: -.08em;
+  flex-shrink: 0;
+  overflow: hidden;
+  text-indent: -999px;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='none' stroke='%23000' stroke-width='1.65' stroke-linecap='square' d='M2.5 9.5 9.5 2.5M4 2.5h5.5V8'/%3E%3C/svg%3E") no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='none' stroke='%23000' stroke-width='1.65' stroke-linecap='square' d='M2.5 9.5 9.5 2.5M4 2.5h5.5V8'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+.channels > a > span[aria-hidden="true"] {
+  width: 15px;
+  height: 15px;
+}
+
 button {
   color: inherit;
   font: inherit;
@@ -1471,6 +1489,7 @@ dialog.art-dialog::backdrop {
   background: none;
   font-size: 12px;
   font-weight: 700;
+  font-variant-emoji: text;
   padding: 0 4px;
 }
 
@@ -1595,7 +1614,15 @@ dialog.art-dialog::backdrop {
 
 @media (max-width: 850px) {
   body {
-    padding-bottom: 61px;
+    padding-bottom: calc(61px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .text-link {
+    padding: 6px 0;
+  }
+
+  .inline-links a {
+    padding: 6px 0 4px;
   }
 
   .nav-shell {
@@ -1928,7 +1955,9 @@ dialog.art-dialog::backdrop {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 61px;
+    height: calc(61px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: var(--ink);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     box-shadow: 0 -4px 20px rgba(0, 0, 0, .15);
